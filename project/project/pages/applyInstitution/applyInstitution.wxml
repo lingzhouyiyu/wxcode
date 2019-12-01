@@ -1,0 +1,39 @@
+<view class='container'>
+  <view class='partline_3'></view>
+  <view class='applyTitle textcolor_blue'>请填写以下申请资料</view>
+
+  <view class='institutioncontent'>
+    <form bindsubmit="submitdata">
+      <view class='contents_item'>
+        <text class='contents_item_txt'>学校名称</text>
+        <input class='contents_item_input' name='schoolName'></input>
+      </view>
+      <view class='contents_item contents_item_guimo' bindtap='selectguimo'>
+        <text class='contents_item_txt'>规模</text>
+        <input class='contents_item_input' value='{{selectData}}' name='schoolScale'></input>
+        <image class='{{selectTag?"selectimg":"selectimgs"}}' src='../../images/more.png'></image>
+        <!-- 下拉框 -->
+        <view class='Dropdownbox' hidden='{{selectTag}}'>
+          <view class='Dropdownbox_item' wx:for='{{dropdownboxArray}}' wx:key='unique' bindtap='selectitem' data-select='{{item}}'>{{item}}</view>
+        </view>
+
+      </view>
+      <view class='contents_item'>
+        <text class='contents_item_txt'>负责人</text>
+        <input class='contents_item_input' name='schoolLeader'></input>
+      </view>
+      <view class='contents_item'>
+        <text class='contents_item_txt'>联系电话</text>
+        <input class='contents_item_input' type="number" name='schoolPhone'></input>
+      </view>
+      <view class='contents_item'>
+        <text class='contents_item_txt'>地址</text>
+        <input class='contents_item_input' name='schoolAddress'></input>
+      </view>
+      <button class='applySubmit' formType="submit">提交申请</button>
+    </form>
+  </view>
+
+
+
+</view>

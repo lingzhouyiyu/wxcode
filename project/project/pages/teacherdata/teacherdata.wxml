@@ -1,0 +1,34 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class='teacher_name'>{{teacherData.teacherName}}</view>
+  <view class='partline_3'></view>
+  <view class='teacher_position'>
+    <text class='position_title'>担任职务：</text>
+    <text class='position_content'>{{teacherData.teacherJob}}</text>
+  </view>
+  <view class='partline_3'></view>
+  <view class='teacher_goodat'>
+    <text class='goodat_title'>擅长项目：</text>
+    <view class='goodat_content'>
+      <!-- <text class='goodat_content_item'>芭蕾舞</text> -->
+      <text class='goodat_content_item' wx:for='{{teacherBestWork}}' wx:key='unique1'>{{item}}</text>
+    </view>
+  </view>
+  <view class='partline_3'></view>
+  <view class='teacher_introduction'>
+    <text class='introduction_title'>老师简介：</text>
+    <view class='introduction_content'>
+    <template is="wxParse" data="{{wxParseData:teacherIntroduce.nodes}}"/>
+    </view>
+  </view>
+  <view class='partline_3'></view>
+  <view class='teacher_photo_title'>老师相册：</view>
+  <view class='teacher_photo_warp'>
+    <view class='teacher_photo'>
+      <!-- <image class='teacher_photo_img' src='../../images/test.jpg'></image> -->
+      <image class='teacher_photo_img' wx:for='{{teacherPhoto}}' wx:key='unique2' bindtap="previewImage" data-src='{{Furl}}{{item}}' src='{{Furl}}{{item}}'></image>
+
+    </view>
+  </view>
+
+</view>

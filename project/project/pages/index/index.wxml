@@ -1,0 +1,177 @@
+<!--index.wxml-->
+<view class="container {{showModalStatus?'fixedindex':''}}">
+  <!-- //顶部搜索框 -->
+  <view class='header'>
+    <image class='Locationimg' src='../../images/Location.png' bindtap='allowLocation'></image>
+    <text bindtap='allowLocation'>{{address}}</text>
+    <view class='search'>
+      <image class='searchimg' src='../../images/search.png'></image>
+      <!-- <input type='text' confirm-type='search' bindinput='searchSchool' bindconfirm='searchSchool' bindfocus='searchSchool' class='searchinput' placeholder="想找的搜出来~" cursor-spacing="15"></input> -->
+      <view class='searchinput' bindtap='searchSchool'>请输入学校名或者课程名~</view>
+    </view>
+    <image class='noticeimg' src='../../images/message.png' catchtap='gotonotice'></image>
+  </view>
+  <!-- 轮播图 -->
+  <view class='bannerimg'>
+    <swiper class="swiper" autoplay="true" circular='true' interval="5000" duration="1000" style='height:{{Height}}'>
+      <block wx:for="{{bannersimages}}" wx:for-index="index" wx:key="unique1">
+        <swiper-item>
+          <image src="{{Furl}}{{item.newimg}}" style='width:100%;heigth:100%' bindtap='gotoactive' mode="widthFix" bindload='imgHeight' data-activeId='{{item.activeId}}' data-activeType='{{item.activeType}}' />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 滑动分类 -->
+  <view class='bannercate'>
+    <swiper class="swiper" circular='true' indicator-color='F1F0EE' indicator-active-color='#00AEFE' interval="5000" duration="1000" indicator-dots='true'>
+      <block wx:for="{{categorybanner}}" wx:for-item="item" wx:key="unique2">
+        <swiper-item class='swiper_item'>
+          <view class='cateview'>
+            <view class='cateviewItems' wx:for="{{item.data}}" data-categoryid='{{items.danceCategoryId}}' catchtap='gotoDetail' wx:for-item="items" wx:key="unique3">
+              <view class='cateimgview'>
+                <!-- <image class='cateimg' src='../../images/tests.jpg'></image> -->
+                <image class='cateimg' src='{{Furl}}{{items.categoryImageOne}}' mode="aspectFill"></image>
+              </view>
+              <view class='catetxt'>
+                <text>{{items.categoryName}}</text>
+              </view>
+            </view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='partlineone'></view>
+  <!-- 本周优选 -->
+  <view class='Recommend'>
+    <view class='top'>
+      <text class='txt'>本周优选</text>
+      <!-- <text class='more'>更多</text> -->
+    </view>
+    <view class='img'>
+      <image wx:for="{{imgArray}}" wx:key="lalala" src='{{Furl}}{{item.imgurl}}' bindtap='gotoactive' data-activeId='{{item.activeId}}' data-activeType='{{item.activeType}}'></image>
+    </view>
+    <!-- <view class='category'>
+      <text class='items' wx:for="{{RecommendCategory}}">{{item}}</text>
+    </view> -->
+  </view>
+  <!-- 名师推荐 -->
+  <view class='teacher'>
+    <view class='top' bindtap='gotorankings'>
+      <text class='txt'>名师推荐</text>
+      <text class='more'>更多</text>
+    </view>
+    <scroll-view scroll-x='true' bindscroll='getwidth' class='teacherarea'>
+      <view class='blanks'></view>
+      <view class='teacher_section' wx:for="{{teacherarray}}" wx:for-index="index" wx:key="unique4" bindtap='gotodetailTeacher' data-teacherId='{{item.teacherId}}'>
+        <view class='sectionheader'>
+          <!-- <image src='../../images/guitar.png' class='headerimg'></image> -->
+          <image src='{{Furl}}{{item.teacherImage}}' class='headerimg'></image>
+        </view>
+        <view class='teacherdes'>
+          <text class='margins name'>{{item.teacherName}}</text>
+          <text class='margins kind'>{{item.categoryName}}</text>
+          <text class='margins counts'>{{item.yuyueCount}}人预约过</text>
+        </view>
+        <view class='hotsign'></view>
+        <!-- <view class='signTxt' style="display:{{(index==0||index==1)?'':'none'}}">{{index==1?'HOT':'名师'}}</view>
+        <view class='hotsigns' style="display:{{(index==0||index==1)?'':'none'}};border-color:{{index==0?'#00AEFE':'#FF4B50'}} transparent"></view> -->
+        <view class='signTxt'>{{item.recommend==1?'名师':'HOT'}}</view>
+        <view class='hotsigns' style="border-color:{{item.recommend==1?'#00AEFE':'#FF4B50'}} transparent"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 底部推荐 -->
+  <view class='footer'>
+    <scroll-view scroll-x="true" scroll-left='15' class="tab_comtainer">
+      <block wx:for="{{footertitle}}" wx:key="unique5">
+        <text class="tab_item {{item.categoryName == catalogSelect ? 'active':''}}" bindtap='tabSelect' data-select="{{item.categoryName}}" data-categoryid='{{item.danceCategoryId}}'>{{item.categoryName}}</text>
+      </block>
+    </scroll-view>
+
+    <view class='footeritem' wx:for="{{schoolList}}" wx:key="unique6">
+      <view class='partlinetwo'></view>
+      <view class='itemtopwrap {{item.hascourse?"":"itemtopwraps"}}' bindtap='gotodetailinstitution' data-select='{{item.schoolId}}'>
+        <view class='itemtop'>
+          <view class='itemtop_left'>
+            <!-- <image class='titleimg' src='../../images/test.jpg'></image> -->
+            <image class='titleimg' src='{{Furl}}{{item.schoolPicture}}'></image>
+          </view>
+          <view class='itemtop_right'>
+            <view class='title'>
+              <text class='catetitle'>{{item.schoolName}}</text>
+              <image class='renzhengimg' src='../../images/renzheng.png'></image>
+            </view>
+            <view class='kind'>
+              <text>课程数量:{{item.totalCount}}</text>
+              <!-- <text>>{{item.newSchoolDistance}}km</text> -->
+              <!-- <text>{{item.newSchoolDistance==1?'<1':'>'+item.newSchoolDistance}}km</text> -->
+              <text>{{item.newSchoolDistance}}</text>
+            </view>
+
+            <view class='address'>
+              <text>{{item.schoolAddress}}</text>
+            </view>
+            <view class='Score'>
+              <image src='../../images/star.png' class='starimg'></image>
+              <image src='../../images/star.png' class='starimg'></image>
+              <image src='../../images/star.png' class='starimg'></image>
+              <image src='../../images/star.png' class='starimg'></image>
+              <image src='../../images/star.png' class='starimg'></image>
+              <text>{{item.yuyueCount}}预约</text>
+               <text>{{item.schoolFlexe}}到访</text>
+            </view>
+
+          </view>
+        </view>
+      </view>
+
+      <view class='itembuttom'>
+        <view class='itemcontent' data-courseid='{{items.courseId}}' catchtap='gotodetailcourse' wx:for="{{item.newCourse}}" wx:for-item='items' wx:key="unique7">
+          <view class='shangmian'>
+            <image class='itemcontentimg' src='../../images/buy.png'></image>
+            <text class='itemcontenttxt'>{{items.courseTitle}}</text>
+          </view>
+          <view class='xiamian'>
+            <text class='pricelala'>￥</text>
+            <text class='itemcontentprice'>{{items.courseAdvancePayment}}</text>
+          </view>
+        </view>
+        <view class='checkall' bindtap='gotoinstitutionAppointment' data-select='{{item.schoolId}}' wx:if='{{item.hascourse==true}}'>
+          <text>查看全部项目</text>
+          <image src='../../images/goto.png' class='checkall_img'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+<!-- <view>
+  <authDialog id='dialog'></authDialog>
+</view> -->
+<view class='partlinethree'></view>
+
+<!-- //城市选择列表 -->
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}" catchtouchmove='stopPageScroll'></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}" catchtouchmove='stopPageScroll'>
+  <!-- 关闭按钮 -->
+  <view class='closeBtn' bindtap="hideModal">
+    <!-- <image src='../../images/close.png'></image> -->
+    <text>返回</text>
+  </view>
+  <!-- 城市列表 -->
+  <view class='cityList'>
+    <cityList bind:myevent='getcityName'></cityList>
+  </view>
+</view>
+<!-- 活动弹框 -->
+<view class="modalDlg" wx:if="{{activeModal}}" bindtap='gotoactive' data-activeId='1000001610262994' data-activeType='0'>
+<image src='../../images/activityImg.jpg'></image>
+</view>
+<view class='close_btn' bindtap="close_mask" wx:if="{{activeModal}}">
+  <image src='../../images/activeClose.png'></image>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="close_mask" wx:if="{{activeModal}}"></view>

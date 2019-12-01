@@ -1,0 +1,10 @@
+<view class='container'>
+  <image src='../../images/share/share.jpg' class='icon'></image>
+  <text class='txt1'>恭喜您，报名成功</text>
+  <view class='txt2'>
+    <text class='txt2_1'>您的编号为</text>
+    <text class='txt2_2'>{{number}}</text>
+    <text class='txt2_3'>赶紧去找人帮您投票吧!</text>
+  </view>
+  <text class='txt3' bindtap='gotovote'>返回首页</text>
+</view>

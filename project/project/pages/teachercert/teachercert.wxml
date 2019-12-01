@@ -1,0 +1,11 @@
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class='container'>
+ <template is="wxParse" data="{{wxParseData:teacherCertificates.nodes}}"/>
+  <!-- <view class='certtop'>教师资格证</view>
+  <image class='certimg_top' src='../../images/test.jpg'></image>
+  <view class='partline_20'></view>
+  <view class='certbottom'>授课专业老师资格证</view>
+  <image class='certimg_bottom' src='../../images/test.jpg'></image>
+   <view class='partlinecert'></view> -->
+</view>

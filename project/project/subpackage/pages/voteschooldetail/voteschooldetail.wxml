@@ -1,0 +1,33 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class='title'>
+    <text>{{schoolData.id}}号，</text>
+    <text>{{schoolData.schoolName}}</text>
+  </view>
+  <view class='title'>
+    <text>{{schoolData.schoolAddress}}</text>
+  </view>
+  <view class='btnview'>
+    <view class='btnitem'>
+      <text class='itemtxt'>{{schoolData.votes}}</text>
+      <text>当前票数</text>
+    </view>
+    <view class='btnitem'>
+      <text class='itemtxt'>{{schoolData.rownum}}</text>
+      <text>当前排名</text>
+    </view>
+  </view>
+  <view class='toupiao' catchtap='vote' data-id='{{schoolData.id}}'>投一票</view>
+  <view class='lapiao' bindtap='gotovoteshare'>为学校拉票</view>
+  <view class='schoolcontent' wx:if='{{schoolData.type=="0"}}'>
+    <template is="wxParse" data="{{wxParseData:schooltext.nodes}}" />
+    <template is="wxParse" data="{{wxParseData:schoolcontent.nodes}}" />
+  </view>
+  <view class='schoolcontent' wx:if='{{schoolData.type=="1"}}'>
+    <view class='schoolcontents'>{{schoolData.schoolIntroduce}}</view>
+    <image src='{{Furl}}{{item}}' wx:for='{{schoolData.newschoolPicture}}' wx:key='' class='newschoolPicture' mode='widthFix'></image>
+  </view>
+  <view class='backview' catchtap='gotoindex'>
+    <image src='../../images/backindex.png'></image>
+  </view>
+</view>

@@ -1,0 +1,107 @@
+<!--pages/nk/task/task.wxml-->
+<view class="container">
+
+
+  <view style='display:flex;flex-direction:row;padding-left:10px;height:40px;width:100%;'>
+    <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">任务信息：</view>
+    <view wx:if="{{ClassesInfo.Status==0}}" style="padding-right:10px;background: #fff;display:flex;align-items:center;justify-content: center;width:100px">
+      <view class="viewsurebtn" bindtap="optionSure">领取任务</view>
+    </view>
+
+    <view wx:elif="{{ClassesInfo.Status==1}}" style="padding-right:10px;background: #fff;display:flex;align-items:center;justify-content: center;width:100px">
+      <view class="viewstartbtn" bindtap="optionStart">确认发车</view>
+    </view>
+
+    <view wx:elif="{{ClassesInfo.Status==2}}" style="padding-right:10px;background: #fff;display:flex;align-items:center;justify-content: center;width:100px">
+      <view class="viewendbtn" bindtap="optionEnd">确认完成</view>
+    </view>
+
+  </view>
+      <view class="user-termsOfUse userstyle">
+        <text class="userTextStyle">发班日期：{{ClassesInfo.UseDate}}</text>
+      </view>
+
+      <view class="user-ontegralRule userstyle">
+        <text class="userTextStyle">确认时间：{{ClassesInfo.AffirmTime?ClassesInfo.AffirmTime:''}}</text>
+      </view>
+
+      <view class="user-commonProblem userstyle">
+        <text class="userTextStyle">开始时间：{{ClassesInfo.BeginTime?ClassesInfo.BeginTime:''}}</text>
+      </view>
+
+      <view class="user-termsOfUse userstyle">
+        <text class="userTextStyle">结束时间：{{ClassesInfo.EndTime?ClassesInfo.EndTime:''}}</text>
+      </view>
+  <view style="display:flex;flex-direction:row;width:100%">
+    <view style="flex:.5">
+      <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">任务状态：</text>
+        <text wx:if="{{ClassesInfo.Status==0}}" class="userTextStyle">待领取</text>
+        <text wx:elif="{{ClassesInfo.Status==1}}" class="userTextStyle">待发车</text>
+        <text wx:elif="{{ClassesInfo.Status==2}}" class="userTextStyle">已发车</text>
+        <text wx:elif="{{ClassesInfo.Status==3}}" class="userTextStyle">已完成</text>
+        <text  wx:else class="userTextStyle">未知</text>
+      </view>
+
+      <view class="user-commonProblem userstyle">
+        <text class="userTextStyle">线路名称：{{ClassesInfo.RouteName}}</text>
+      </view>
+    </view>
+
+
+    <view style="flex:.5">
+      <view class="user-privacyPolicy userstyle">
+        <text class="userTextStyle">发班序号：{{ClassesInfo.SortNo}}</text>
+      </view>    
+
+      <view class="user-privacyPolicy userstyle">
+        <text class="userTextStyle">车牌号码：{{ClassesInfo.VehicleNumber}}</text>
+      </view>
+    </view>
+
+  </view>
+
+
+
+  <view style='display:flex;flex-direction:row; align-items: center;justify-content: center;padding-left:10px;height:40px;width:100%;'>
+    <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">订单信息：</view>
+    <navigator wx:if="{{ClassesInfo.Status==1 || ClassesInfo.Status==2 }}" url="buyticket?VehicleId={{ClassesInfo.VehicleId}}&RouteId={{ClassesInfo.RouteId}}&TaskId={{TaskID}}&DriverId={{ClassesInfo.DriverId}}&RouteName={{ClassesInfo.RouteName}}" hover-class="navigator-hover">
+      <view style="margin-right:20px;border-radius: 5px;border:1px solid #21c021;width:80px;line-height:30px;color:#21c021;font-size:30rpx;text-align:center">代购车票</view>
+    </navigator>
+
+    <navigator wx:if="{{ClassesInfo.Status==1 || ClassesInfo.Status==2 }}" url="qrcode?ClassesId={{ClassesInfo.ID}}" hover-class="navigator-hover">
+      <view style="margin-right:20px;border-radius: 5px;border:1px solid #21c021;width:80px;line-height:30px;color:#21c021;font-size:30rpx;text-align:center">购票码</view>
+    </navigator>
+
+  </view>
+
+  <block wx:for="{{TicketList}}" wx:key="ID">
+
+    <view bindtap="clickOrder" id='{{item.ticketNo}}' data-index="{{index}}" class="user-privacyPolicy userstyle">
+      
+      <view style="width:100px;text-align:left">
+        <text class="userTextStyle">{{index+1}}.{{item.UserAccount}}</text>
+      </view>
+
+      <view style="display:flex;flex-direction:column;flex:1;text-align:center">
+        <text style="font-size:26rpx;color:#4a4a4a">起：{{item.StartStationName}}</text>
+        <text style="font-size:26rpx;color:#4a4a4a">终：{{item.EndStationName}}</text>
+      </view>
+      <view style="display:flex;flex-direction:column;flex:1;text-align:center">
+        <text style="font-size:26rpx;color:#4a4a4a">{{item.ticketType}}</text>
+        <text style="font-size:26rpx;color:#4a4a4a">{{item.OrderPrice}}元</text>
+      </view>
+
+     <text wx:if="{{item.PaymentStatus=='0'}}" class="userTextStyle" style="color:#ff0000">未支付</text>
+     <text wx:elif="{{item.PaymentStatus=='1'}}" class="userTextStyle" style="color:#179B16">已支付</text>
+     <text wx:elif="{{item.PaymentStatus=='2'}}" class="userTextStyle" style="color:#ff0000">已退款</text>
+
+
+    <text wx:if="{{item.Checked=='0'}}" class="userTextStyle" style="color:#ff0000">未检票</text>
+     <text wx:elif="{{item.Checked=='1'}}" class="userTextStyle" style="color:#ff0000">已检票</text>
+     <text wx:elif="{{item.Checked=='2'}}" class="userTextStyle" style="color:#179B16">已下车</text>
+      <text class="righthead"></text>
+    </view>
+
+  </block>
+</view>

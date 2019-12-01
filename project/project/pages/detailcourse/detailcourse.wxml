@@ -1,0 +1,241 @@
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class='container'>
+  <!-- 顶部图片 -->
+  <view class='details_img'>
+    <swiper class='imgwrap' autoplay="true" interval="5000" duration="500">
+      <block wx:for="{{courseData.newImg}}" wx:key='unique7'>
+        <swiper-item>
+          <image src="{{Furl}}{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 详细信息 -->
+  <view class='course_details_warp'>
+    <view class='course_details_title'>{{courseData.courseTitle}}</view>
+    <view class='course_details_price'>
+      <text class='pricepl'></text>
+      <view>
+        <text class='price'>￥{{courseData.courseAdvancePayment}}</text>
+        <text class='tiptext' wx:if='{{courseData.courseUnit!="/"}}'>{{courseData.courseUnit}}</text>
+      </view>
+      <text class='Originalprice textcolor_gray' wx:if='{{courseData.courseAdvancePayment!=courseData.coursePrice}}'>￥{{courseData.coursePrice}}</text>
+    </view>
+    <view class='course_details_address'>
+      <!-- <text class='address_title'>昆明市</text> -->
+      <text class='address_yuyue'>{{courseData.sellCount}}人已预约</text>
+    </view>
+  </view>
+  <!--  -->
+  <view class='tips' wx:if='{{courseData.courseNotice!=""&&courseData.courseNotice!=null}}'>
+    <view class='img_view'>
+      <image class='tips_img' src='../../images/laba.png'></image>
+    </view>
+    <view class='tips_view'>
+      <text class='tips_txt'>{{courseData.courseNotice}}</text>
+    </view>
+  </view>
+  <!-- 服务 -->
+  <view class='service' bindtap='gotodetailcourse_service'>
+    <view class='service_title'>服务</view>
+    <view class='service_item'>
+      <image class='service_item_img' src='../../images/fuwu.png'></image>
+      <text>急速退款</text>
+    </view>
+    <view class='service_item'>
+      <image class='service_item_img' src='../../images/fuwu.png'></image>
+      <text>退款说明</text>
+    </view>
+    <image class='service_more' src='../../images/more.png'></image>
+  </view>
+  <!-- 领券 -->
+  <view class='Voucher' bindtap='getVoucher'>
+    <view class='Voucher_one'>领券</view>
+    <view class='Voucher_two'>预约金红包</view>
+    <view class='Voucher_three'>
+      <view class='Voucher_three_txt' wx:for='{{voucherArray}}' wx:key='unique9'>
+        <text> {{item.title}}</text>
+        <view class='leftspot'></view>
+        <view class='rightspot'></view>
+      </view>
+    </view>
+    <view class='Voucher_four'>{{voucherCount}}个</view>
+    <image class='Voucher_more' src='../../images/more.png'></image>
+  </view>
+  <!-- 促销 -->
+  <view class='sales' wx:if='{{hasActive}}'>
+    <text class='sales_one'>促销</text>
+    <text class='sales_two'>秒</text>
+    <text class='sales_three'>活动结束恢复</text>
+    <text class='sales_four'>￥{{courseData.coursePrice}}</text>
+  </view>
+  <view class='partline_20'></view>
+  <view class='contact' bindtap='gotodetailinstitution' data-select='{{schoolData.schoolId}}'>
+    <view class='contact_left'>
+      <!-- <image class='contact_left_img' src='../../images/test.jpg'></image> -->
+      <image class='contact_left_img' src='{{Furl}}{{schoolImg}}'></image>
+    </view>
+    <view class='contact_right'>
+      <view class='contact_right_title'>{{schoolData.schoolName}}</view>
+      <view class='contact_right_txt'>资质：教育培训</view>
+      <view class='contact_right_address'>地址：{{schoolData.schoolAddress}}</view>
+    </view>
+  </view>
+  <view class='lianxi textcolor_blue'>
+    <view class='lianxi_item' bindtap='makephonecall'>
+      <image class='lianxi_img' src='../../images/telephone.png'></image>
+      <text>电话咨询</text>
+    </view>
+    <button class='lianxi_item' open-type="contact">
+      <image class='lianxi_imgs' src='../../images/zaixian.png'></image>
+      <text>在线咨询</text>
+    </button>
+  </view>
+  <view class='partline_3'></view>
+  <!-- <view class='bulabulawrap'>
+    <view class='bulabula' wx:for='{{teacherList}}' wx:key='unique19' bindtap='gotodetailteacher' data-teacherid='{{item.teacherId}}'>
+      <text class='bulabula_name'>{{item.teacherName}}</text>
+      <text class='bulabula_detail'>擅长：{{item.teacherBestWork}}</text>
+      <image class='bulabula_img' src='../../images/more.png'></image>
+    </view>
+  </view> -->
+  <view class='bulabulawrap'>
+    <view class='bulabula' wx:for='{{teacherList}}' wx:key='unique19' bindtap='gotodetailteacher' data-teacherid='{{item.teacherId}}'>
+      <text class='bulabula_name'>{{item.teacherName}}</text>
+    </view>
+  </view>
+  <view class='partline_20 partlines'></view>
+  <view class='introduce'>
+    <view class='introduce_item' bindtap='introduce_item_switch' data-select='0'>
+      <text class='introduce_item_txt {{introduceSelect=="0"?"introduce_item_txts":""}}'>详情</text>
+    </view>
+    <view class='introduce_item' bindtap='introduce_item_switch' data-select='1'>
+      <text class='introduce_item_txt {{introduceSelect=="1"?"introduce_item_txts":""}}'>环境</text>
+    </view>
+    <view class='introduce_item' bindtap='introduce_item_switch' data-select='2'>
+      <text class='introduce_item_txt {{introduceSelect=="2"?"introduce_item_txts":""}}'>评价</text>
+    </view>
+  </view>
+  <view class='partline_3'></view>
+
+  <view class='coursedetailswarp'>
+
+    <!-- //详情 -->
+    <view scroll-y class='' hidden='{{introduceSelect!="0"}}'>
+      <view class='insiti_bottom'>
+        <template is="wxParse" data="{{wxParseData:courseDetails.nodes}}" />
+      </view>
+    </view>
+
+    <!-- //环境 -->
+    <view scroll-y class='scroll_content' hidden='{{introduceSelect!="1"}}'>
+      <template is="wxParse" data="{{wxParseData:courseEnvironment.nodes}}" />
+    </view>
+    <!-- 评价 -->
+    <!-- <view class='commenttop' hidden='{{introduceSelect!="2"}}'>
+    <view class='insti_score'>5.0</view>
+    <view class='insti_score_detail'>
+      <text>环境：5.0</text>
+      <text>专业度：5.0</text>
+      <text>服务：5.0</text>
+      <text>效果：5.0</text>
+    </view>
+    <view class='partline_3'></view>
+    <view class='hotcate'>
+      <view class='hotitem' wx:for="{{hotarray}}" wx:key="unique4">{{item}}</view>
+    </view>
+  </view> -->
+    <view scroll-y class='scroll_content scroll_contents' hidden='{{introduceSelect!="2"}}'>
+      <view class='comment_item' wx:for="{{commentData}}" wx:key='unique5'>
+        <view class='comment_item_left'>
+          <image src='{{item.nickPicture}}'></image>
+        </view>
+        <view class='comment_item_right'>
+          <view class='comment_item_right_1'>{{item.nickName}}</view>
+          <view class='comment_item_right_2'>
+            <image wx:for='{{item.starArray}}' wx:key='unique6' wx:for-item='items' src='../../images/{{items}}.png'></image>
+          </view>
+          <view class='comment_item_right_3'>
+            {{item.schoolReasonText}}
+          </view>
+          <view class='comment_item_right_4 textcolor_gray'>{{item.newtime}}</view>
+          <!-- <view class='comment_item_right_5 textcolor_gray'>浏览90676</view> -->
+        </view>
+      </view>
+      <view wx:if='{{!hasmessage}}' class='nomessages'>
+        <image src='../../images/nomessages.png'></image>
+        <text class='textcolor_gray'>暂时没有评价</text>
+      </view>
+    </view>
+  </view>
+  <!-- 领取优惠券蒙版 -->
+  <view class='getVoucher_cover  {{hidetag?"hideview":"showview"}}' catchtap='hideVoucher' catchtouchmove="myCatchTouch"></view>
+  <view class='scroll_warp {{hidetag?"hideview":"showview"}}' catchtouchmove="myCatchTouch">
+    <view class='top_warp'>
+      <view class='close_img'>
+        <image src='../../images/closeBtn.png' catchtap='hideVoucher'></image>
+      </view>
+      <view class='klqdhb'>可领取红包</view>
+    </view>
+    <scroll-view scroll-y class='getVoucher_content'>
+      <view class='contentwrap'>
+        <!-- 已领取 -->
+        <view class='content_item' wx:for='{{voucherArray}}' wx:key='unique8' bindtap='addCouponUse' data-hasget='{{item.hasGet}}' data-couponid='{{item.id}}'>
+          <view class='content_item_left {{item.hasGet==0?"":"ylqbackground"}}'>
+            <text class='content_item_left_1'>{{item.title}}</text>
+            <view class='content_item_left_2'>
+              <text class='content_item_left_3'>￥</text>
+              <text class='content_item_left_4'>{{item.price}}</text>
+            </view>
+          </view>
+          <view class='content_item_right'>
+            <view class='content_item_right_1'>{{item.title}}</view>
+            <view class='content_item_right_2'>有效期:{{item.startTime}}至{{item.endTime}}</view>
+            <view class='content_item_right_3'></view>
+            <view class='content_item_right_4 {{item.hasGet==0?"":"ylqtxt"}}'>{{item.hasGet==0?"未领取":"已领取"}}</view>
+          </view>
+        </view>
+
+      </view>
+
+    </scroll-view>
+  </view>
+
+</view>
+<!-- 底部咨询部分 -->
+<view class='bottom_detail'>
+  <view class='bottom_detail_left'>
+    <view class='bula_left' bindtap="submit">
+      <view class='bula_left_top'>
+        <text>预约金：</text>
+        <text class='textcolor_blue '>￥{{courseData.yuyuejin}}</text>
+        <image class='bula_left_top_img' src='../../images/tips.png'></image>
+      </view>
+      <view class='bula_left_bottom'>
+        <text>到校再付：</text>
+        <text>￥{{courseData.tailPrice}}</text>
+      </view>
+    </view>
+    <view class='bula_right'>
+      <view class='bula_right_item {{collectionTag?"":"bula_right_items"}}' bindtap='courseCollection'>
+        <image class='bula_right_item_imgs' src='../../images/{{collectionImg}}.png'></image>
+        <text>{{collectionTxt}}</text>
+      </view>
+      <view class='bula_right_item' bindtap='makephonecall'>
+        <image class='bula_right_item_img' src='../../images/telephone.png'></image>
+        <text>咨询</text>
+      </view>
+    </view>
+  </view>
+  <view class='bottom_detail_right' bindtap='gotoconfirmOrder'>{{isbuy?'已购买':'立即购买'}}</view>
+</view>
+<!-- 预约金说明弹框 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class='close_mask'>什么是预约金？</view>
+  <view class='detail_text'>预约金是所购课程需要在蛙涡教育先支付的费用，到店后支付其余部分即可。</view>
+  <view class='detail_text'>即：预约金+到校再付=蛙涡价</view>
+  <view class='detail_text'>注：预约金到校消费前可退，过期未消费也可退。详情见页面退款部分说明。</view>
+  <button class='save_money' bindtap="close_mask">确定</button>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="close_mask" wx:if="{{showModal}}"></view>

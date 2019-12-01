@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/selectArea",
+    "pages/listIndex/showline",
+    "pages/listIndex/searchline",
+    "pages/mapshow/mapIndex",
+    "pages/mapshow/recovery"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#0099ff",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "来云游公交"
+  },
+  "networkTimeout": {
+    "request": 20000
+  },
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,28 @@
+<view class="ub bc-text ub-ver mainpage">
+  <view class='ub ub-ac ub-ver ub-pc person-top'>
+    <view class='ub ub-ac ub-pc'>
+      <image class='person-logo' src='../common/images/logo.png'></image>
+    </view>
+    <view class='ub ub-ac ub-pc person-tel'>
+      <button open-type="openSetting" bindopensetting="openSetting">用户授权</button>
+    </view>
+  </view>
+  <navigator wx:if="{{manage!='老师'}}" url="changepassword" hover-class="navigator-hover">
+    <view class='ub ub-ac person-item'>
+      <view class='ub ub-ac ub-f1'>
+        <text>修改密码</text>{{manage}}
+      </view>
+      <view class='ub ub-ac'>
+        <text class="righthead"></text>
+      </view>
+    </view>
+  </navigator>
+  <view bindtap='bindlogout' class='ub ub-ac person-item'>
+    <view class='ub ub-ac ub-f1'>
+      <text>退出登录</text>
+    </view>
+    <view class='ub ub-ac'>
+      <text class="righthead"></text>
+    </view>
+  </view>
+</view>

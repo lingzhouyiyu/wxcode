@@ -1,0 +1,126 @@
+<view class='container'>
+  <view class='search'>
+    <image class='searchimg' src='../../images/search.png'></image>
+    <input type='text' confirm-type='search' bindinput='searchSchool' bindfocus='openhistory' bindblur='closehistory' bindconfirm='searchSchools' class='searchinput' placeholder="请输入学校名或者课程名~" value='{{Fkeyworlds}}' cursor-spacing="15"></input>
+  </view>
+  <view class='partline_3 partline'></view>
+  <view class='historyview' wx:if='{{isShowhistory}}'>
+    <view class='historyitem' wx:for='{{historyList}}' wx:key='' bindtap='historyclick' data-text='{{item.keyWorlds}}'>
+      <view>
+        <image src='../../images/historysearch.png' class='clearallimage'></image>
+        <text>{{item.keyWorlds}}</text>
+      </view>
+      <image src='../../images/clearhistory.png' catchtap='deleteAlong' class='clearimg' data-id='{{item.id}}' data-text='{{item.keyWorlds}}'></image>
+    </view>
+    <view class='historybottom'>
+      <view class='bottomitem'>
+        <text bindtap='deleteAll'>清除历史记录</text>
+        <text bindtap='closehistory'>关闭</text>
+      </view>
+    </view>
+  </view>
+  <view class='hottitle'>热搜</view>
+  <view class='hotpanel'>
+    <view wx:for='{{hotData}}' wx:key='' class='{{hotselect==item.id?"hotitems":"hotitem"}}' bindtap='hotsearch' data-id='{{item.id}}' data-word='{{item.word}}'>{{item.word}}</view>
+  </view>
+  <view class='partline_3'></view>
+   <!-- 热门列表 -->
+    <view class='hotcontent'>
+      <view class='contentitem' wx:for="{{hotCourseList}}" wx:key="unique1">
+        <view class='item' bindtap='gotodetailcourse' data-courseid='{{item.courseId}}'>
+          <view class='leftimg'>
+            <!-- <image src='../../images/test.jpg'></image> -->
+            <image src='{{Furl}}{{item.courseImg}}'></image>
+          </view>
+          <view class='rightitem'>
+            <text class='titles'>{{item.courseTitle}}</text>
+            <view class='personMsg'>
+              <text class='detailtxt'>{{item.teacherName}}</text>
+            </view>
+            <view class='distant'>
+              <text class='schoolnameview'>{{item.schoolName}}</text>
+              <text class='distance'>{{item.newSchoolDistance}}</text>
+            </view>
+            <view class='prices'>
+              <view>
+                <text class='hsjdfashjfd'>￥</text>
+                <text class='price'>{{item.courseAdvancePayment}}</text>
+                <text class='Originalprice' wx:if='{{item.courseAdvancePayment!=item.coursePrice}}'>￥{{item.coursePrice}}</text>
+              </view>
+              <view>
+                <text class='detailtxts'>预约数:{{item.yuyueCount}}</text>
+              </view>
+
+            </view>
+          </view>
+        </view>
+        <view class='patrline'></view>
+      </view>
+    </view>
+
+  <!-- 学校数据 -->
+  <view class='footercontent'>
+    <scroll-view scroll-x="true" scroll-left='15' class="tab_comtainer" wx:if='{{hasSchool}}'>
+      <block wx:for="{{footertitle}}" wx:key="unique5">
+        <text class="tab_item {{item.categoryName == catalogSelect ? 'active':''}}" bindtap='tabSelect' data-select="{{item.categoryName}}" data-categoryid='{{item.danceCategoryId}}'>{{item.categoryName}}</text>
+      </block>
+    </scroll-view>
+    <view class='footeritem' wx:for="{{schoolList}}" wx:key="unique6">
+      <view class='partlinetwo'></view>
+      <view class='itemtopwrap {{item.hascourse?"":"itemtopwraps"}}' bindtap='gotodetailinstitution' data-select='{{item.schoolId}}'>
+        <view class='itemtop'>
+          <view class='itemtop_left'>
+            <!-- <image class='titleimg' src='../../images/test.jpg'></image> -->
+            <image class='titleimg' src='{{Furl}}{{item.schoolPicture}}'></image>
+          </view>
+          <view class='itemtop_right'>
+            <view class='title'>
+              <text class='catetitle'>{{item.schoolName}}</text>
+              <image class='renzhengimg' src='../../images/renzheng.png'></image>
+            </view>
+            <view class='kind'>
+              <text>课程数量:{{item.totalCount}}</text>
+              <!-- <text>>{{item.newSchoolDistance}}km</text> -->
+              <!-- <text>{{item.newSchoolDistance==1?'<1':'>'+item.newSchoolDistance}}km</text> -->
+              <text>{{item.newSchoolDistance}}</text>
+            </view>
+
+            <view class='address'>
+              <text>{{item.schoolAddress}}</text>
+            </view>
+            <view class='Score'>
+              <image src='../../images/star.png' class='starimg'></image>
+              <image src='../../images/star.png' class='starimg'></image>
+              <image src='../../images/star.png' class='starimg'></image>
+              <image src='../../images/star.png' class='starimg'></image>
+              <image src='../../images/star.png' class='starimg'></image>
+              <text>{{item.yuyueCount}}预约</text>
+              <text>{{item.schoolFlexe}}到访</text>
+            </view>
+
+          </view>
+        </view>
+      </view>
+
+      <view class='itembuttom'>
+        <view class='itemcontent' bindtap='gotodetailinstitution' data-select='{{item.schoolId}}' wx:for="{{item.newCourse}}" wx:for-item='items' wx:key="unique7">
+          <view class='shangmian'>
+            <image class='itemcontentimg' src='../../images/buy.png'></image>
+            <text class='itemcontenttxt'>{{items.courseTitle}}</text>
+          </view>
+          <view class='xiamian'>
+            <text class='pricelala'>￥</text>
+            <text class='itemcontentprice'>{{items.courseAdvancePayment}}</text>
+          </view>
+        </view>
+        <view class='checkall' bindtap='gotoinstitutionAppointment' data-select='{{item.schoolId}}' wx:if='{{item.hascourse==true}}'>
+          <text>查看全部项目</text>
+          <image src='../../images/goto.png' class='checkall_img'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+</view>

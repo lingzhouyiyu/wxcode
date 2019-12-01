@@ -1,0 +1,480 @@
+.container {
+  position: relative;
+}
+
+.search {
+  width: 92%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f2f3f6;
+  border-radius: 5px;
+  padding-left: 10rpx;
+}
+
+.partline {
+  margin-top: 20rpx;
+}
+
+.historyview {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 85rpx;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+}
+
+.historyitem {
+  width: 92%;
+  height: 80rpx;
+  border-bottom: 3rpx solid #f3f2f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clearallimage {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 20rpx;
+}
+.clearimg{
+   width: 60rpx;
+  height: 60rpx;
+}
+.historyitem text {
+  font-size: 28rpx;
+}
+
+.historybottom {
+  width: 100%;
+  height: 70rpx;
+  background-color: #f3f2f0;
+  margin-top: -3rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.bottomitem {
+  width: 92%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 搜索框 */
+
+.searchinput {
+  border-style: none;
+  color: #abaaab;
+  height: 60rpx;
+  width: 100%;
+  margin-left: 5rpx;
+}
+
+/* 搜索图片 */
+
+.searchimg {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 5rpx;
+}
+
+.footercontent {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  margin-top: 20rpx;
+}
+
+.tab_comtainer {
+  width: 92%;
+  white-space: nowrap;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 0 30rpx 0 30rpx;
+}
+
+.tab_item {
+  display: inline-block;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 32rpx;
+  color: rgb(136, 136, 136);
+  font-size: 28rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-color: white;
+}
+
+.active {
+  /* color: rgb(50, 50, 50); */
+  color: #65b5fc;
+}
+
+.footeritem {
+  width: 100%;
+  height: auto;
+  padding-top: 20rpx;
+  margin-top: -10rpx;
+  margin-bottom: 8rpx;
+  /* background-color: blue; */
+}
+
+.itemtopwrap {
+  width: 100%;
+  border-bottom: 3rpx solid #f2f2f2;
+}
+
+.itemtopwraps {
+  border-bottom: 0;
+}
+
+.itemtop {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* border-bottom: 3rpx solid #f2f2f2; *//* margin-top: 20rpx; */
+  margin: 20rpx 30rpx 0 30rpx;
+}
+
+.itemtop_left {
+  width: 102rpx;
+  height: 102rpx;
+  background-color: gray;
+  padding: 0;
+  margin: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.itemtop_right {
+  width: 82%;
+  /* margin-left: 20rpx; */
+}
+
+.footeritem .titleimg {
+  width: 102rpx;
+  height: 102rpx;
+  border-radius: 50%;
+}
+
+.itemtop_right .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemtop_right .catetitle {
+  font-size: 34rpx;
+  color: rgb(50, 50, 50);
+}
+
+.itemtop_right  .kind {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+
+.itemtop_right  .address {
+  margin-top: 10rpx;
+  overflow: hidden; /*超出部分隐藏*/
+  white-space: nowrap; /*不换行*/
+  text-overflow: ellipsis; /*超出部分文字以...显示*/
+  font-size: 24rpx;
+  color: rgb(102, 102, 102);
+}
+
+.itemtop_right  .Score {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.itemtop_right  .Score  text {
+  margin-left: 20rpx;
+  font-size: 23rpx;
+}
+
+.starimg {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.itemtop_right .renzhengimg {
+  height: 31rpx;
+  width: 81rpx;
+}
+
+.itembuttom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+.itembuttom .itemcontent {
+  width: 76%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3rpx solid #f2f2f2;
+  /* padding-top: 20rpx; */
+  padding-bottom: 20rpx;
+  margin-left: 130rpx;
+  position: relative;
+  /* background-color: rebeccapurple; */
+}
+
+.shangmian {
+  /* background-color: red; */
+}
+
+.xiamian {
+  /* background-color: yellow; */
+  margin-top: 15rpx;
+}
+
+.itembuttom .itemcontentimg {
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  top: 25rpx;
+}
+
+.itembuttom .itemcontenttxt {
+  position: absolute;
+  top: 23rpx;
+  left: 50rpx;
+  width: 400rpx;
+  overflow: hidden; /*超出部分隐藏*/
+  white-space: nowrap; /*不换行*/
+  text-overflow: ellipsis; /*超出部分文字以...显示*/
+  font-size: 24rpx;
+  color: rgb(50, 50, 50);
+}
+
+.itembuttom .itemcontentprice {
+  color: #69abf7;
+  font-size: 34rpx;
+}
+
+.pricelala {
+  color: #69abf7;
+  font-size: 24rpx;
+}
+
+.itembuttom .checkall {
+  width: 100%;
+  height: 40rpx;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #69abf7;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+}
+
+.checkall_img {
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 10rpx;
+}
+
+
+/* //热搜面板 */
+.hottitle{
+color: rgb(136, 136, 136);
+font-size: 32rpx;
+margin-top: 30rpx;
+margin-bottom: 30rpx;
+width: 92%;
+}
+.hotpanel{
+width: 92%;
+height: auto;
+/* background-color: red; */
+/* padding: 25rpx; */
+display: flex;
+flex-flow: row wrap;
+justify-content: flex-start;
+align-items: flex-start;
+
+}
+.hotitem{
+  /* background-color: yellow; */
+  margin-right: 30rpx;
+  padding: 5rpx 25rpx;
+  border-radius: 40rpx;
+  border: 3rpx solid #f3f2f0;
+  margin-bottom: 30rpx;
+  color: rgb(136, 136, 136);
+}
+.hotitems{
+  /* background-color: yellow; */
+  margin-right: 30rpx;
+  padding: 5rpx 25rpx;
+  border-radius: 40rpx;
+  border: 3rpx solid #f3f2f0;
+  margin-bottom: 30rpx;
+  color: #69abf7;
+}
+/* 课程样式 */
+
+
+.hotcontent {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+ 
+}
+.contentitem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+   /* padding: 20rpx 0 20rpx 0; */
+  
+
+}
+.patrline {
+  width: 100%;
+  height: 15rpx;
+  background-color: #f3f2f0;
+}
+.item {
+  width: 94%;
+  height: 185rpx;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 25rpx 0 25rpx 0;
+}
+.leftimg {
+  width: 27%;
+  height: 100%;
+  /* background-color: green; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.leftimg image {
+  width: 170rpx;
+  height: 170rpx;
+  border-radius: 5px;
+}
+.rightitem {
+  width: 73%;
+  height: 100%;
+  /* background-color: gainsboro; */
+  display: flex;
+  flex-direction: column;
+justify-content: space-between;
+overflow: hidden;
+}
+
+.rightitem text {
+  width: 100%;
+}
+.titles {
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+width: 100%;
+height: auto;
+
+}
+
+.detailtxt {
+  width: 50%;
+  color: #7e7b75;
+  font-size: 24rpx;
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.personMsg {
+  /* display: flex; *//* background-color: red; */
+  width: 100%;
+  /* position: absolute;
+  bottom: 65rpx; */
+  color: #7e7b75;
+  font-size: 24rpx;
+
+}
+.personMsg text{
+ overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.distant {
+  /* display: flex; *//* background-color: yellow; */
+  width: 100%;
+  /* position: absolute;
+  bottom: 35rpx; */
+  color: #7e7b75;
+  font-size: 24rpx;
+  display: flex;
+  justify-content: space-between;
+   margin-top: 7rpx;
+}
+.schoolnameview{
+  width: 80%;
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+/* background-color: green; */
+}
+.distance {
+  text-align: right;
+  width:20%;
+}
+.prices {
+  width: 100%;
+display: flex;
+justify-content: space-between;
+/* background-color: red; */
+}
+.hsjdfashjfd{
+  font-size: 24rpx;
+  color:#2bb5fe;
+}
+.price {
+  color: #2bb5fe;
+  font-size: 32rpx;
+  margin-right: 20rpx;
+}
+.Originalprice {
+  color: #7e7b75;
+  font-size: 24rpx;
+  text-decoration: line-through;
+}
+.detailtxts {
+  color: #7e7b75;
+  font-size: 24rpx;
+  /* position: absolute;
+bottom: 45rpx; */
+}

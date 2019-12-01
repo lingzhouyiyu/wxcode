@@ -1,0 +1,214 @@
+.sug-input{
+    background: transparent;
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left:20px;
+    outline: none;
+    width: 100%;
+    color:#ff9900;
+    overflow: hidden;
+    margin-left: -32px;
+    padding-left: 42px;
+    box-sizing: border-box;
+    border:  1px solid #ff9900;
+    border-radius: 15px;
+    height: 30px;
+}
+
+.transit-search-icon-img{
+    width: 16px;
+    height: 16px;    
+    margin: 0 26px;
+}
+.transit-sug-search-icon{
+    float: left;
+    width: 42px;
+}
+.transit-sug-click-hook{
+    float: left;
+    width: 100%;
+    line-height: 50px;
+    box-sizing: border-box;
+    padding-right: 60px;
+    margin-right: -60px;
+    align-items: center;
+    vertical-align: middle;
+    display: flex;
+    flex-direction:row;
+}
+.transit-sug-list{
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    width: 100%;
+}
+.transit-list-item{
+    background-color: #fafafa;
+}
+.transit-list-item-inner{
+    display: table;
+    margin: 0 16px;
+    width:100%;
+    height: 60px;
+    border-bottom: 1px solid #ebebeb;
+}
+.transit-sug-text{
+    display: table-cell;
+    vertical-align: middle;
+    height: 60px;
+    width: 100%;
+}
+.transit-sugitem-name{
+    font-size: 16px;
+    margin-top:10px;
+    line-height: 16px;
+    color: #333;
+}
+.transit-sugitem-name text {
+    display:-webkit-box;
+    overflow:hidden;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;  
+}
+.transit-sugitem-desc{
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #adadad;
+}
+.transit-sugitem-desc text {
+    display:-webkit-box;
+    overflow:hidden;
+    -webkit-line-clamp:1;
+    -webkit-box-orient:vertical;  
+}
+.transit-sug-icon{
+    display: inline-block;
+    width: 20px;
+    margin-right: 10px;
+}
+.sug-line-icon{
+    display: inline-block;
+    position:relative;
+    top:20px;
+    height: 20px;
+    width: 20px;
+    background-size: 20px 20px;
+}
+
+
+
+
+
+
+/* 共享右箭头设置*/
+
+.righthead:after {
+  content: '';
+  /*即不把兄弟挤下去 又能设置自己的style  inline不能设置大小 block会挤下去 所以有了inline-block*/
+  display: inline-block;
+  width: 18rpx;
+  height: 18rpx;
+  border: 3rpx solid #a3a3a3;
+  border-bottom: none;
+  border-left: none;
+  transform: rotate(45deg);
+  margin-top: -8rpx;
+}
+
+/* 共享下箭头设置*/
+
+.bottomhead:after {
+  content: '';
+  /*即不把兄弟挤下去 又能设置自己的style  inline不能设置大小 block会挤下去 所以有了inline-block*/
+  display: inline-block;
+  width: 14rpx;
+  height: 14rpx;
+  border: 4rpx solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.s-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.list-bg {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background: #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-bar {
+  align-items: center;
+  vertical-align: middle;
+  background: #efefef;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+}
+
+.list-baricon {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 30px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.list-bartext {
+  align-items: center;
+  vertical-align: middle;
+  line-height: 40px;
+  color: #999;
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+}
+
+.list-itembg {
+  background: #fff;
+  align-items: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+}
+.list-itemicon {
+  padding-left: 10px;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+}
+.list-itemleft {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50px;
+}
+
+.list-itemcenter {
+  line-height: 50px;
+  color: #aaa;
+  font-size: 14px;
+  width: 200px;
+  height: 50px;
+}
+
+.list-itemcenterLight {
+  line-height: 50px;
+  color: #FF9900;
+  font-size: 14px;
+  width: 200px;
+  height: 50px;
+}

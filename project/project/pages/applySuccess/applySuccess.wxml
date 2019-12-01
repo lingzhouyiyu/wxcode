@@ -1,0 +1,186 @@
+<view class='container'>
+  <view class='banner'>
+    <view class='share' bindtap='shareTo'>
+      <image src='../../images/share.png'></image>
+      <text>分享</text>
+    </view>
+  </view>
+  <view class='banners'></view>
+  <view class='personalMessage'>
+    <view class='wrap'>
+      <view class='toptitle textcolor_blue'>您目前排行第12位</view>
+      <view class='messageDetail'>
+        <view class='messageDetail_left'>
+          <image src='../../images/test.jpg'></image>
+        </view>
+        <view class='messageDetail_right'>
+          <text class='txtone'>杨XX</text>
+          <text class='txttwo'>13888888888</text>
+          <text class='txtthree' wx:if='{{!editTag}}'>所有你值得的东西，都在路上,不用太着急</text>
+          <input type='text' placeholder='请填写个人名言' class='inputs' wx:if='{{editTag}}'></input>
+          <image class='rightimg' src='../../images/edit.png' bindtap='editData'></image>
+        </view>
+      </view>
+      <view class='section'>
+        <view class='section_item'>
+          <text>服务机构</text>
+          <text class='textcolor_gray xiamian'>云南华洋国际教育</text>
+        </view>
+        <view class='section_item' bindtap='showModal'>
+          <view class='mores'>
+            <text>从业年限</text>
+            <text class='lallalal textcolor_gray'>more</text>
+            <image src='../../images/more.png'></image>
+            <image src='../../images/more.png'></image>
+          </view>
+          <text class='textcolor_gray'>10年</text>
+        </view>
+        <view class='section_item'>
+          <text>擅长</text>
+          <text class='textcolor_gray'>爵士舞、肚皮舞</text>
+        </view>
+        <view class='section_item'>
+          <text>毕业于</text>
+          <text class='textcolor_gray'>云南艺术学院</text>
+        </view>
+      </view>
+      <view class='zhengshu'>
+        <view class='top'>证书/荣誉</view>
+        <view class='imgwarp'>
+          <image src='../../images/test.jpg' wx:for='1234' wx:key='unique1'></image>
+        </view>
+      </view>
+      <view class='zhengshu'>
+        <view class='top'>授课/作品</view>
+        <view class='imgwarp'>
+          <image src='../../images/test.jpg' wx:for='1234' wx:key='unique2'></image>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+  <view class='headerimg'>
+    <image src='../../images/test.jpg'></image>
+  </view>
+  <view class='wxtitle'>微信名称</view>
+  <view class='btnWrap'>
+    <view class='btnWraps'>
+      <view class='btnitem'>
+        <image src='../../images/dianzan.png'></image>
+        <view class='btnitem_r'>
+          <text>点赞</text>
+          <text class='ryuiwer'>12657人</text>
+        </view>
+      </view>
+      <view class='btnitem blllll' bindtap='showModals'>
+        <image src='../../images/dacall.png'></image>
+        <view class='btnitem_r'>
+          <text>打call</text>
+          <text class='ryuiwer'>12657人</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='contentwrap'>
+    <view class='contentitem'>
+      <view class='items'>
+        <view class='imageview'>
+          <image src='../../images/test.jpg'></image>
+        </view>
+        <view class='items_r'>
+          <view class='items_r_t'>
+            <text>打不死的小强</text>
+            <text class='ershis'>2018-08-17</text>
+          </view>
+          <text class='textcolor_blue ershis'>为XXX老师今日点赞一次</text>
+        </view>
+      </view>
+    </view>
+    <view class='contentitems'>
+      <view class='topcontent'>
+        <view class='items'>
+          <view class='imageview'>
+            <image src='../../images/test.jpg'></image>
+          </view>
+          <view class='items_r'>
+            <view class='items_r_t'>
+              <text>打不死的小强</text>
+              <text class='ershis'>2018-08-17</text>
+            </view>
+            <text class='textcolor_blue ershis'>为XXX老师今日点赞一次</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='bottomcontent'>
+        <text wx:for='123' wx:key='unique3'>标签1</text>
+      </view>
+
+
+    </view>
+  </view>
+  <view class='checkall textcolor_blue'>查看全部</view>
+  <view class='saveChange' bindtap='saveChanges'>保存</view>
+</view>
+<!-- ///从业年限更多 -->
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <view class='closeBtn' bindtap="hideModal">
+    <image src='../../images/close.png'></image>
+  </view>
+  <view class='titles'>从业经历</view>
+  <view class='jiao'></view>
+  <scroll-view scroll-y class='scrollview'>
+    图文详情
+  </scroll-view>
+</view>
+
+<!-- 打call -->
+<view class="commodity_screen" bindtap="hideModals" wx:if="{{showModalStatu}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatu}}">
+  <view class='closeBtn' bindtap="hideModals">
+    <image src='../../images/close.png'></image>
+  </view>
+  <view class='callcontent'>
+    <view class='calltips'>请选择打call标签</view>
+    <view class='calldetail'>
+      <view class='calldetail_left'>
+        <image src='../../images/test.jpg'></image>
+      </view>
+      <view class='calldetail_right'>
+        <text class='txtllll'>微信名称</text>
+        <text class='textcolorlll'>感谢您为喜欢的老师打call，一下标签每次只能选择三个</text>
+      </view>
+    </view>
+    <view class='Labels'>
+      <view class='Labels_item {{item.selected?"":"Labels_items"}}' wx:for='{{labelArray}}' wx:key='unique4' bindtap='selectitem' data-select='{{item.text}}'>{{item.text}}</view>
+    </view>
+    <view class='callSubmit' bindtap='saveData'>提交</view>
+  </view>
+
+</view>
+
+<!-- ///从业年限更多 -->
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideshareModal" wx:if="{{showModalStatus_share}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box sharestyle" wx:if="{{showModalStatus_share}}">
+  <view class='shareview'>
+    <view class='sharetitle'>分享到</view>
+    <view class='Btnview'>
+      <view class='Btnview_item'>
+        <image src='../../images/wx.png' class='llllimg'></image>
+        <text>微信好友</text>
+      </view>
+      <view class='Btnview_item' bindtap='saveImg'>
+        <image src='../../images/pyq.png'></image>
+        <text>朋友圈</text>
+      </view>
+    </view>
+  </view>
+  <view class='cancelBtn' bindtap='hideshareModal'>取消</view>
+</view>

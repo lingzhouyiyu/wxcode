@@ -1,0 +1,93 @@
+<view class='container'>
+  <view class='servicetop'>
+    <view class='topitem {{optselect=="listone"?"textcolor_blue":""}}' bindtap='jumpTo' data-opt="listone">
+      急速退款
+    </view>
+    <view class='topitem {{optselect=="listtwo"?"textcolor_blue":""}}' bindtap='jumpTo' data-opt="listtwo">
+      过期退款
+    </view>
+    <view class='topitem {{optselect=="listthree"?"textcolor_blue":""}}' bindtap='jumpTo' data-opt="listthree">
+      退款说明
+    </view>
+    <view class='topitem {{optselect=="listfour"?"textcolor_blue":""}}' bindtap='jumpTo' data-opt="listfour">
+      其他
+    </view>
+  </view>
+
+  <scroll-view class='servicecontent' scroll-into-view="{{optselect}}" scroll-y>
+    <view class='choushabi'>
+      <!-- 急速退款 -->
+      <view id='listone' class='toptxt'>
+        <view class='leftline'></view>
+        <view class='centertxt'>急速退款</view>
+        <view class='rightline'></view>
+      </view>
+      <view class='content_title'>
+        <view class='content_title_line'></view>
+        <text>急速退款</text>
+      </view>
+      <view class='content_detial'>
+        <text>用户等级V2以上：预约成功且未验证订单-申请退款-填写退款信息-30分钟之内急速审核处理。</text>
+        <text>用户等级低于V2以及国际性订单：预约成功且为验证订单-申请退款-填写退款信息-3个工作日内审核处理。</text>
+      </view>
+      <view class='partline_3'></view>
+
+      <!-- 过期退款 -->
+      <view id='listtwo' class='toptxt'>
+        <view class='leftline'></view>
+        <view class='centertxt'>过期退款</view>
+        <view class='rightline'></view>
+      </view>
+      <view class='content_title'>
+        <view class='content_title_line'></view>
+        <text>过期退款</text>
+      </view>
+      <view class='content_detial'>
+        <text>全部用户：订单过期且未验证订单-申请退款-填写退款信息-审核处理。</text>
+      </view>
+      <view class='partline_3'></view>
+
+      <!-- 退款说明 -->
+      <view id='listthree' class='toptxt'>
+        <view class='leftline'></view>
+        <view class='centertxt'>退款说明</view>
+        <view class='rightline'></view>
+      </view>
+      <view class='content_title'>
+        <view class='content_title_line'></view>
+        <text>退款说明</text>
+      </view>
+      <view class='content_detial'>
+        <text>1.所有下单成功且未验证消费的预约都支持退款；</text>
+        <text>2.过期订单同样支持退款；</text>
+        <text>3.退款金额将原路退回至您的账户；</text>
+        <text>4.申请退款，无需任何手续费。</text>
+      </view>
+      <view class='partline_3'></view>
+
+      <!--其他-->
+      <view id='listfour' class='toptxt'>
+        <view class='leftline'></view>
+        <view class='centertxt'>其他</view>
+        <view class='rightline'></view>
+      </view>
+      <view class='content_title'>
+        <view class='content_title_line'></view>
+        <text>其他</text>
+      </view>
+      <view class='content_detial'>
+       <text>以下情况不享受“退预约金”的服务范围</text>
+       <text>1.已验证并使用的订单；</text>
+       <text>2.产品页面未标明“退预约金”的产品；</text>
+       <text>3.特殊活动商品不支持退款，具体见商品活动规则；</text>
+       <text>4.用户在使用蛙涡过程中有欺诈、违法或者违反本网站《用户使用协议》的行为。</text>
+      </view>
+      <view class='partline_3'></view>
+
+
+
+    </view>
+
+  </scroll-view>
+
+</view>

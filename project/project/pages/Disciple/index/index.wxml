@@ -1,0 +1,23 @@
+<view class='container'>
+
+  <view class='partline'></view>
+  <view class='titleview'>
+    <view class='titleview_left'>
+      <image src='../../../images/Explain.png'></image>
+    </view>
+    <view class='titleview_right'>请根据您的资质选择以下内容，并根据步骤进行填写与确认，完成师承推广</view>
+  </view>
+
+  <view class='Btn' bindtap='gotoSelectschool'>已入驻机构</view>
+  <view class='Btns' bindtap='gotoapplyTeacher'>未入驻机构</view>
+  <view class='imgview'>
+  <image src='../../../images/shicheng.png'></image>
+  </view>
+
+  <!-- <view class='yuanjiao'></view> -->
+  <!-- <canvas canvas-id="myCanvas" class='thecanvas'></canvas>
+  <view class='logo'>
+    <text>LOGO</text>
+  </view> -->
+
+</view>

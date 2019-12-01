@@ -1,0 +1,22 @@
+<view class='container'>
+  <view class='news_content' wx:for='{{newsList}}' wx:key='unique2'  bindtap='gotonewsdetail' data-newsid='{{item.id}}'>
+    <view class='news_item'>
+      <view class='newstitle' >{{item.title}}</view>
+      <view class='newscontent'>{{item.introduceContext}}</view>
+      <view class='newsimg'>
+       <view class='imgviews' wx:for='{{item.imgarray}}' wx:for-item='items'>
+          <image src='{{Furl}}{{items}}' class='detailimg'></image>
+        </view>     
+      </view>
+      <view class='newsdetail'>
+        <text class='catetxt'>舞蹈</text>
+        <text class='timetxt'>{{item.createTime}}</text>
+        <!-- <text class='counttxt'>10780</text>
+        <text class='looktxt'>浏览</text> -->
+        <text class='countstxt'>{{item.lookCount}}</text>
+        <text class='commenttxt'>浏览</text>
+      </view>
+    </view>
+    <view class='partlineb'></view>
+  </view>
+</view>

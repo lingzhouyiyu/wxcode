@@ -1,0 +1,25 @@
+<view class='container'>
+  <view class='hotcate' hidden='{{hascategory}}'>
+    <view class="hotitem {{item.categoryName == catalogSelect ? 'active':''}}" wx:for="{{hotarray}}" wx:key="unique1"  bindtap='tabSelect' data-select="{{item.categoryName}}" data-categoryid="{{item.categoryId}}">{{item.categoryName}}</view>
+  </view>
+  <view class='partline_20' hidden='{{hascategory}}'></view>
+  <view class='contentitem' wx:for="{{array}}" wx:key="unique2" hidden='{{hascourse}}' data-courseid='{{item.courseId}}' bindtap='gotodetailcourse'>
+    <view class='item'>
+      <view class='leftimg'>
+        <image src='{{Furl}}{{item.courseImg}}'></image>
+      </view>
+      <view class='rightitem'>
+        <text class='titles'>{{item.courseTitle}}</text>
+        <text class='detailtxt'>{{item.schoolName}}</text>
+        <text class='detailtxts'>预约数：{{item.sellCount}}</text>
+        <view class='prices'>
+          <text class='price'>￥{{item.courseAdvancePayment}}</text>
+          <text class='Originalprice' wx:if='{{item.courseAdvancePayment!=item.coursePrice}}'>￥{{item.coursePrice}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='partline_3'></view>
+  </view>
+  <view class='nodata_tips textcolor_blue' hidden='{{pullTips}}' >- 没有更多数据了 -</view>
+   <view class='nodata_tips textcolor_gray' hidden='{{!hascourse}}' >- 暂时没有数据 -</view>
+</view>

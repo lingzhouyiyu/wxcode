@@ -1,0 +1,21 @@
+<view class='container'>
+  <view class='canvas-box' bindlongtap='saveImg'>
+    <canvas canvas-id="myCanvas" style="width:100%;height:{{windowHeight*0.75}}px;"></canvas>
+  </view>
+</view>
+<view  class="commodity_attr_box sharestyle" >
+  <view class='shareview'>
+    <view class='sharetitle'>分享到</view>
+    <view class='Btnview'>
+      <button class='mmp' hover-class='none' open-type="share" bindtap='personalShare'>
+        <image src='../../images/wx.png' class='mmpimg'></image>
+        <text>微信好友</text>
+      </button>
+      <view class='Btnview_item' bindtap='saveImg'>
+        <image src='../../images/pyq.png'></image>
+        <text>保存图片到相册分享到朋友圈</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- "disableScroll": true -->

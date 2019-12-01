@@ -1,0 +1,37 @@
+<view class='container'>
+  <view class='top'>
+    <view class='message {{tapcurrent=="0"?"txtcolor":""}}' catchtap='menutap' data-current='0'>
+      <text>私信</text>
+      <view class='bottomline {{tapcurrent=="0"?"":"bottomlines"}}'></view>
+    </view>
+    <view class='notice {{tapcurrent=="1"?"txtcolor":""}}' catchtap='menutap' data-current='1'>
+      <text>通知</text>
+      <view class='bottomline {{tapcurrent=="1"?"":"bottomlines"}}'></view>
+    </view>
+  </view>
+  <view class='partline'></view>
+  <view class='content'>
+
+    <button class='messagecontent' open-type="contact" wx:for="{{messagearray}}" wx:key='unique1' hidden='{{tapcurrent!="0"}}' wx:if='{{hasmessage}}'>
+      <view class='item_img'>
+        <image src='{{Furl}}{{item.schoolImg}}' class='images'></image>
+      </view>
+      <text class='companyname'>{{item.schoolName}}</text>
+      <image src='../../images/more.png' class='detailimg'></image>
+    </button>
+    <view wx:if='{{!hasmessage}}' class='nomessages'>
+      <image src='../../images/nomessage.png'></image>
+      <text class='textcolor_gray'>暂时没有消息</text>
+    </view>
+    <view class='noticecontent' hidden='{{tapcurrent!="1"}}' wx:for="{{noticearray}}" wx:key='unique2'>
+      <view class='titles'>
+        <text class='date'>{{item.createTime}}</text>
+        <text>系统通知</text>
+      </view>
+      <view class='contents'>
+        <text>{{item.noticeContent}}</text>
+      </view>
+    </view>
+
+  </view>
+</view>

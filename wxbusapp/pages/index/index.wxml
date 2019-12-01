@@ -1,0 +1,94 @@
+<!--pages/listIndex/index.wxml-->
+<page>
+  <view wx:if="{{loaded == false}}" style="margin-top:120px;height: 60px;">
+    <view class="spinner">
+      <view class="rect1"></view>
+      <view class="rect2"></view>
+      <view class="rect3"></view>
+      <view class="rect4"></view>
+      <view class="rect5"></view>
+    </view>
+  </view>
+
+  <view wx:if="{{loaded && !localService}}" class="service-bg">
+    <image style="width:350px;height:200px;margin-bottom:20px" src='../../source/icon/noservice.png'></image>
+    <view>
+      <text>所在地区尚未开通服务</text>
+    </view>
+    
+  
+    <view class="service-button">
+    <navigator url="./selectArea">
+      <text>切换到开通地区</text>
+    </navigator>
+    </view>
+
+
+  </view>
+
+  <view wx:if="{{loaded && localService}}">
+    <view class="index-bg">
+      <view class="index-bg-location">
+        <image class="index-bg-locaation-img" src='../../source/icon/search_location-mini.png'></image>
+      </view>
+      <view catchtap="selectArea" class='index-bg-loaciton-textview'>
+        <text class="s-text">{{city}}{{district}}</text>
+        <view style="padding-left: 10px;padding-right: 5px;">
+          <text class="bottomhead"></text>
+        </view>
+      </view>
+    </view>
+
+    <view class="search-bg">
+      <view catchtap="searchLine" class="search-bar">
+        <view style="line-height:30px;padding-right:5px;height:30px">
+          <icon type="search" size="15" color="#FF9900" />
+        </view>
+        <view style="line-height:30px;color:#FF9900;font-size: 20;height:30px">
+          查询公交线路
+        </view>
+
+      </view>
+    </view>
+
+
+    <view class="list-bg">
+      <view class="list-bar">
+        <view class="list-baricon">
+          <icon type="download" size="20" color="#09f" />
+        </view>
+        <view style="list-bartext">
+          当前地区公交线路
+        </view>
+        <view style="padding-right: 18px;">
+          <!--<text class="righthead"></text>-->
+        </view>
+      </view>
+      
+      <scroll-view scroll-y style='height:{{scrollheight-16}}px'>
+        <block wx:key="line_id" wx:for="{{lineList}}">
+
+          <!--<navigator open-type="reLaunch"	 url="../listIndex/showline?line_id={{item.no}}&type={{item.type}}">-->
+          <navigator  url="../mapshow/mapIndex?id={{item.id}}&line_id={{item.no}}&type={{item.type}}&online={{item.isopen == '开通'?1:0}}">
+
+            <view class="list-itembg">
+              <view class="list-itemicon" ><image  style="margin-top:5px;width:30px; height:30px" src="/source/icon/bus.png"></image></view>
+              <view class="list-itemleft">
+                <view style="color: #000;font-size: 16px;width:100%;"><text >{{item.no}}</text><text style="margin-left:10px;font-size:12px">{{item.start_time}}-{{item.end_time}}
+</text></view>
+                <view style="color: #aaa;font-size: 12px">{{item.start_stop}}-{{item.end_stop}}</view>
+              </view>
+
+              <view  wx:if="{{item.isopen == '开通'}}"  class="list-itemcenterLight">实时位置</view>
+              <view  wx:else class="list-itemcenter">无实时位置 </view>
+              <view style="padding-right: 18px;">
+                <text class="righthead"></text>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </scroll-view>
+    </view>
+
+  </view>
+</page>

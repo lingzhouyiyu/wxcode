@@ -1,0 +1,85 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <!-- 顶部图片 -->
+  <view class='activityimg'>
+    <!-- <swiper class="swiper" autoplay="true" circular='true' interval="5000" duration="1000">
+      <block wx:for="{{imgData}}" wx:for-index="index" wx:key="unique1">
+        <swiper-item>
+          <image src="{{Furl}}{{item}}" style='width:100%;height:100%' bindtap='gotoactive' />
+        </swiper-item>
+      </block>
+    </swiper> -->
+      <template is="wxParse" data="{{wxParseData:schoolIntroduce.nodes}}"/>    
+  </view>
+  <!-- 排序标题 -->
+  <view class='ordertitle'>
+    <view class='titledetail' catchtap='selecttitleone' data-select='0'>
+      <text class='titletxt {{titleselect=="0"?"txtcolor":""}}'>{{categorytext}}</text>
+      <image class='titleimg' src='../../images/{{titleselect=="0"?"mores":"more"}}.png'></image>
+    </view>   
+    <view class='titledetail' catchtap='selecttitletwo' data-select='1'>
+      <text class='titletxt {{titleselect=="1"?"txtcolor":""}}'>{{distancetext}}</text>
+      <image class='titleimg' src='../../images/{{titleselect=="1"?"mores":"more"}}.png'></image>
+    </view>
+     <view class='titledetail' catchtap='selecttitlethree' data-select='2'>
+      <text class='titletxt {{titleselect=="2"?"txtcolor":""}}'>{{ordertext}}</text>
+      <image class='titleimg' src='../../images/{{titleselect=="2"?"mores":"more"}}.png'></image>
+    </view>
+  </view>
+  <!-- 内容 -->
+  <view class='content_warp'>
+    <view class='contentitem' wx:for="{{array}}" wx:key="unique">
+      <view class='item' data-courseid='{{item.courseId}}' bindtap='gotodetailcourse'>
+        <view class='leftimg'>
+          <image src='{{Furl}}{{item.courseImg}}'></image>
+        </view>
+        <view class='rightitem'>
+          <text class='titles'>{{item.courseTitle}}</text>
+
+          <text class='detailtxt'>{{item.schoolName}}</text>
+          <!-- <text class='detailtxts'>预约数：{{item.yuyueCount}}</text> -->
+          <view class='prices'>
+          <text class='pricepl'>￥</text>
+            <text class='price'>{{item.courseAdvancePayment}}</text>
+            <text class='Originalprice' wx:if='{{item.courseAdvancePayment!=item.coursePrice}}'>￥{{item.coursePrice}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='patrline'></view>
+    </view>
+    <!-- 全部项目选择框 -->
+    <view class='picker_All {{AllTag?"showviews":"hideview"}}'>
+      <scroll-view class='left_item' scroll-y='true'>
+        <view class='section' wx:for="{{Allarray}}" wx:key="unique1" catchtap='tapcateOneselect' data-select='{{index}}'>
+          <text class='{{index==cateOneselect?"txtcolor":""}}'>{{item.categoryName}}</text>
+        </view>
+      </scroll-view>
+      <view class='right_item'>
+        <view class='right_section ' wx:for='{{Allarray[cateOneselect].childList}}' wx:for-item='items' wx:key="unique2" catchtap='tapcateTwoselect' data-select='{{items.categoryName}}' data-id='{{items.danceCategoryId}}'>
+          <text class='{{item.categoryName==cateTwoselect?"texts":"textn"}}'>{{items.categoryName}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 智能排序选择框 -->
+    <!-- {{IntelligenceTag?"showview":"hideview"}} -->
+    <view class='picker_Intelligence hideview'>
+      <view wx:for="{{IntelligenceList}}" wx:key="unique3" wx:for-index="indexs" data-select='{{indexs}}' catchtap='SelectIntelligence' class='Intelligenceitems  {{indexs==selectIndex?"txtcolor":""}}'>{{item}}</view>
+    </view>
+
+    <!-- 距离选择框 -->
+    <view class='picker_distance {{distanceTag?"showviews":"hideview"}}'>
+      <scroll-view class='disleft_item' scroll-y='true'>
+        <view class='section {{item==diseOneselect?"dissection":""}}' wx:for="{{Distancearray}}" wx:key="unique4" catchtap='disOneselect' data-select='{{item}}'>
+          <text class='distext {{item==diseOneselect?"distexts":""}}'>{{item}}</text>
+        </view>
+      </scroll-view>
+      <view class='disright_item'>
+        <view class='disright_setion' wx:for='{{disitem}}' wx:key="unique5" catchtap='disTwoselect'  data-select='{{item}}'>
+        <text class='disright_setion_txt {{item==diseTwoselect?"disright_setion_txts":""}}'>{{item}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>

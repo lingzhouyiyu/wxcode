@@ -1,0 +1,89 @@
+page{
+  padding: 0;
+}
+.container{
+  background-color: red;
+}
+.canvas-box{
+  width: 77%;
+  height: auto;
+  position: fixed;
+  left: 90rpx;
+  top: 166rpx;
+  padding: 0;
+  border-radius: 15rpx;
+  /* background-color: green; */z-index: 100;
+}
+.canvas-boxs{
+  width: 77%;
+  height: auto;
+  position: fixed;
+  left: 90rpx;
+  top: 166rpx;
+  padding: 0;
+  border-radius: 15rpx;
+  /* background-color: green; */
+  z-index: 999;
+}
+.hide{
+  display: none;
+}
+.yaoqing{
+  width: 80%;
+  height: 88rpx;
+  border-radius: 50rpx;
+  background-color: #69abf7;
+  position: fixed;
+  bottom: 20rpx;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 34rpx;
+  border: none;
+  outline: none;
+}
+.yaoqing::after{
+    border: none;
+  outline: none;
+}
+.tips{
+  /* margin-top: 96rpx; */
+  font-size: 30rpx;
+    color: rgb(74, 74, 74);
+     z-index: 9999;
+     position: fixed;
+     top: 96rpx;
+}
+.zhinan{
+  font-size: 28rpx;
+  color: #fff;
+  width: 156rpx;
+  height: 56rpx;
+  position: fixed;
+  top: 20rpx;
+  left: 0;
+  background-color: #bcbcbc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-right-radius: 30rpx;
+   border-top-right-radius: 30rpx;
+}
+.countview{
+ width: 80%;
+ position: fixed;
+ bottom: 150rpx;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  color: rgb(74, 74, 74);
+    font-size: 28rpx;
+}
+.countview image{
+  width: 28rpx;
+  height: 16rpx;
+  margin-left: 10rpx;
+}
+
+

@@ -1,0 +1,89 @@
+<!--pages/nk/historytask/taskinfo.wxml-->
+<!--pages/nk/task/task.wxml-->
+<view class="container">
+  <view style='padding-left:10px;height:40px;width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx'>任务信息：</view>
+  <view class="user-termsOfUse userstyle">
+    <text class="userTextStyle">发班时间：{{ClassesInfo.UseDate}}</text>
+  </view>
+  <view class="user-ontegralRule userstyle">
+    <text class="userTextStyle">确认时间：{{ClassesInfo.AffirmTime?ClassesInfo.AffirmTime:''}}</text>
+  </view>
+
+  <view class="user-commonProblem userstyle">
+    <text class="userTextStyle">开始时间：{{ClassesInfo.BeginTime?ClassesInfo.BeginTime:''}}</text>
+  </view>
+
+  <view class="user-termsOfUse userstyle">
+    <text class="userTextStyle">结束时间：{{ClassesInfo.EndTime?ClassesInfo.EndTime:''}}</text>
+  </view>
+
+  <view style="display:flex;flex-direction:row;width:100%">
+    <view style="flex:.5">
+      <view class="user-ontegralRule userstyle">
+        <text wx:if="{{ClassesInfo.Status==0}}" class="userTextStyle">任务状态：待领取</text>
+        <text wx:elif="{{ClassesInfo.Status==1}}" class="userTextStyle">任务状态：待发车</text>
+        <text wx:elif="{{ClassesInfo.Status==2}}" class="userTextStyle">任务状态：已发车</text>
+        <text wx:elif="{{ClassesInfo.Status==3}}" class="userTextStyle">任务状态：已完成</text>
+      </view>
+
+      <view class="user-commonProblem userstyle">
+        <text class="userTextStyle">线路名称：{{ClassesInfo.RouteName}}</text>
+      </view>
+
+    </view>
+
+
+    <view style="flex:.5">
+
+
+      <view class="user-privacyPolicy userstyle">
+        <text class="userTextStyle">发班序号：{{ClassesInfo.SortNo}}</text>
+      </view>
+
+      
+      <view class="user-privacyPolicy userstyle">
+        <text class="userTextStyle">车牌号码：{{ClassesInfo.VehicleNumber}}</text>
+      </view>
+    </view>
+  </view>
+
+
+  <view style='padding-left:10px;height:40px;width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx'>订单列表：</view>
+
+  <block wx:for="{{TicketList}}" wx:key="id">
+
+    <view bindtap="clickOrder" id='item.id' class="user-privacyPolicy userstyle">
+      <text class="userTextStyle">{{index+1}}.{{item.UserAccount}}</text>
+      <view style="display:flex;flex-direction:column;flex:1;text-align:center">
+        <text style="font-size:26rpx;color:#4a4a4a">起：{{item.StartStationName}}</text>
+        <text style="font-size:26rpx;color:#4a4a4a">终：{{item.EndStationName}}</text>
+      </view>
+      <view style="display:flex;flex-direction:column;width:60px;text-align:center">
+        <text style="font-size:26rpx;color:#4a4a4a">{{item.ticketType}}</text>
+        <text style="font-size:26rpx;color:#4a4a4a">{{item.OrderPrice}}元</text>
+      </view>
+
+    <view style="display:flex;flex-direction:column;width:5   0px;text-align:center">
+      <text wx:if="{{item.UserType=='0'}}"  style="font-size:26rpx;color:#ff0000">代购</text>
+      <text wx:elif="{{item.UserType=='1'}}" style="font-size:26rpx">自购</text>
+        
+      <text wx:if="{{item.PaymentStatus=='0'}}" class="userTextStyle" style="color:#ff0000">未支付</text>
+      <text wx:elif="{{item.PaymentStatus=='1'}}" class="userTextStyle" style="color:#179B16">已支付</text>
+      <text wx:elif="{{item.PaymentStatus=='2'}}" class="userTextStyle" style="color:#ff0000">已退款</text>
+
+    </view>
+
+
+
+
+    <text class="userTextStyle">{{item.CreateDate}}</text>
+     
+     <!--
+      <text class="righthead"></text>
+       -->
+    </view>
+
+
+  </block>
+
+</view>

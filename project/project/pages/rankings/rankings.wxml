@@ -1,0 +1,44 @@
+<view class='container'>
+  <view class='top'>
+    <view class='message {{tapcurrent=="0"?"txtcolor":""}}' catchtap='menutap' data-current='0'>
+      <text>本周</text>
+      <view class='bottomline {{tapcurrent=="0"?"":"bottomlines"}}'></view>
+    </view>
+    <view class='notice {{tapcurrent=="1"?"txtcolor":""}}' catchtap='menutap' data-current='1'>
+      <text>本月</text>
+      <view class='bottomline {{tapcurrent=="1"?"":"bottomlines"}}'></view>
+    </view>
+  </view>
+
+  <view class='partline_10'></view>
+
+  <view class='rankcontent'>
+    <view class='rankcontent_item' wx:for='{{tapcurrent==0?weekData:monthData}}' wx:key='unique1'bindtap='gotodetailTeacher' data-teacherId='{{item.teacherId}}'>
+      <view class='rankcontent_item_left'>
+        <image class='rank_headerimg' src='{{Furl}}{{item.teacherImage}}'></image>
+        <text class='right_txt' wx:if='{{index==0}}'>TOP{{index+1}}</text>
+        <text class='right_txt1' wx:elif='{{index==1}}'>TOP{{index+1}}</text>
+        <text class='right_txt2' wx:elif='{{index==2}}'>TOP{{index+1}}</text>
+      </view>
+      <view class='rankcontent_item_right'>
+        <view class='detail_top'>
+          <view class='topleft'>
+            <text class='detail_name'>{{item.teacherName}}</text>
+            <view class='detaitag' wx:if='{{index==0||index==1||index==2}}'>
+              <view class='tag_item'>HOT</view>
+            </view>
+          </view>
+          <view class='topright' wx:if='{{index>=3}}'>{{index+1}}</view>
+        </view>
+        <view class='fuwu'>服务于{{item.schoolName}}</view>
+        <view class='suoyou'>{{item.teacherMotto}}</view>
+        <view class='detail_bottom'>
+          <view class='detail_bottom_left'>预约
+            <text class='textcolor_blue marginleft marginright'>{{item.yuyueCount}}</text>次</view>
+          <!-- <view class='detail_bottom_right'>打call
+            <text class='textcolor_blue marginleft marginright'>15998</text>次</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

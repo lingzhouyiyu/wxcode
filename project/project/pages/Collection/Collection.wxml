@@ -1,0 +1,116 @@
+<view class='container'>
+  <view class='top'>
+    <view class='message {{tapcurrent=="0"?"textcolor_blue":""}}' catchtap='menutap' data-current='0'>
+      <text>课程</text>
+      <view class='bottomline {{tapcurrent=="0"?"":"bottomlines"}}'></view>
+    </view>
+    <view class='notice {{tapcurrent=="1"?"textcolor_blue":""}}' catchtap='menutap' data-current='1'>
+      <text>教师</text>
+      <view class='bottomline {{tapcurrent=="1"?"":"bottomlines"}}'></view>
+    </view>
+  </view>
+  <view class='partline'></view>
+  <view class='contentwrap'>
+    <view class='hotcontent' hidden='{{tapcurrent!="0"}}'>
+      <view class='contentitem' wx:for="{{courseList}}" wx:key='unique1' bindtap='gotodetailcourse' data-courseid='{{item.courseId}}'>
+        <view class='item'>
+          <view class='leftimg'>
+            <image src='{{Furl}}{{item.courseImg}}'></image>
+          </view>
+          <view class='rightitem'>
+            <text class='titles'>{{item.courseTitle}}</text>
+             <text class='teacherview'>{{item.teacherName}}</text>
+                     
+            <view class='schoolview'>
+              <text>{{item.schoolName}}</text>
+            </view>
+            <view class='prices'>
+              <view class='leftprice'>
+                <text class='pricepl'>￥</text>
+                <text class='price'>{{item.courseAdvancePayment}}</text>
+                <text class='Originalprice'wx:if='{{item.courseAdvancePayment!=item.coursePrice}}'>￥{{item.coursePrice}}</text>
+              </view>
+              <view class='rightyuyue'>
+                <text class='detailtxts'>预约数:{{item.yuyueCount}}</text>
+              </view>
+            </view>
+
+          </view>
+        </view>
+        <view class='patrline'></view>
+      </view>
+    </view>
+    <view class='teachercontent' hidden='{{tapcurrent!="1"}}'>
+       <view class='footeritem' wx:for='{{teacherList}}' wx:key='unique3' wx:for-item='item'>
+        <view class='itemtopwrap' bindtap='gotodetailTeacher' data-select='{{item.teacherId}}' >
+          <view class='itemtop'>
+            <view class='itemtop_left itemtop_left_teacher'>
+              <image class='titleimg titleimg_teacher' src='{{Furl}}{{item.teacherImage}}'></image>
+            </view>
+            <view class='itemtop_right'>
+              <view class='title'>
+                <text class='catetitle'>{{item.teacherName}}</text>
+                <!-- <text class='cate_teacher'>舞蹈老师</text> -->
+                <image class='renzhengimg' src='../../images/teacherrenzheng.png'></image>
+              </view>
+              <view class='kind kind_teacher'>
+                <text>{{item.schoolName}}</text>
+                <text>{{item.newSchoolDistance}}</text>
+              </view>
+              <view class='Score'>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/stars.png' class='starimg'></image>
+                <view class='txt_teacher_wrap'>
+                  <text class='txt_teacher'>{{item.yuyueCount}}预约</text>
+                  <!-- <text>|</text>
+                  <text>209学生</text> -->
+                </view>
+              </view>
+              <!-- <view class='appointment'>
+                <view class='appointmentitems'>
+                  名族舞蹈2590预约
+                </view>
+                <view class='appointmentitems'>
+                  印度舞蹈2590预约
+                </view>
+                <view class='appointmentitems'>
+                  4018预约
+                </view>
+              </view> -->
+            </view>
+          </view>
+        </view>
+
+        <view class='itembuttom'>
+          <view class='itemcontent' wx:for='{{item.sellCourse}}' wx:key='unique4' wx:for-item='items'>
+            <view class='shangmian'>
+              <image class='itemcontentimg' src='../../images/buy.png'></image>
+              <text class='itemcontenttxt'>{{items.courseTitle}}</text>
+            </view>
+            <!-- <view>
+             <text class='yuxueview'>预约数:495</text>
+            </view> -->
+            <view class='xiamian'>
+              <text class='pricelala'>￥</text>
+              <text class='itemcontentprice'>{{items.courseAdvancePayment}}</text>
+            </view>
+          </view>
+          <view class='checkall' bindtap='gototeacherAppointment' data-select='{{item.teacherId}}' wx:if='{{item.hascourse}}'>
+            <text>查看全部项目</text>
+            <image src='../../images/goto.png' class='checkall_img'></image>
+          </view>
+        </view>
+        <view class='partline_15'></view>
+      </view>
+    </view>
+
+  </view>
+  <view class='smsmsms' hidden='{{isShow}}'>
+    <view class='blleft'></view>
+    <text class='textcloor_gray blhhh'>没有更多了哦</text>
+    <view class='blleft'></view>
+  </view>
+</view>

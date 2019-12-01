@@ -1,0 +1,30 @@
+<!--pages/user/user.wxml-->
+<view class="container">
+
+  <view class="user-logo">
+    <image class="user-logo-img" src="/images/logo.png"></image>
+  </view>
+<!-- bindtap="maixiangMembertap"  -->
+
+<view style='height:5px;width:100%'></view>
+
+
+<view  url="changepassword" hover-class="navigator-hover">
+  <view class="user-ontegralRule userstyle">
+    <button open-type="openSetting" bindopensetting="openSetting">用户授权</button>
+  </view>
+</view>
+
+<navigator  url="changepassword" hover-class="navigator-hover">
+  <view class="user-ontegralRule userstyle">
+    <text class="userTextStyle">修改密码</text>
+    <text class="righthead"></text>
+  </view>
+</navigator>
+
+  <view bindtap='bindlogout' class="user-privacyPolicy userstyle">
+    <text class="userTextStyle">退出登录</text>
+    <text class="righthead"></text>
+  </view>
+
+</view>

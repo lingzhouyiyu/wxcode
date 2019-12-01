@@ -1,0 +1,50 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class='partline_3'></view>
+  <view class='activitycontent'>
+    <template is="wxParse" data="{{wxParseData:activity_buy.nodes}}" />
+  </view>
+  <!-- <view class='detailsbottom'>
+    <view class='detailsbottom_left'>已报名
+      <text>4563</text> 人
+    </view>
+    <view class='detailsbottom_right'>立即报名</view>
+  </view> -->
+</view>
+<!-- 底部咨询部分 -->
+<view class='bottom_detail'>
+  <view class='bottom_detail_left'>
+    <view class='bula_left' bindtap="submit">
+      <view class='bula_left_top'>
+        <text>预约金：</text>
+        <text class='textcolor_blue '>￥{{activityData.perCapitaPrice}}{{activityData.unit}}</text>
+        <image class='bula_left_top_img' src='../../images/tips.png'></image>
+      </view>
+      <view class='bula_left_bottom'>
+        <text>现场再付：</text>
+        <!-- <text>￥800/人</text> -->
+        <text>请详细阅读活动内容</text>
+      </view>
+    </view>
+    <view class='bula_right'>
+      <view class='bula_right_item' bindtap='makephonecall'>
+        <image class='bula_right_item_img' src='../../images/telephone.png'></image>
+        <text>咨询</text>
+      </view>
+    </view>
+  </view>
+  <view class='bottom_detail_right' bindtap='gotoconfirmOrder_activity'>
+    <text>立即报名</text>
+    <text class='shengyu'>剩余{{activityData.numPeople}}个名额</text>
+  </view>
+</view>
+<!-- 预约金说明弹框 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class='close_mask'>什么是预约金？</view>
+  <view class='detail_text'>因为入驻机构较多，预约金是培训机构入驻蛙涡需要先支付的排位费用，签约日再支付其余部分。</view>
+  <view class='detail_text'>入驻流程：
+支付预约金-客服联系-工作人员上门-签约入驻</view>
+  <view class='detail_text'>注：预约金在合同签订之前可退，如有疑问请咨询蛙涡工作人员。</view>
+  <button class='save_money' bindtap="close_mask">确定</button>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="close_mask" wx:if="{{showModal}}"></view>

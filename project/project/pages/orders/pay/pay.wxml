@@ -1,0 +1,42 @@
+<view class='container'>
+  <view class='ordernumber'>
+    <text>蛙涡单号：</text>
+    <text>{{orderNo}}</text>
+  </view>
+  <view class='ordermoney'>
+    <text>预约金额：</text>
+    <view>
+      <text class='tags textcolor_blue'>￥</text>
+      <text class='pricess textcolor_blue'>{{amount}}</text>
+    </view>
+  </view>
+  <view class='typeTitle'>
+    <text>选择支付方式</text>
+  </view>
+  <view class='needtopay'>
+    <text>还需支付尾款：</text>
+     <text wx:if='{{isShow}}'>￥{{orderRepaymount}}</text>
+    <text  wx:if='{{!isShow}}'>{{orderRepaymount}}</text>
+  </view>
+  <view class='partline_3'></view>
+  <view class='pay_way'>
+    <view class='pay_way_left'>
+      <image src='../../../images/weixin.png'></image>
+    </view>
+    <view class='pay_way_right'>
+      <view class='pay_way_right_1'>
+        <view>
+          <text>微信支付</text>
+          <text class='recmend'>推荐</text>
+        </view>
+        <text class='bbll'>亿万用户的选择，更快更安全</text>
+      </view>
+      <view class='pay_way_right_2'>
+        <image src='../../../images/wexinspot.png'></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='bottomtip'>订单已生成，请在60分钟内完成预约金支付</view>
+<view class='applySubmit' bindtap='toPay'>确认支付</view>

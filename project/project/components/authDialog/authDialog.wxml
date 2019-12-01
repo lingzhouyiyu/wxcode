@@ -1,0 +1,13 @@
+<!-- //模态窗 -->
+<!--弹窗wx:if="{{showModal}}-->
+<view class="modal-mask" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">用户授权</view>
+  <view class="modal-content">
+    <view style=' font-size: 34rpx; color: #666;text-align: center;'>蛙涡教育想要获取您的昵称、头像</view>
+  </view>
+  <view class="modal-footer">
+    <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+    <button open-type="getUserInfo" style='font-size:34rpx;'  bind:getuserinfo="bindGetUserInfo"  class="btn-confirm btn-bordernone" data-status="confirm">允许</button>
+  </view>
+</view>

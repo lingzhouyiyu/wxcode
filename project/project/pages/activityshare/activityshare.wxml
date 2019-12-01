@@ -1,0 +1,35 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class='partline_3'></view>
+  <view class='activitycontent'>
+    <template is="wxParse" data="{{wxParseData:activity_buy.nodes}}" />
+  </view>
+  <!-- <view class='detailsbottom'>
+    <view class='detailsbottom_left'>已报名
+      <text>4563</text> 人
+    </view>
+    <view class='detailsbottom_right'>立即报名</view>
+  </view> -->
+</view>
+<!-- 底部咨询部分 -->
+<view class='bottom_detail' wx:if='{{!hasPhone}}'>   
+  <view class='bottom_detail_right' bindtap='gotoregister'>
+    <text>点击分享免费领券</text>
+  </view>
+</view>
+<view class='bottom_detail' wx:if='{{hasPhone}}'>   
+  <button class='bottom_detail_rights' open-type='share'>
+    <text wx:if='{{clickCount==0}}'>分享两次立即领券</text>
+    <text wx:elif='{{clickCount==1}}'>再分享一次就能得到我咯~</text>
+    <text wx:elif='{{clickCount==2}}'>恭喜您分享成功咯~</text>
+  </button>
+</view>
+<!-- 预约金说明弹框 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class='close_mask'>什么是预约金？</view>
+  <view class='detail_text'>预约金是所购课程需要在蛙涡教育先支付的费用，到店后支付其余部分即可。</view>
+  <view class='detail_text'>即：预约金+到校再付=蛙涡价</view>
+  <view class='detail_text'>注：预约金到校消费前可退，过期未消费也可退。详情见页面退款部分说明。</view>
+  <button class='save_money' bindtap="close_mask">确定</button>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="close_mask" wx:if="{{showModal}}"></view>

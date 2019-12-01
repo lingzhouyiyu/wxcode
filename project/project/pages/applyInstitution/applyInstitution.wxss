@@ -1,0 +1,107 @@
+.container{
+  font-size: 32rpx;
+}
+
+.applyTitle {
+  width: 80%;
+  font-size: 34rpx;
+  /* font-weight: bold; */
+  margin-top: 60rpx;
+}
+
+.institutioncontent {
+  width: 80%;
+  height: auto;
+  margin-top: 70rpx;
+}
+
+.contents_item {
+  width: 100%;
+  height: 70rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40rpx;
+  border-bottom: 3rpx solid #f3f2f0;
+}
+
+.contents_item_txt {
+  height: 45rpx;
+  line-height: 45rpx;
+  /* background-color: red; */
+  padding: 0 0 0 10rpx;
+  border-left: 8rpx solid #1cb2fd;
+  font-size: 28rpx;
+}
+
+.contents_item_input {
+  width: 445rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  /* background-color: yellow; */
+  margin-left: 20rpx;
+}
+
+.applySubmit {
+  height: 85rpx;
+  width: 100%;
+  background-color: #00aefe;
+  color: #fff;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  font-size: 32rpx;
+  margin-top: 100rpx;
+}
+
+/* 规模样式 */
+
+.contents_item_guimo {
+  position: relative;
+  /* background-color: red; */
+}
+
+.selectimg {
+  width: 18rpx;
+  height: 25rpx;
+  position: absolute;
+  right: 5rpx;
+  transform: rotate(90deg);
+}
+
+.selectimgs {
+  width: 18rpx;
+  height: 25rpx;
+  position: absolute;
+  right: 5rpx;
+  transform: rotate(-90deg);
+}
+
+.Dropdownbox {
+  width: 200rpx;
+  height: auto;
+  background-color: #aca8a3;
+  position: absolute;
+  top: 70rpx;
+  right: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 0 20rpx 0;
+  z-index: 999;
+  font-size: 26rpx;
+}
+
+.Dropdownbox_item {
+  width: 70%;
+  height: 50rpx;
+  /* background-color: red; */
+  border-bottom: 3rpx solid #fff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 9999;
+}

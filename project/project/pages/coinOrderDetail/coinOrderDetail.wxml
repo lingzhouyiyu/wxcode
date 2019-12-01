@@ -1,0 +1,14 @@
+<view class='container'>
+<view class='partline_3'></view>
+  <view class='itemwrap' wx:for='{{detailData}}' wx:key='unique1'>
+    <view class='item'>
+      <view class='itemleft'>
+        <view class='title'>{{item.title}}</view>
+        <view class='time'>{{item.downTime}}</view>
+      </view>
+      <view class='itemright'>
+      <text class='{{item.type==1?"greencolor":""}}'>{{item.money}}</text>
+      </view>
+    </view>
+  </view>
+</view>

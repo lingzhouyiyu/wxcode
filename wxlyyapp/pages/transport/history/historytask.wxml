@@ -1,0 +1,40 @@
+<!--pages/nk/historytask/historytask.wxml-->
+<view class="container">
+  <view style='padding-left:10px;height:40px;width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx;text-align:center;'>运行记录</view>
+
+    <view style='display:flex;flex-direction:row;padding-left:10px;height:20px;width:100%;'>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:center">
+    </view>
+    <view bindtap="preDay" style="width:60px;line-height:20px;color:#21c021;font-size:26rpx;text-align:center">前一天</view>
+
+    <picker mode="date" value="{{date}}" start="2018-10-01" end="{{endSelsctDate}}" bindchange="bindDateChange">
+      <view  style="width:120px;line-height:20px;color:#21c021;font-size:32rpx;text-align:center">{{date}}</view>
+    </picker>
+    <view bindtap="nextDay" style="width:60px;line-height:20px;color:#21c021;font-size:26rpx;text-align:center">后一天</view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:center">
+    </view>
+  </view>
+  
+  <scroll-view scroll-y style="height: {{windowHeight-60}}px;">
+  <block wx:for="{{taskList}}" wx:key="ID">
+
+  <view class="user-privacyPolicy userstyle">
+   <view style="display:flex;flex-direction:column;width:40px;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.RouteNo}}</text>
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.TypeName}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.CreateTime}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.BusNumber}}</text>
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.DriverName}}</text>
+    </view>
+        <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.Location}}</text>
+    </view>
+  </view>  
+
+</block>
+</scroll-view>
+</view>

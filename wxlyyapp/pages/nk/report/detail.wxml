@@ -1,0 +1,73 @@
+<view class="container">
+    <view style='display:flex;flex-direction:row;padding-left:10px;height:20px;width:100%;'>
+      <view  style="border-radius: 8rpx;width:100px;border-width: 4rpx 4rpx 4rpx 4rpx;border-style: solid;border-color: #7b7b7b;line-height:20px;color:#7b7b7b;font-size:32rpx;text-align:center">{{options.VehicleNumber}}</view>
+  </view>
+  
+ 
+  <scroll-view scroll-y style="height: {{windowHeight-30}}px;"> 
+  <block wx:for="{{TicketList}}" wx:key="ClassId">
+  <view class=" tabheadtyle">
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:30rpx;color:#4a4a4a">{{item.Ranks}}</text>
+    </view>
+
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:30rpx;color:#4a4a4a">{{item.UseTime?item.UseTime:''}}</text>
+    </view>
+  
+
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:30rpx;color:#4a4a4a">{{item.RouteName}}</text>
+    </view>
+
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:30rpx;color:#4a4a4a">{{item.UseDate}}</text>
+    </view>
+  </view>
+   <view class="userstyle">
+   <view style="display:flex;flex-direction:column;width:20px;text-align:left;">
+      <text style="font-size:30rpx;color:#4a4a4a"> </text>
+    </view>
+    <view style="display:flex;flex-direction:column;width:40px;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">方式</text>
+    </view>
+    <view style="display:flex;flex-direction:column;width:60px;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">时间</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">订票人</text>
+    </view>
+        <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">起终点</text>
+    </view>
+        <view style="display:flex;flex-direction:column;width:30px;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">价格</text>
+    </view>
+  </view> 
+<block wx:for="{{item.PassengerDetails}}" wx:key="SortNo" wx:for-item="orderitem">
+  <view class="userstyle">
+   <view style="display:flex;flex-direction:column;width:20px;text-align:left;">
+      <text style="font-size:30rpx;color:#4a4a4a">{{orderitem.PaymentType=='小计'?'':orderitem.SortNo}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;width:40px;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{orderitem.PaymentType}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;width:60px;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{orderitem.BuyTime}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{orderitem.Passenger}}</text>
+    </view>
+        <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{orderitem.BeginAndEndStation}}</text>
+    </view>
+        <view style="display:flex;flex-direction:column;width:30px;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{orderitem.OrderAmount}}</text>
+    </view>
+  </view> 
+  </block>
+
+
+</block>
+</scroll-view>
+</view>

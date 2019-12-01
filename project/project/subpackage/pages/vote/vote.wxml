@@ -1,0 +1,191 @@
+<!-- <import src='../../template/vote.wxml' /> -->
+<view class='container'>
+  <official-account class='gzh' bindload='officialLoad' binderror='officialError'></official-account>
+  <view class='options'>
+    <view class='school {{optionselect==0?"selected":""}}' bindtap='selectoption' data-index='0'>云南最受欢迎学校(学校报名)</view>
+    <view class='personal {{optionselect==1?"selected":""}} per' bindtap='selectoption' data-index='1'>
+    新春黄金大锦鲤(个人报名)
+    <image src='../../images/s.png' class='tipimg {{optionselect==1?"isno":""}}' mode='widthFix' bindtap="previewImage"></image>
+    </view>
+  </view>
+  <!-- 公共部分 -->
+  <view class='public'>
+    <view class='banner'>
+      <image src='{{Furl}}{{imgurl}}' mode="widthFix"></image>
+      <view class='countview'>
+        <view class='countitem'>
+          <text class='count'>{{schoolCount}}</text>
+          <text class='title'>报名数量</text>
+        </view>
+        <view class='countitem'>
+          <text class='count'>{{schoolVotes}}</text>
+          <text class='title'>累计投票</text>
+        </view>
+        <view class='countitem'>
+          <text class='count'>{{lookCount}}</text>
+          <text class='title'>访问量</text>
+        </view>
+      </view>
+    </view>
+    <view class='countdown'>
+      <text>距离</text>
+      <text class='txtcolors'>活动结束</text>
+      <text>：</text>
+      <text class='txtcolor'>{{countDownDay}}</text>
+      <text>天</text>
+      <text class='txtcolor'>{{countDownHour}}</text>
+      <text>小时</text>
+      <text class='txtcolor'>{{countDownMinute}}</text>
+      <text>分</text>
+      <text class='txtcolor'>{{countDownSecond}}</text>
+      <text>秒</text>
+    </view>
+    <view class='partline_10'></view>
+    <view class='timeview'>
+      <view class='start'>
+        <image src='../../images/timestart.png'></image>
+        <text>开始时间</text>
+        <text>{{activeBeginDate}}</text>
+      </view>
+      <view class='start'>
+        <image src='../../images/timeend.png'></image>
+        <text>结束时间</text>
+        <text>{{activeEndDate}}</text>
+      </view>
+    </view>
+    <!-- <view class='partline_3'></view> -->
+  </view>
+
+  <!-- 个人投票 -->
+  <view class='contentwrap' wx:if='{{optionselect==1}}'>
+    <view class='btnview'>
+      <view class='btnitems' bindtap='selectbtnpersonal' data-index='0'>我要报名</view>
+      <view class='btnitem' bindtap='selectbtnpersonal' data-index='1'>排行榜</view>
+      <view class='btnitem' bindtap='selectbtnpersonal' data-index='2'>规则/奖品</view>
+    </view>
+    <view class='bottom'>
+      <view class='search'>
+        <input placeholder='请输入姓名或编号' bindconfirm='getpersonvalue' bindinput='getpersonvalue' bindblur='getpersonvalue'></input>
+        <image src='../../images/votesearch.png' bindtap='getpersonvalues'></image>
+      </view>
+      <view class="content">
+        <view class="left">
+          <!-- <template is="item" data="{{...item}}" wx:if="{{index%2==0}}"></template> -->
+          <view class="item" wx:for="{{personalList}}" wx:key="{{index}}" wx:if="{{index%2==0}}" bindtap='gotovotepersonaldetail' data-id='{{item.id}}'>
+            <view class='imgview'>
+              <image mode="widthFix" src='{{Furl}}{{item.image}}' class='itemimg'></image>
+              <view class='imgbottom'>
+                <view class='imgleft'>
+                  <text class='imgtxt1'>{{item.id}}号</text>
+                  <text class='imgtxt2'>{{item.name}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='voteview'>
+              <view class='tmpleft'>
+                <text>{{item.total}}票</text>
+              </view>
+              <view class='tmpright' catchtap='addPersonalVote' data-id='{{item.id}}'>
+                <image src='../../images/votexin.png'></image>
+                <text>投票</text>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="right">
+          <!-- <template is="item" data="{{...item}}" wx:if="{{index%2==1}}"></template> -->
+          <view class="item" wx:for="{{personalList}}" wx:key="{{index}}" wx:if="{{index%2==1}}" bindtap='gotovotepersonaldetail' data-id='{{item.id}}'>
+            <view class='imgview'>
+              <image mode="widthFix" src='{{Furl}}{{item.image}}' class='itemimg'></image>
+              <view class='imgbottom'>
+                <view class='imgleft'>
+                  <text class='imgtxt1'>{{item.id}}号</text>
+                  <text class='imgtxt2'>{{item.name}}</text>
+                </view>
+              </view>
+            </view>
+            <view class='voteview'>
+              <view class='tmpleft'>
+                <text>{{item.total}}票</text>
+              </view>
+              <view class='tmpright' catchtap='addPersonalVote' data-id='{{item.id}}'>
+                <image src='../../images/votexin.png'></image>
+                <text>投票</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- 学校投票 -->
+  <view class='contentwrap' wx:if='{{optionselect==0}}'>
+    <view class='btnview'>
+      <view class='btnitems' bindtap='selectbtn' data-index='0'>学校报名</view>
+      <view class='btnitem' bindtap='selectbtn' data-index='1'>排行榜</view>
+      <view class='btnitem' bindtap='selectbtn' data-index='2'>规则/奖品</view>
+    </view>
+    <view class='bottom'>
+      <view class='search'>
+        <input placeholder='请输入学校名称或编号' bindconfirm='getschoolvalue' bindblur='getschoolvalue' bindinput='getschoolvalue'></input>
+        <image src='../../images/votesearch.png' bindtap='getschoolvalues'></image>
+      </view>
+      <view class="content">
+        <view class='schoolwrap'>
+          <view class='schoolItem' bindtap='gotovoteschooldetail' wx:for='{{schoolList}}' data-id='{{item.id}}' wx:key=''>
+            <view class='itemleft'>
+              <image src='{{Furl}}{{item.schoolPicture}}' mode="widthFix"></image>
+            </view>
+            <view class='itemright'>
+              <view class='righttop'>
+                <text>{{item.id}}号</text>
+                <text>{{item.schoolName}}</text>
+              </view>
+              <view class='rightbottom'>
+                <view class='right_left'>
+                  <image src='../../images/piaocount.png'></image>
+                  <text>{{item.votes}}票</text>
+                </view>
+                <view class='right_right' catchtap='vote' data-id='{{item.id}}'>
+                  <image src='../../images/votexin.png'></image>
+                  <text>投票</text>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class='backview' catchtap='gotoindex'>
+    <image src='../../images/backindex.png'></image>
+  </view>
+</view>
+
+<!-- 引导用户操作 -->
+<!-- <view class="modalDlg" catchtouchmove="preventTouchMove" wx:if="{{showModalguide}}">
+  <view class='close_mask'>什么是预约金？</view>
+  <view class='detail_text'>因为入驻机构较多，预约金是培训机构入驻蛙涡需要先支付的排位费用，签约日再支付其余部分。</view>
+  <view class='detail_text'>入驻流程：
+支付预约金-客服联系-工作人员上门-签约入驻</view>
+  <image src='https://www.hiwawow.com/images/gzh.jpg' class='gzhimg' mode='widthFix' bindtap="previewImage"></image>
+  <view class='detail_text'>注：点击上方二维码，长按识别关注公众号后，方可参加报名！</view>
+
+  <scroll-view class="scroll-view_H" scroll-x="true" style="width: 100%">
+    <view class="scroll-view-item_H">
+      <image src='../../images/xx.jpg' class='gzhimg' mode='widthFix' bindtap="previewImage"></image>
+    </view>
+    <view class="scroll-view-item_H">
+      <image src='../../images/gr.jpg' class='gzhimg' mode='widthFix' bindtap="previewImage"></image>
+    </view>
+  </scroll-view>
+
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap='close_mask' wx:if="{{showModalguide}}"></view> -->
+
+<!-- <view class='tip'>
+  <image src='../../images/s.png' class='tipimg' mode='widthFix' bindtap="previewImage"></image>
+</view> -->

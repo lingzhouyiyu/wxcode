@@ -1,0 +1,55 @@
+<view class='container'>
+  <view class='reason'>退款原因</view>
+  <view class='personal'>
+    <view class='item' bindtap='showoption'>
+      <text>个人方面的原因</text>
+      <view class='spot'>
+      <image src='../../../images/{{showTag?"tuikuan_select":"tuikuan"}}.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='partline_3'></view>
+  <view class='personal'>
+    <view class='item' bindtap='showschool'>
+      <text>学校方面的原因</text>
+      <view class='spot'>
+       <image src='../../../images/{{showschoolTag?"tuikuan_select":"tuikuan"}}.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='optionpanel' wx:if='{{showTag}}'>
+    <view class='reason'>请选择具体退款原因</view>
+    <!-- <view class='btnitem {{item.selected?"btnitems":""}}' wx:for='{{labelArray}}' wx:key='unique2' bindtap='selectitem' data-select='{{index}}'>{{item.text}}</view> -->
+
+    <view class='optionpanelItem {{item.selected?"textcolor_pink":""}}' wx:for='{{optionpanelItem}}' wx:key='unique1' bindtap='selectoption' data-select='{{index}}'>
+      <view class='personal'>
+        <view class='item' >
+          <text>{{item.text}}</text>
+          <view class='spot'>
+           <image src='../../../images/{{item.selected?"tuikuan_select":"tuikuan"}}.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='partline_3'></view>
+    </view>
+  </view>
+  <view class='optionpanel' wx:if='{{showschoolTag}}'>
+    <view class='reason'>请选择具体退款原因</view>
+
+    <view class='optionpanelItem {{item.selected?"textcolor_pink":""}}' wx:for='{{schoolpanelItem}}' wx:key='unique1' bindtap='selectschool' data-select='{{index}}'>
+      <view class='personal'>
+        <view class='item'>
+          <text>{{item.text}}</text>
+          <view class='spot'>
+           <image src='../../../images/{{item.selected?"tuikuan_select":"tuikuan"}}.png'></image>
+          </view>
+        </view>
+      </view>
+      <view class='partline_3'></view>
+    </view>
+  </view>
+  <view class='detailtxt textcolor_gray'>
+    温馨提示：退款周期仅供您参考，具体退款周期可能会受银行、支付机构等相关因素影响。 1.京东在线支付及POS机刷卡支付订单退款，如涉及到银行信息京东会依据银行及相关机构已经建立的条例处理退款，为了保证客户账户金额的安全，我们均会安排原卡原退。 2.公司转账或支票支付的订单，需与客服人员确认公司相关信息后进行公司转账，目前京东只支持原路退回至客户原支付的公司账户中，给您带来的不便请您谅解。 3.京东卡/京东E卡支付退款无法直接兑换成现金，会在1个工作日左右返还至您支付的京东卡/京东E卡内。
+  </view>
+  <view class='applySubmit' bindtap='applicationRefund'>申请退款</view>
+</view>

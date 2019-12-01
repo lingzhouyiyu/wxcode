@@ -1,0 +1,910 @@
+@import "../../wxParse/wxParse.wxss";
+.container{
+  z-index: 0;
+}
+.details_img {
+  width: 100%;
+  height: 800rpx;
+  background-color: #aca8a3;
+}
+
+.course_details_warp {
+  width: 92%;
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 25rpx;
+}
+
+.course_details_title {
+  font-size: 32rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  width: 100%;
+}
+
+.course_details_price {
+  width: 100%;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.pricepl{
+   color: #2bb5fe;
+  font-size: 28rpx;
+}
+.price {
+  color: #2bb5fe;
+  font-size: 38rpx;
+
+}
+.tiptext{
+  font-size: 26rpx;
+  color: rgb(50, 50, 50);
+    margin-right: 20rpx;
+}
+.Originalprice {
+  margin-left: 10rpx;
+  font-size: 24rpx;
+  text-decoration: line-through;
+}
+.address_yuyue{
+  font-size: 24rpx;
+}
+.course_details_address {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #bfbab4;
+  margin-top: 10rpx;
+}
+
+.tips {
+  width: 93%;
+  height: auto;
+  background-color: #fff1ed;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+/* background-color: red; */
+}
+
+.tips_view {
+  width: 94%;
+  height: 100%;
+  display: flex;
+  /* background-color: yellow; */
+  font-size: 24rpx;
+}
+.img_view{
+  display: flex;
+  width:6%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  /* background-color: blueviolet; */
+}
+.tips_img {
+  width: 20rpx;
+  height: 25rpx;
+  margin-right: 15rpx;
+}
+
+.tips_txt {
+  /* background-color: red; */
+  color: #ff4d75;
+   font-size: 24rpx;
+}
+
+.service {
+  display: flex;
+  /* background-color: red; */
+  width: 92%;
+  color: #353635;
+  position: relative;
+  padding: 10rpx 0 20rpx 0;
+  font-size: 24rpx;
+}
+
+.service_item_img {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.service_more {
+  width: 14rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 0;
+}
+
+.service_title {
+  margin-right: 30rpx;
+}
+
+.service_item {
+  display: flex;
+  margin-right: 10rpx;
+}
+.Voucher {
+  display: flex;
+  width: 92%;
+  position: relative;
+  margin-top: 20rpx;
+  color: #353635;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 24rpx;
+  margin-bottom: 15rpx;
+}
+
+.Voucher_more {
+  width: 14rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 0;
+  margin-top: 6rpx;
+}
+
+.Voucher_two {
+  margin-left: 30rpx;
+}
+
+.Voucher_three {
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  width: 400rpx;
+  display: flex;
+  flex-flow: row wrap;
+  /* background-color: red; */
+  font-size: 20rpx;
+  color: #ff4d75;
+  margin-top: 5rpx;
+}
+
+.Voucher_three_txt {
+  width: 41%;
+  background-color: #ffd0d5;
+  margin-right: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0 15rpx 0 15rpx;
+  margin-bottom: 30rpx;
+  position: relative;
+
+}
+
+.leftspot {
+  width: 15rpx;
+  height: 15rpx;
+  position: absolute;
+  left: -3rpx;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.rightspot {
+  width: 15rpx;
+  height: 15rpx;
+  position: absolute;
+  right: -3rpx;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.sales {
+  width: 92%;
+  display: flex;
+  color: #353635;
+  margin-bottom: 30rpx;
+}
+
+.sales_one {
+  margin-right: 30rpx;
+  font-size: 24rpx;
+}
+
+.sales_two {
+  margin-right: 10rpx;
+  color: #fff;
+  background-color: #ff426d;
+  border-radius: 3px;
+  padding: 0 5rpx 0 10rpx;
+  font-size: 20rpx;
+}
+
+.sales_three {
+  margin-right: 10rpx;
+  color: black;
+  font-size: 24rpx;
+}
+
+.sales_four {
+  color: black;
+  font-size: 24rpx;
+}
+
+.contact {
+  width: 92%;
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  padding: 20rpx 0 20rpx 0;
+}
+
+.contact_left {
+  width: 18%;
+  display: flex;
+  /* background-color: yellow; */
+  align-items: center;
+}
+
+.contact_left_img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.contact_right {
+  width: 82%;
+}
+
+.contact_right_title {
+  font-size: 32rpx;
+}
+
+.contact_right_txt {
+  color: #aba7a2;
+    font-size: 24rpx;
+}
+
+.contact_right_address {
+  color: #aba7a2;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+   font-size: 24rpx;
+}
+
+.lianxi {
+  width: 75%;
+  height: 60rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+   font-size: 24rpx;
+}
+
+.lianxi_item {
+  width: 47%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 3rpx solid #1cb2fd;
+  font-size: 24rpx;
+ outline: none !important;
+ color: #1cb2fd;
+}
+
+.lianxi_img {
+  width: 33rpx;
+  height: 33rpx;
+  margin-right: 20rpx;
+}
+.lianxi_imgs {
+  width: 36rpx;
+  height: 37rpx;
+  margin-right: 20rpx;
+}
+.bulabulawrap{
+  width: 92%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 30rpx;
+  /* background-color: red; */
+  padding:30rpx 0 5rpx 0;
+}
+.partlines{
+  margin-top: 30rpx;
+}
+.bulabula {
+  height: 55rpx;
+  display: flex;
+  position: relative;
+  background-color: #eef8fe;
+  /* border: 2rpx solid #f3f2f0; */
+  padding: 0 22rpx;
+  border-radius: 7rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+  font-size: 27rpx;
+  color: rgb(50, 50, 50);
+}
+
+.bulabula_name {
+  font-size: 27rpx;
+}
+
+.bulabula_detail {
+  color: #aba7a2;
+  margin-left: 30rpx;
+  font-size: 27rpx;
+}
+
+.bulabula_img {
+  width: 11rpx;
+  height: 21rpx;
+  position: absolute;
+  right: 0;
+}
+
+.introduce {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+    font-size: 30rpx;
+}
+
+.introduce_item {
+  width: 33.33%;
+  height: 100%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.introduce_item_txt {
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  border-bottom: 5rpx solid #fff;
+}
+
+.introduce_item_txts {
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  color: #1cb2fd;
+  border-bottom: 5rpx solid #1cb2fd;
+}
+
+.coursedetailswarp {
+  width: 92%;
+  height: auto;
+  margin-top: 50rpx;
+  margin-bottom: 150rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coursedetails_imgs {
+  width: 100%;
+  display: flex;
+}
+
+.coursedetails_imgs_left {
+  width: 50%;
+  height: auto;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25rpx 25rpx 0 25rpx;
+}
+
+.coursedetails_imgs_left image {
+  width: 100%;
+  height: 230rpx;
+  margin-bottom: 40rpx;
+}
+
+.coursedetails_imgs_right {
+  width: 50%;
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 25rpx 25rpx 0 25rpx;
+}
+
+.coursedetails_imgs_right image {
+  width: 100%;
+  height: 250rpx;
+  margin-bottom: 40rpx;
+}
+
+.coursedetails_txt {
+  color: #4a4a48;
+  margin-bottom: 110rpx;
+}
+
+/* 底部咨询框 */
+
+.bottom_detail {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  background-color: #fff;
+}
+
+.bottom_detail_left {
+  width: 77%;
+  height: 100%;
+  display: flex;
+}
+
+.bula_left {
+  width: 50%;
+  height: 100%;
+  /* background-color: red; */
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 30rpx;
+}
+
+.bula_left_top {
+  margin-bottom: 10rpx;
+  font-size: 26rpx;
+}
+
+.bula_left_top_img {
+  width: 25rpx;
+  height: 25rpx;
+  margin-left: 8rpx;
+}
+
+.bula_left_bottom {
+  font-size: 26rpx;
+}
+
+.bula_right {
+  width: 50%;
+  height: 100%;
+  display: flex;
+}
+
+.bula_right_item {
+  width: 50%;
+  height: 100%;
+  /* background-color: yellow; */
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.bula_right_items{
+color: #ed5b75;
+}
+.bula_right_item_imgs {
+  width: 31rpx;
+  height: 28rpx;
+  margin-bottom: 8rpx;
+}
+.bula_right_item_img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-bottom: 8rpx;
+}
+
+.bottom_detail_right {
+  width: 23%;
+  height: 100%;
+  background-color: #00aefd;
+  color: #fff;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hideview {
+  display: none;
+}
+
+.showview {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.getVoucher_cover {
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  background-color: #b5b1ab;
+  filter: Alpha(Opacity=60);
+  opacity: 0.6;
+}
+
+.scroll_warp {
+  width: 100%;
+  height: auto;
+  z-index: 9999;
+  position: fixed;
+  bottom: 0;
+  background-color: #f8f8f7;
+}
+.top_warp{
+width: 95%;
+/* background-color: red; */
+}
+
+.close_img {
+  width: 100%;
+  height: 60rpx;
+  position: relative;
+  display: block;
+  /* background-color: green; */
+}
+
+.close_img image {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 0;
+  top: 20rpx;
+}
+
+.klqdhb {
+  margin-bottom: 30rpx;
+   display: block;
+   /* background-color: yellow; */
+   font-size: 26rpx;
+}
+.getVoucher_content {
+  width: 100%;
+  height: 750rpx;
+}
+
+.contentwrap {
+  width: 95%;
+  height: auto;
+  /* background-color: red; */
+  margin-left: 20rpx;
+}
+
+.content_item {
+  width: 100%;
+  height: 180rpx;
+  /* background-color: red; */
+  margin-bottom: 30rpx;
+  display: flex;
+}
+
+.content_item_left {
+  width: 35%;
+  height: 100%;
+  background-color: #ff853e;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24rpx;
+}
+.content_item_left_1{
+  font-size: 24rpx;
+}
+.content_item_left_3 {
+  margin-top: 15rpx;
+  font-size: 30rpx;
+}
+
+.content_item_left_2 {
+  /* background-color: red; */
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.content_item_left_4 {
+  font-size: 60rpx;
+}
+
+.content_item_right {
+  width: 65%;
+  height: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+  padding-right: 20rpx;
+}
+
+.content_item_right_1 {
+  width: 100%;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+  color: #6e6c67;
+}
+
+.content_item_right_2 {
+  width: 100%;
+  font-size: 24rpx;
+  color: #aca8a2;
+  margin-top: 10rpx;
+}
+
+.content_item_right_3 {
+  width: 100%;
+  border: 2rpx dashed #aca8a2;
+  margin-top: 10rpx;
+}
+
+.content_item_right_4 {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: red; */
+  margin-top: 10rpx;
+  color: #ff853e;
+  font-size: 28rpx;
+}
+
+.ylqtxt {
+  color: #6e6c67;
+}
+
+.ylqbackground {
+  background-color: #c6c3bd;
+}
+
+.noscroll {
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  z-index: 0;
+}
+/* //评价样式 */
+.commenttop {
+  width: 94%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.insti_score {
+  width: 100%;
+  height: 100rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 15rpx;
+  font-size: 38rpx;
+}
+
+.insti_score_detail {
+  width: 100%;
+  margin-bottom: 30rpx;
+}
+
+.insti_score_detail text {
+  margin-right: 20rpx;
+}
+
+.hotcate {
+  width: 100%;
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 3rpx solid #f3f2f0;
+}
+
+.hotitem {
+  width: auto;
+  height: 50rpx;
+  background-color: #f6f5f4;
+  margin-right: 30rpx;
+  border-radius: 13px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15rpx 0 15rpx;
+  margin-bottom: 20rpx;
+}
+
+.comment_item {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+   border-bottom: 3rpx solid #f3f2f0;
+}
+
+.comment_item_left {
+  width: 15%;
+  height: 100rpx;
+  /* background-color: red; */
+}
+
+.comment_item_left image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.comment_item_right {
+  width: 85%;
+  height: auto;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+}
+
+.comment_item_right_1 {
+  width: 100%;
+}
+
+.comment_item_right_2 {
+  width: 100%;
+  margin-top: 10rpx;
+}
+
+.comment_item_right_2 image {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 5rpx;
+}
+
+.comment_item_right_3 {
+  width: 100%;
+  margin-top: 10rpx;
+}
+
+.comment_item_right_4 {
+  width: 100%;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+
+.comment_item_right_5 {
+  width: 100%;
+  font-size: 24rpx;
+  margin-top: 10rpx;
+  margin-bottom: 30rpx;
+}
+.scroll_content {
+  width: 100%;
+  height: auto;
+  margin-bottom: 70rpx;
+  overflow: hidden;
+  display: flex;
+flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.scroll_contents{
+margin-bottom: 15rpx;
+}
+.slide-image{
+  width: 100%;
+  height: 100%;
+}
+.imgwrap{
+   width: 100%;
+  height: 100%;
+}
+/* 预约金说明弹框 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background:rgb(90, 90, 90);
+  z-index: 9000;
+  opacity: 0.7;
+}
+ 
+.modalDlg {
+  width: 540rpx;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 100rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 0rpx 0 20rpx;
+}
+ 
+
+ 
+.save_money {
+  color: #fff;
+  width: 370rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #1cb2fd;
+  text-align: center;
+  border-radius: 12rpx;
+  margin-bottom: 50rpx;
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+ 
+.close_mask {
+  color: #1cb2fd;
+  position: relative;
+  font-size: 30rpx;
+  /* background-color: yellow; */
+  margin-bottom: 32rpx;
+ 
+}
+.detail_text{
+  width: 100%;margin-bottom: 30rpx;
+  /* background-color: red; */
+  font-size: 26rpx;
+  color: rgb(50, 50, 50);
+}
+/* //评价 */
+.nomessages {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 150rpx 0 150rpx 0;
+}
+
+.nomessages image {
+  width: 396rpx;
+  height: 188rpx;
+  margin-bottom: 40rpx;
+}

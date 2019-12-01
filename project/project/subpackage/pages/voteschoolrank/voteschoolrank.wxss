@@ -1,0 +1,117 @@
+.top{
+width: 100%;
+height: 160rpx;
+background-color:  #ff4f38;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: #fff;
+}
+.title{
+height: 32%;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: flex-end;
+/* background-color: yellow; */
+}
+.timeview{
+height: 68%;
+width: 60%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+/* background-color: green; */
+color: #ff4f38;
+}
+.tian{
+  width: 84rpx;
+  height: 58rpx;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+.fen{
+  width:98rpx;
+  height: 58rpx;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+.contentwrap{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 30rpx;
+  border-bottom: 3rpx solid #F3F2F0;
+  padding-bottom: 30rpx;
+}
+.items{
+  width: 87%;
+  height: 138rpx;
+  /* background-color: rebeccapurple; */
+  display: flex;
+
+}
+.iconview{
+  width: 12%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: rgb(51, 51, 51)
+
+}
+.iconview image{
+width: 36rpx;
+height: 32rpx;
+}
+.iconview text{
+width: 36rpx;
+margin-top: 10rpx;
+text-align: center;
+}
+.imgview{
+  width: 24%;
+  height: 100%;
+  /* background-color: yellow; */
+}
+.imgview image{
+  width: 138rpx;
+}
+.txtview{
+  width: 64%;
+  height: 100%;
+  /* background-color: green; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+ text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.llltop{
+width: 100%;
+/* background-color: red; */
+font-size: 32rpx;
+color: rgb(51, 51, 51);
+}
+.hao{
+  margin-right: 20rpx;
+}
+.lllbottom{
+width: 100%;
+/* background-color: yellow; */
+font-size: 26rpx;
+color: #ff4f38;
+margin-top: 10rpx;
+}

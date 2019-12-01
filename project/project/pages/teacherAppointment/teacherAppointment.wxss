@@ -1,0 +1,132 @@
+.hotcate {
+  width: 94%;
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+  font-size: 28rpx;
+}
+
+.hotitem {
+  width: auto;
+  height: 50rpx;
+  background-color: #f6f5f4;
+  margin-right: 30rpx;
+  border-radius: 26rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 15rpx 0 15rpx;
+  margin-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.contentitem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  /* background-color: red; */
+}
+
+.patrline {
+  width: 100%;
+  height: 15rpx;
+  background-color: #f3f2f0;
+}
+
+.item {
+  width: 94%;
+  height: 210rpx;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: row;
+}
+
+.leftimg {
+  width: 26%;
+  height: 100%;
+  /* background-color: green; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.leftimg image {
+  width: 165rpx;
+  height: 170rpx;
+  border-radius: 5px;
+}
+
+.rightitem {
+  width: 74%;
+  height: 180rpx;
+  /* background-color: gainsboro; */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.rightitem text {
+  width: 100%;
+}
+
+.titles {
+  font-size: 28rpx;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    /* line-height: 100%; */
+}
+
+.detailtxt {
+  color: #7e7b75;
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 75rpx;
+}
+
+.detailtxts {
+  color: #7e7b75;
+  font-size: 24rpx;
+  position: absolute;
+  bottom: 39rpx;
+}
+
+.prices {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.price {
+  color: #2bb5fe;
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+.pricepl{
+   color: #2bb5fe;
+  font-size: 24rpx;
+}
+.Originalprice {
+  color: #7e7b75;
+  font-size: 24rpx;
+  text-decoration: line-through;
+}
+.partline_3{
+  width: 94%;
+}
+.nodata_tips{
+  font-size: 28rpx;
+  margin-top: 35rpx;
+  margin-bottom: 35rpx;
+}
+.active{
+  background-color: #0097EB;
+  color: #fff;
+}

@@ -1,0 +1,169 @@
+.container{
+padding-bottom: 400rpx;
+}
+
+.applyTitle{
+  width:80%;
+  font-size: 34rpx;
+  /* font-weight: bold; */
+  margin-top: 40rpx;
+}
+.formview{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+/* background-color: yellow; */
+}
+.applyContent{
+  width:87%;
+  height: auto;
+  border:3rpx solid #F3F2F0;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 20rpx 0 20rpx;
+  /* background-color: red; */
+  margin-left: 30rpx;
+}
+.applyContent_img{
+  width: 100%;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.headerimg{
+ width: 145rpx;
+  height: 145rpx;
+  border-radius: 50%;
+    background-color: #F0F1F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerimg image{
+  width: 70rpx;
+  height: 56rpx;
+ 
+}
+.headerimgs{
+ width: 145rpx;
+  height: 145rpx;
+  border-radius: 50%;
+    background-color: #F0F1F3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerimgs image{
+ width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.contents{
+  width: 100%;
+  height: auto;
+  /* background-color: yellow; */
+}
+.contents_item{
+width: 100%;
+height: 70rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 40rpx;
+  border-bottom: 3rpx solid #F3F2F0;
+  font-size: 32rpx;
+}
+.contents_item_txt{
+  height: 45rpx;
+  line-height: 45rpx;
+   /* background-color: yellow; */
+   padding: 0 0 0 10rpx;
+   border-left: 7rpx solid #1CB2FD;
+}
+.contents_item_input{
+  width: 480rpx;
+   height: 45rpx;
+  line-height: 45rpx;
+   /* background-color: yellow; */
+   margin-left: 20rpx;
+}
+/* 证书样式 */
+.contents_itemzhengshu{
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 3rpx solid #F3F2F0;
+  padding-bottom: 20rpx;
+}
+.contents_item_txtzhengshu{
+  width: 15%;
+  /* background-color: yellow; */
+}
+.lalalalla{
+  border-bottom: none;
+  /* background-color: yellow; */
+  margin-bottom: 0;
+}
+.uploadview{
+width: 85%;
+height: auto;
+display: flex;
+flex-flow: row wrap;
+/* background-color: red; */
+}
+.uploadBtn{
+  width: 140rpx;
+  height: 140rpx;
+  background-color: #F0F1F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15rpx;
+  margin-left: 10rpx;
+  /* background-color: rebeccapurple; */
+}
+.imgwrap{
+  width: 50rpx;
+  height: 45rpx;
+  border-radius: 50%;
+}
+.uploadBtn image{
+  width: 100%;
+  height: 100%;
+ 
+}
+.applySubmit{
+height: 85rpx;
+width: 92%;
+background-color: #00AEFE;
+color: #fff;
+margin-bottom: 30rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 25px;
+font-size: 32rpx;
+margin-top: 80rpx;
+margin-left: 35rpx;
+}
+.imageview{
+width: 122rpx;
+height: 125rpx;
+/* background-color: red; */
+margin-left: 10rpx;
+margin-bottom: 15rpx;
+}
+.imageview image{
+  width: 100%;
+  height: 100%;
+}
+.hideTrue {
+  display: none
+}
+.true{
+  display: flex;
+}

@@ -1,0 +1,57 @@
+<view class='container'>
+  <!-- 顶部搜索框 -->
+  <view class='top'>
+    <view class='search'>
+      <image class='searchimg' src='../../images/search.png'></image>
+      <input class='searchinput' placeholder="搜索想要的课程" cursor-spacing="15"></input>
+    </view>
+    <image class='noticeimg' src='../../images/message.png' catchtap='gotonotice'></image>
+  </view>
+  <view class='partline'></view>
+  <!-- 菜单部分 -->
+  <view class='bottom'>
+    <!-- 左边菜单列表 -->
+    <view class='bottom_left'>
+      <view class='menuwrap'>
+        <view class='menuitem' wx:for="{{classificationArray}}" wx:key="unique1" wx:for-index="indexs" bindtap='tabSelect' data-danceCategoryid='{{item.danceCategoryId}}' data-select="{{indexs}}" data-child='{{item.childList}}' >
+          <view class="menuitem_left {{indexs==itemselect?'menuitem_left':'menuitem_lefts'}}"></view>
+          <text class="menuitem_title {{indexs==itemselect?'':'active'}}">{{item.categoryName}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class='bottom_partline'></view> -->
+    <!-- 右边详情 -->
+    <scroll-view class='scroll_view' scroll-y>
+      <view class='bottom_right'>
+        <view class='bottom_right_top' bindtap='gotoactive'>
+          <swiper class="swiper Rectangle" autoplay="true" circular='true' interval="5000" duration="1000">
+            <block wx:for="{{bannersimages}}" wx:for-index="index" wx:key="unique2">
+              <swiper-item class='Rectangle'>
+                <!-- <image src='../../images/test.jpg'></image> -->
+                <image wx:for='{{item.imgarray}}' wx:key='unique4' wx:for-item='items' src="{{Furl}}{{items}}" />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class='bottom_right_center'>
+          <view class='contentwrap'>
+            <view class='contentwrap_item'>
+              <!-- <view class='title'>{{items.categoryName}}</view> -->
+              <view class='content'>
+                <view class='contentitem' wx:for='{{childData}}' data-dancecategoryid='{{item_L.danceCategoryId}}' wx:key="unique3" wx:for-item='item_L' catchtap='gotoDetail'>
+                  <!-- <image src='../../images/test.jpg'></image> -->
+                  <image src='{{Furl}}{{item_L.categoryImage}}'></image>
+                  <text>{{item_L.categoryName}}</text>
+                </view>
+              </view>
+              <!-- <view class='contentitem_partline'></view> -->
+            </view>
+
+          </view>
+
+        </view>
+      </view>
+    </scroll-view>
+
+  </view>
+</view>

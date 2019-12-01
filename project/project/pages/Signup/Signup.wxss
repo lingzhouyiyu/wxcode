@@ -1,0 +1,71 @@
+page{
+  background-color: #F3F7F6;
+  padding-bottom: 50rpx;
+}
+
+.noticecontent{
+  background-color: #FFF;
+  width:80%;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  border-radius: 5px;
+  position: relative;
+}
+.titles{
+width: 100%;
+margin-bottom: 25rpx;
+font-size: 24rpx;
+color: #C0C0C0;
+}
+.date{
+  margin-right: 10rpx;
+}
+.contents{
+  width: 100%;
+  color: rgb(252, 102, 116);
+  font-size: 28rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.bulabula{
+width: 100%;
+font-size: 32rpx;
+overflow : hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 2;
+-webkit-box-orient: vertical;
+}
+.centercontent{
+  width: 100%;
+  height: 100rpx;
+  /* background-color: red; */
+  margin-bottom: 40rpx;
+  border-bottom: 3rpx solid #f3f2f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.getbtn{
+  padding: 10rpx 30rpx;
+  background-color: rgb(252, 102, 116);
+  border-radius: 7rpx;
+  color: #fff;
+}
+.getbtns{
+ padding: 10rpx 30rpx;
+  background-color:rgb(102, 102, 102);
+  border-radius: 7rpx;
+  color: #fff;
+}
+.yuyue{
+  font-size: 26rpx;
+  color: rgb(102, 102, 102)
+}
+.code{
+  font-size: 32rpx;
+  color: rgb(1, 1, 1)
+}

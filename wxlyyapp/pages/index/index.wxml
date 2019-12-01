@@ -1,0 +1,224 @@
+<!--login.wxml-->
+<view wx:if="{{logined==false}}" class="post-userList">
+  <view class="userlogo">
+    <image class="userlogo-img" src="../../images/logo.png" />
+    <text class="userlogo-phone">用户登录</text>
+  </view>
+
+  <view class="userdata">
+    <view class="userdata-name">用户名</view>
+    <view class="userdata-symbol"></view>
+    <input class="userdata-input" type="text" bindinput="UsernameInputValue" bindinput="bindUsernameInput" placeholder="请输入用户名" value="{{UsernameInputValue}}" />
+  </view>
+
+  <view class="userdata">
+    <view class="userdata-name"> 密 码</view>
+    <view class="userdata-symbol"></view>
+    <input class="userdata-input" type="text" password="true" bindinput="bindPasswordInput" placeholder="请输入密码" value="{{PasswordInputValue}}" />
+  </view>
+
+  <view class="userdata">
+    <view class="userdata-name"> 类 型</view>
+    <view class="userdata-symbol"></view>
+    <radio-group bindchange="radioChange">
+      <radio class="radio" wx:for-items="{{items}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+        <text>{{item.value}}</text>
+      </radio>
+    </radio-group>
+  </view>
+
+  <button type="primary" bindtap="loginbuttontap" class="userbutton">登录</button>
+</view>
+
+<!--index.wxml-->
+<view wx:else>
+  <view class="cards">
+  <!--  学生定制 -->
+    <navigator wx:if="{{loginTypeIndex=='0'}}" url="../wxstudent/person/person" hover-class="navigator-hover">
+      <view style="display:flex;align-items:center;justify-content:center;position:fixed;right:10px;top:10px;width:40px;height:40px;background:#fff;border:1rpx solid #000000;border-radius:20px">
+        <image style="height:26px;width:26px;" src="/images/index_mine.png" />
+      </view>
+    </navigator>
+
+      <!--  农客 -->
+    <navigator wx:elif="{{loginTypeIndex=='1'}}" url="../nk/user/user" hover-class="navigator-hover">
+      <view style="display:flex;align-items:center;justify-content:center;position:fixed;right:10px;top:10px;width:40px;height:40px;background:#fff;border:1rpx solid #000000;border-radius:20px">
+        <image style="height:26px;width:26px;" src="/images/index_mine.png" />
+      </view>
+    </navigator>
+
+  <!--  出租 -->
+    <navigator wx:elif="{{loginTypeIndex=='2'}}" url="../xsdz/user/user" hover-class="navigator-hover">
+      <view style="display:flex;align-items:center;justify-content:center;position:fixed;right:10px;top:10px;width:40px;height:40px;background:#fff;border:1rpx solid #000000;border-radius:20px">
+        <image style="height:26px;width:26px;" src="/images/index_mine.png" />
+      </view>
+    </navigator>
+
+  <!--  公交 -->
+    <navigator wx:elif="{{loginTypeIndex=='3'}}" url="../transport/user/user" hover-class="navigator-hover">
+      <view style="display:flex;align-items:center;justify-content:center;position:fixed;right:10px;top:10px;width:40px;height:40px;background:#fff;border:1rpx solid #000000;border-radius:20px">
+        <image style="height:26px;width:26px;" src="/images/index_mine.png" />
+      </view>
+    </navigator>
+
+    <navigator wx:else url="../nk/user/user" hover-class="navigator-hover">
+      <view style="display:flex;align-items:center;justify-content:center;position:fixed;right:10px;top:10px;width:40px;height:40px;background:#fff;border:1rpx solid #000000;border-radius:20px">
+        <image style="height:26px;width:26px;" src="/images/index_mine.png" />
+      </view>
+    </navigator>
+
+
+  </view>
+
+  <view style="background:#eeeeee;display:flex;width:100%;height:50px;flex-direction: row;align-items: center;justify-content: center;">
+    <view class="cardText" style="text-align:center;width:50%">当前用户：{{userName}}</view>
+    <view wx:if="{{loginTypeIndex=='0'}}" class="cardText">类型：学生定制</view>
+    <view wx:elif="{{loginTypeIndex=='1'}}" class="cardText">类型：农村客运</view>
+    <view wx:elif="{{loginTypeIndex=='2'}}" class="cardText">类型：出租车</view>
+    <view wx:elif="{{loginTypeIndex=='3'}}" class="cardText">类型：公交</view>
+    <view wx:else class="cardText">类型：未知</view>
+  </view>
+
+  <!--学生定制菜单-->
+  <view wx:if="{{loginTypeIndex=='0'}}" class="index-block">
+    <view style="width:100%;height:60px;line-height:60px;text-align:center">操作菜单</view>
+    <block wx:if="{{manage=='司机'}}">
+    <view class="index-item">
+      <navigator url="../wxstudent/currtask/currtask" hover-class="navigator-hover">
+        <view class="indexflex">
+          <image class="index-item-img" src="/images/index_tag.png" />
+          <text class="index-item-name">任务列表</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="index-item">
+      <navigator url="../wxstudent/tasklist/tasklist" hover-class="navigator-hover">
+        <view class="indexflex">
+          <image class="index-item-img" src="/images/index_wallet.png" />
+          <view class="index-item-name">历史任务</view>
+        </view>
+      </navigator>
+    </view>
+    </block>
+    <block wx:if="{{manage=='老师'}}">
+      <view class="index-item">
+        <navigator url="../wxstudent/manage/classes" hover-class="navigator-hover">
+          <view class="indexflex">
+            <image class="index-item-img" src="/images/index_mine.png" />
+            <view class="index-item-name">学生信息</view>
+          </view>
+        </navigator>
+      </view>
+
+      <view class="index-item">
+        <navigator url="../wxstudent/manage/searchstudent/searchstudent" hover-class="navigator-hover">
+          <view class="indexflex">
+            <image class="index-item-img" src="/images/index-history.png" />
+            <view class="index-item-name">扫脸找人</view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </view>
+
+  <!--农客菜单-->
+  <view wx:elif="{{loginTypeIndex=='1'}}" class="index-block">
+    <view style="width:100%;height:60px;line-height:60px;text-align:center">操作菜单</view>
+    <view class="index-item">
+      <navigator url="../nk/task/tasklist" hover-class="navigator-hover">
+        <view class="indexflex">
+          <image class="index-item-img" src="/images/index_tag.png" />
+          <text class="index-item-name">任务列表</text>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="index-item">
+      <navigator url="../nk/historytask/historytask" hover-class="navigator-hover">
+        <view class="indexflex">
+          <image class="index-item-img" src="/images/index-history.png" />
+          <view class="index-item-name">历史任务</view>
+        </view>
+      </navigator>
+    </view>
+
+    <view class="index-item">
+      <navigator url="../nk/report/index" hover-class="navigator-hover">
+        <view class="indexflex">
+          <image class="index-item-img" src="/images/index-history.png" />
+          <view class="index-item-name">报表</view>
+        </view>
+      </navigator>
+    </view>
+
+    <view wx:if="{{manage=='2'}}" class="index-item">
+      <navigator url="../nk/schedule/schedule" hover-class="navigator-hover">
+        <view class="indexflex">
+          <image class="index-item-img" src="/images/index_wallet.png" />
+          <text class="index-item-name">调度排班</text>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+
+  <!--出租菜单-->
+  <view wx:elif="{{loginTypeIndex=='2'}}" class="index-block">
+    <view class="czitem">
+      <view style="font-size: 30rpx;color:#6c6c6c;text-align:left">姓名：{{locationRes.latitude}}</view>
+      <view style="font-size: 30rpx;color:#6c6c6c;text-align:left;width:50%">车牌：{{locationRes.latitude}}</view>
+    </view>
+    <view class="czitem">
+      <view style="font-size: 30rpx;color:#6c6c6c;text-align:left;width:50%">经度：{{locationRes.latitude}}</view>
+      <view style="font-size: 30rpx;color:#6c6c6c;text-align:left;width:50%">纬度：{{locationRes.longitude}}</view>
+    </view>
+
+    <view class="czitem">
+      <view style="font-size: 30rpx;color:#6c6c6c;text-align:left;width:100%">速度：{{locationRes.speed}}</view>
+    </view>
+    <view class="czitem">
+      <view style="font-size: 30rpx;color:#6c6c6c;text-align:left;width:100%">位置的精确度：{{locationRes.accuracy}}</view>
+    </view>
+
+
+    <view class="czbtnview">
+      <view wx:if="{{TaxiRuning}}" catchtap="turnOffRun" style="background:#179B16;height:50px;font-size: 30rpx;color:#ffffff;line-height:50px;text-align:left;width:49%;text-align:center">服务状态：开始</view>
+      <view wx:else catchtap="turnOnRun" style="background:#eeeeee;height:50px;font-size: 30rpx;color:#179B16;line-height:50px;text-align:left;width:49%;text-align:center">服务状态：未开始</view>
+
+
+      <view style="height:50px;font-size: 30rpx;color:#ffffff;line-height:50px;text-align:left;width:2%;text-align:center"></view>
+
+
+      <view wx:if="{{TaxiFull}}" catchtap="turnOffFull" style="background:#ff0000;height:50px;font-size: 30rpx;color:#ffffff;line-height:50px;text-align:left;width:49%;text-align:center">运营状态：满载</view>
+      <view wx:else catchtap="turnOnFull" style="background:#179B16;height:50px;font-size: 30rpx;color:#ffffff;line-height:50px;text-align:left;width:49%;text-align:center">运营状态：空载</view>
+    </view>
+
+  </view>
+
+  <!-- 公交菜单 -->
+  <view wx:elif="{{loginTypeIndex=='3'}}" class="index-block">
+        <view style="width:100%;height:60px;line-height:60px;text-align:center">操作菜单</view>
+    <view class="index-item">     
+        <view bindtap="busScanCode"  class="indexflex" >
+          <image class="index-item-img" src="/images/index_tag.png" />
+          <text class="index-item-name">扫码看票</text>
+        </view>
+    </view>
+
+    <view class="index-item">
+      <navigator url="../transport/history/historytask" hover-class="navigator-hover">
+        <view class="indexflex">
+          <image class="index-item-img" src="/images/index-history.png" />
+          <view class="index-item-name">历史任务</view>
+        </view>
+      </navigator>
+    </view>
+
+    
+    <view>{{show}}</view>
+  </view>
+
+  <view wx:else class="index-block">
+    未知用户类型
+  </view>
+</view>

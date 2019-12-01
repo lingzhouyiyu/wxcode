@@ -1,0 +1,81 @@
+<view class='container'>
+  <view class='recmendcontent'>
+    <view class='recmenditem'>
+
+      <view class='item_right'>
+        <view class='itemtitle'>{{orderData.orderDetail.activeTitle}}</view>
+
+        <view class='itemprice'>
+          <view class='itemprice_left'>
+            <text class='Originalprice'>预约金：</text>
+            <text class='bubulala'>￥</text>
+            <text class='price'>{{orderData.orderReservationsInit}}</text>
+          </view>
+          <view class='itemprice_right' bindtap='gotoactivity_detail'>
+          <text>查看活动详情</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='partline_3'></view>
+
+  <view class='partline_15'></view>
+  <!-- <view class='yuyuecode'>联系电话：{{orderData.orderDetail.schoolPhone}}</view> -->
+  <view class='xuexiao'>
+    <text>主办方：昆明黑芒科技有限公司</text>
+    <image src='../../../images/telephone.png' bindtap='makephonecall'></image>
+  </view>
+  <view class='partline_3'></view>
+  <view class='xuexiao' bindtap='openlocation'>
+    <text>地址：{{orderData.orderDetail.activityAddress}}</text>
+    <!-- <image src='../../../images/locations.png'></image> -->
+  </view>
+  <view class='partline_15'></view>
+  <view class='yuyuecode'>订单信息</view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>订单合计</text>
+    <text class='textcolor_pink'>￥{{orderData.totalPrice}}</text>
+  </view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>报名数量</text>
+    <text>{{orderData.orderCount}}</text>
+  </view>
+  <!-- <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>预约金红包</text>
+    <text>￥10</text>
+  </view> -->
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>蛙币金额</text>
+    <text>￥{{orderData.waCoin}}</text>
+  </view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>尾款合计</text>
+    <text>{{orderData.orderRepaymount}}</text>
+  </view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>下单时间</text>
+    <text>{{orderData.orderDownTime}}</text>
+  </view>
+  <view class='dingdetail' bindtap='setClipboardData'>
+    <text class='txtdetail_title textcolor_gray'>订单编号</text>
+    <text>{{orderData.orderNum}}</text>
+    <view class='fuzhi'>复制</view>
+  </view>
+  <view class='txtdetail lalala'>
+    <text class='txtdetail_title textcolor_gray'>手机号码</text>
+    <text>{{orderData.userPhone}}</text>
+  </view>
+  <view class='partline_15'></view>
+  <view class='xuexiao' bindtap='makephonecall'>
+    <view>
+      <text>客服电话:</text>
+      <text class='textcolor_blue made'>087168505116</text>
+    </view>
+    <image src='../../../images/telephone.png'></image>
+  </view>
+  <view class='textcolor_gray bottomtxt'>
+    <text class='bottomtxts'>(每天9:00-22:00)</text>
+  </view>
+  <view class='partline_15'></view>
+</view>

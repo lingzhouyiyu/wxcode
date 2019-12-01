@@ -1,0 +1,123 @@
+<!--pages/mine/mine.wxml-->
+<view class='container'>
+  <view class='top' style="url('../../images//backimg.jpg') repeat center top;"></view>
+  <view class='center'></view>
+  <view class='coverview'>
+    <!-- catchtap='gotoregister' -->
+    <view class='imgviews'>
+      <image class='coverviewimg' wx:if='{{userInfo.avatarUrl}}' src='{{userInfo.avatarUrl}}'></image>
+      <image class='coverviewimg' wx:else src='../../images/avatarImg.png'></image>
+    </view>
+    <view class='loginstate'>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+    <!-- <view class='phonestate' catchtap='gotoregister'>
+      <text>没有绑定手机号</text>
+    </view> -->
+    <view class='recharge'>
+      <view class='leftview'>
+        <image src='../../images/wabi.png'></image>
+        <text class='leftprice'>{{WawowCoin}}</text>
+        <text class='wabi textcolor_gray'>蛙币</text>
+      </view>
+      <view class='rightview' bindtap='gotorecharge'>
+        <text class='textview'>充值</text>
+      </view>
+    </view>
+    <view class='options'>
+      <view class='optionone' bindtap='gotomyOrder' data-optselect='listtwo'>
+        <image class='optionimg' src='../../images/mine/payment.png'></image>
+        <text>待付款</text>
+      </view>
+      <view class='optionone' bindtap='gotomyOrder' data-optselect='listthree'>
+        <image class='optionimgs' src='../../images/mine/notused.png'></image>
+        <text>未使用</text>
+      </view>
+      <view class='optionone' bindtap='gotomyOrder' data-optselect='listfour'>
+        <image class='optionimgss' src='../../images/mine/refund.png'></image>
+        <text>退款</text>
+      </view>
+      <view class='optiontwo' bindtap='gotomyOrder' data-optselect='listone'>
+        <text>我的\n订单</text>
+      </view>
+    </view>
+  </view>
+  <view class='list'>
+    <view class='sharewrap' bindtap='gotoshare'>
+      <view class='share'>
+        <view class='shareleft'>
+          <image src='../../images/shareto.png'></image>
+          <text>邀请好友体验蛙涡</text>
+        </view>
+        <view class=''>立得10个蛙币</view>
+      </view>
+    </view>
+    <view class='item' bindtap='gotocoupon'>
+      <view class='item_left hongbao'>
+        <image src='../../images/mine/money.png'></image>
+      </view>
+      <view class='item_right'>
+        <text>我的红包</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view>
+    <view class='item' bindtap='gotoSignup'>
+      <view class='item_left baoming'>
+        <image src='../../images/mine/signup.png'></image>
+      </view>
+      <view class='item_right'>
+        <text>我的报名</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view>
+    <view class='item' bindtap='gotoCollection'>
+      <view class='item_left shoucang'>
+        <image src='../../images/mine/collection.png'></image>
+      </view>
+      <view class='item_right'>
+        <text>我的收藏</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view>
+    <!-- <view class='item' bindtap='gotoDisciple'>
+      <view class='item_left shicheng'>
+        <image src='../../images/mine/QRcode.png'></image>
+      </view>
+      <view class='item_right'>
+        <text>师承推广</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view> -->
+    <view class='item' bindtap='gotoapplyInstitution'>
+      <view class='item_left jigou'>
+        <image src='../../images/mine/mechanismapply.png'></image>
+      </view>
+      <view class='item_right'>
+        <text>申请成为机构</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view>
+    <view class='item' bindtap='gotoapplyTeacher'>
+      <view class='item_left laoshi'>
+        <image src='../../images/mine/teacherapply.png'></image>
+      </view>
+      <view class='item_right'>
+        <text>老师认证</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view>
+    <view class='item' bindtap='gotoAbouts'>
+      <view class='item_left lianxi'>
+        <image src='../../images/mine/about.png'></image>
+      </view>
+      <view class='item_right'>
+        <text>联系我们</text>
+        <image src='../../images/more.png'></image>
+      </view>
+    </view>
+
+  </view>
+</view>
+<view>
+  <authDialog id='dialog' bind:myevent='userInfo'></authDialog>
+</view>

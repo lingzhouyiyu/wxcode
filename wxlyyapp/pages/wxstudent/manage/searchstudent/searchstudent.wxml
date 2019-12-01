@@ -1,0 +1,74 @@
+<!--pages/wxstudent/manage/searchstudent/searchstudent.wxml-->
+<view class="ub bc-text ub-ver mainpage">
+
+  <block wx:if="{{avatarUrl}}">
+    <view style='display:flex;flex-direction:row;align-items: center;justify-content: center;width:100%;'>
+      <image bindtap='bindRegist' style='margin-top:10px;width:94%;border-radius: 5px;border:1px solid #21c021' mode="widthFix" src="{{avatarUrl}}"></image>
+    </view>
+    <view style='display:flex;flex-direction:row; align-items: center;justify-content: center;padding-left:10px;height:40px;width:100%;'>
+      <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">人脸库中识别信息：</view>
+    </view>
+    <view class="user-termsOfUse userstyle">
+      <text class="userTextStyle">人脸库中id：{{facelibaryinfo.user_id}}</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">人脸库中组id：{{facelibaryinfo.group_id}}</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">人脸库备注：{{facelibaryinfo.user_info}}</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">匹配程度：{{facelibaryinfo.score}}</text>
+    </view>
+
+    <view style='display:flex;flex-direction:row; align-items: center;justify-content: center;padding-left:10px;height:40px;width:100%;'>
+      <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">出行系统中识别信息：</view>
+    </view>
+    <view class="user-termsOfUse userstyle">
+      <text class="userTextStyle">姓名：{{studentinfo.StudentName}}{{studentinfo.Sex==1?'【男】':(studentinfo.Sex==2?'【女】':'')}}({{studentinfo.ClassName}})</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">用户id：{{studentinfo.Id}}</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">余额：{{studentinfo.BalancePrice}}</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">默认线路：{{studentinfo.ForthLineName}}</text>
+    </view>
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">默认站点：{{studentinfo.StartStationName}}--{{studentinfo.EndStationName}}</text>
+    </view>
+    <view style='display:flex;flex-direction:row; align-items: center;justify-content: center;padding-left:10px;height:40px;width:100%;'>
+      <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">家长信息：</view>
+    </view>
+    <block wx:for="{{studentinfo.SJ_StudentParent}}" wx:key="ID">
+      <view bindtap="clickOrder" id='{{item.Id}}' data-index="{{index}}" class="userstyle">
+        <view style="widht:100%;display:flex;flex-direction:row">
+          <view style="width:100px;text-align:left">
+            <text class="userTextStyle">{{index+1}}.姓名：{{item.ParentName}}</text>
+          </view>
+
+          <view style="text-align:left">
+            <text class="userTextStyle">电话：{{item.ParentPhone}}</text>
+          </view>
+
+          <text class="righthead"></text>
+        </view>
+      </view>
+    </block>
+
+  </block>
+
+  <view wx:else style='display:flex;flex-direction:row;align-items: center;justify-content: center;height:440px;width:100%;'>
+    <view bindtap='bindRegist' style="border-radius: 5px;border:1px solid #21c021;height:420px;width:94%;line-height:420px;color:#21c021;font-size:60rpx;text-align:center">点击选取照片</view>
+  </view>
+
+
+</view>

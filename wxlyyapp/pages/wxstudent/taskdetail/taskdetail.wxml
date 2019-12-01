@@ -1,0 +1,92 @@
+<view class="ub bc-text ub-ver mainpage">
+  <view class='ub ub-ver ub-f1 detail-top'>
+    <view class='ub ub-ac umar-b'>
+      <view class='ub ub-f1'>
+        <text>车牌号：</text>
+        <text>{{taskInfo.VIN}}</text>
+      </view>
+      <view wx:if="{{taskInfo.TaskState=='0'}}" class='ub ftb colhgreen'>未开始</view>
+      <view wx:elif="{{taskInfo.TaskState=='1'}}" class='ub ftb colhgreen'>已开始</view>
+      <view wx:elif="{{taskInfo.TaskState=='2'}}" class='ub ftb colhgreen'>已结束</view>
+      <view wx:else class='ub ftb colhgreen'>未知状态</view>
+
+    </view>
+    <view class='ub ub-ac  umar-b'>
+      <view class='ub ub-f1 ub-fh sub-task'>
+        <text>上车数：</text>
+        <text>{{taskInfo.OnPeopleNum}}/{{taskInfo.Z_OnPeopleNum}}/{{taskInfo.Z_PeopleNum}}</text>
+        <text>人</text>
+      </view>
+      <view class='ub  ub-f1 ub-fh ub-pe sub-task'>
+        <text>下车数：</text>
+        <text>{{taskInfo.OffPeopleNum}}/{{taskInfo.Z_OffPeopleNum}}/{{taskInfo.Z_PeopleNum}}</text>
+        <text>人</text>
+      </view>
+    </view>
+    <view class='ub umar-b'>
+      <text>线路：</text>
+      <text>{{taskInfo.LineName}}</text>
+      <text>(票价:{{taskInfo.LinePrice}}元)</text>
+    </view>
+    <view class='ub'>
+      <text>指派时间：</text>
+      <text>{{taskInfo.UseDate}}</text>
+    </view>
+
+  </view>
+  <!--学生列表-->
+  <view class='ub ub-ver student-list'>
+    <block wx:for="{{taskInfo.TaskOrderList}}" wx:key="ID">
+      <view class='ub student-item'>
+        <view class='ub ub-ac student-left'>
+          <view class='ub ub-ac ub-pc left-index'>
+            <text>{{index+1}}</text>
+          </view>
+        </view>
+
+        <view class='ub ub-f1 ub-fh ub-ac umar-b'>
+          <text>{{item.StudentName}}</text>
+        </view>
+
+
+        <view class='ub ub-f1 ft14 ub-fh ub-ver'>
+          <view class='ub ub-ac  umar-b'>
+            <text>{{item.OrganizeName}}</text>
+          </view>
+          <view class='ub ub-f1 ub-fh ub-ac ft14'>
+            <text>{{item.Department}}</text>
+          </view>
+        </view>
+
+        <view class='ub ub-f1 ft14 ub-fh ub-ver'>
+          <view class='ub ub-ac  umar-b'>
+            <text>{{item.OffStationName}}</text>
+          </view>
+          <view class='ub ub-f1 ub-fh ub-ac ft14'>
+            <text>票价:{{item.OrderPrice}}</text>
+          </view>
+        </view>
+
+
+        <view class='ub ub-f1 ft14 ub-fh ub-ver'>
+          <view class='ub ub-ac colgloden'>
+            <text wx:if="{{item.IsOnCar=='0'}}">未上车</text>
+            <text wx:elif="{{item.IsOnCar=='1'}}">已上车</text>
+            <text wx:elif="{{item.IsOnCar=='2'}}">已下车({{item.TangNum?item.TangNum:''}})</text>
+          </view>
+          <view class='ub ub-f1 ub-fh ub-ac ft14'>
+            <text>{{item.VIN}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class='ub tast-footer'>
+    <navigator url='../checkticket/checkticket?taskid={{taskid}}&Type=Off' class='ub ub-ac ub-pc ub-f1 ub-fh offbus'>
+      <text>扫码下车</text>
+    </navigator>
+    <navigator url='../checkticket/checkticket?taskid={{taskid}}&Type=On' class='ub ub-ac ub-pc ub-f1 ub-fh onbus'>
+      <text>扫码上车</text>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<!--pages/nk/task/tasklist.wxml-->
+<view class="container">
+  <image class='logo' src="/images/new_notice.png" />
+<scroll-view  scroll-y style="height: {{windowHeight-166}}px;">
+  <block wx:for="{{taskList}}" wx:key="ID">
+    <navigator url="task?id={{item.ID}}">
+      <view class="user-privacyPolicy userstyle">
+      <view style="display:flex;flex-direction:row;flex:1;line-height:30px;text-align:left">
+         <view wx:if="{{item.Status=='0'}}" style="border:1rpx solid #ff0000;border-radius: 10px;width:60px;height:30px;text-align:center;font-size:16px;color:#ff0000">待领取</view>         
+         <view wx:elif="{{item.Status=='1'}}" style="border:1rpx solid #6c6c6c;border-radius: 10px;width:60px;height:30px;text-align:center;font-size:16px;color:#6c6c6c">待发车</view>         
+         <view wx:else style="border:1rpx solid #179B16;border-radius: 10px;width:60px;height:30px;text-align:center;font-size:16px;color:#179B16">已发车</view>
+       </view>
+
+
+        <view style="display:flex;flex-direction:row;flex:1;line-height:30px;text-align:left">
+        <block wx:if="{{item.PreCount=='0'}}">
+         <text style="font-size:20px;color:#179B16">可执行</text>
+        </block>
+        <block wx:else>         
+          <text style="font-size:26rpx;color:#179B16;writing-mode: vertical-lr">前序</text>
+          <text style="font-size:44rpx;color:#179B16">{{item.PreCount}}</text>
+        </block>
+        </view>
+        <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+          <text style="font-size:26rpx;color:#4a4a4a">线路名</text>
+          <text style="font-size:26rpx;color:#4a4a4a">{{item.RouteName}}</text>
+        </view>
+        <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+          <text style="font-size:26rpx;color:#4a4a4a">日期</text>
+          <text style="font-size:26rpx;color:#4a4a4a">{{item.UseDate}}</text>
+        </view>
+        <text class="righthead"></text>
+      </view>
+    </navigator>
+  </block>
+  </scroll-view>
+  
+</view>

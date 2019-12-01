@@ -1,0 +1,36 @@
+.contentwrap{
+   width: 87%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 30rpx 20rpx 60rpx 20rpx;
+   border-top: 20rpx solid rgb(251, 1, 1);
+  border-bottom: 20rpx solid rgb(251, 1, 1);
+  background-color: rgb(255, 237, 214)
+}
+.titleview{
+  font-size: 30rpx;
+  margin-top: 30rpx;
+  font-weight: bold;
+  /* text-indent: 15rpx; */
+}
+.contentview{
+  font-size: 30rpx;
+  margin-top: 20rpx;
+    /* text-indent: 15rpx; */
+}
+.colorview{
+   font-size: 30rpx;
+  margin-top: 10rpx;
+    /* text-indent: 15rpx; */
+    color: #ff4f38;
+}
+.colorviews{
+   font-size: 30rpx;
+  margin-top: 10rpx;
+    /* text-indent: 15rpx; */
+    color: #ff4f38;
+    font-weight: bold;
+}

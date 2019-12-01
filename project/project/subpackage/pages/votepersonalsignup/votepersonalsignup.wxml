@@ -1,0 +1,30 @@
+<view class='container'>
+  <view class='schoolname'>
+    <input class='nameinput' placeholder='请输入姓名' bindinput='getname' bindconfirm='getname' bindblur='getname'></input>
+  </view>
+  <view class='schoolname'>
+    <input class='nameinput' placeholder='请输入联系方式' bindinput='getphone' bindconfirm='getphone' bindblur='getphone'></input>
+  </view>
+  <view class='tips'>*请输入正确的手机号，方便联系您兑换奖品</view>
+
+  <view class='schoolname'>
+    <textarea class='nameinputarea' placeholder='2019年你最想对自己说的话' bindinput='getintroduce' bindconfirm='getintroduce' bindblur='getintroduce'></textarea>
+  </view>
+  <view class='tips'>*描述请不要超过50字</view>
+  <view class='schoolname'>
+    <view class='imgview'>
+      <text>上传头像（1-3张,默认第一张为封面照）</text>
+      <view class='addimg'>
+        <block wx:for='{{pics}}' wx:key="unique">
+          <view class='addbtn'>
+            <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+          </view>
+        </block>
+        <view class='addbtn' bindtap='chooseImg' wx:if='{{isShow}}'>
+          <image src='../../images/addimgbtn.png'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='btnview' bindtap='submit'>确认提交</view>
+</view>

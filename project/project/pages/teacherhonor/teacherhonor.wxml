@@ -1,0 +1,8 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+<!-- <template is="wxParse" data="{{wxParseData:teacherHonor.nodes}}"/> -->
+  <view class='honorwrap'>
+    <!-- <image class='honor_img' src='../../images/test.jpg'></image> -->
+    <image class='honor_img' src='{{Furl}}{{item}}' wx:for='{{teacherHonor}}'></image>
+  </view>
+</view>

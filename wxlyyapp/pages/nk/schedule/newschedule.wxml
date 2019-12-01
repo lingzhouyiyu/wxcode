@@ -1,0 +1,50 @@
+<!--pages/nk/schedule/newschedule.wxml-->
+
+<view class="post-userList">
+  <view style='padding-left:10px;height:40px;width:100%;line-height:40px;color:#4a4a4a;font-size:40rpx;text-align:center'>新增班次</view>
+
+  <view class="userdata">
+    <view class="userdata-name">线路</view>
+    <view class="userdata-symbol"></view>
+    <picker mode="selector"  value="{{routeIndex}}" range="{{routeList}}" bindchange="bindRouteChange">
+    <view class="userdata-input" type="text">
+      <text>{{routeList[routeIndex]}}</text>
+    </view>
+    </picker>
+  </view>
+
+  <view class="userdata">
+    <view class="userdata-name">司机</view>
+    <view class="userdata-symbol"></view>
+    <view style="flex:1" type="text">
+      <picker-view indicator-style="height:50px;" style="width: 100%; height:200px;" value="{{multiIndex}}" bindchange="bindPickviewOnChange">
+        <picker-view-column>
+          <view wx:for="{{carArray}}" style="line-height: 50px">{{item.VIN}}</view>
+        </picker-view-column>
+        <picker-view-column>
+          <view wx:for="{{driverArray}}" style="line-height: 50px">{{item.DriverName}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+  </view>
+
+
+ <view style="margin:10rpx 0rpx;width:90%;align-items:center;">
+
+      <view style="display:flex;flex-direction:row;border:1rpx solid #6c6c6c;border-radius:10rpx;align-items:center;width:100%">
+        <view class="userdata-name">日期</view>
+        <view class="userdata-symbol"></view>
+        <view bindtap="preDay" ><text class="lefthead"></text></view>
+            <picker mode="date" value="{{date}}" start="{{startdate}}" end="{{endSelsctDate}}" bindchange="bindDateChange">
+        <view class="userdata-input" style="text-align:center;">
+          <text>{{date}}</text>
+        </view>
+        </picker>
+        <view bindtap="nextDay" ><text  class="righthead"></text></view>
+      </view>
+    
+  </view>
+
+  <button type="primary" bindtap="buttonBuyTicketontap" class="userbutton">提交</button>
+
+</view>

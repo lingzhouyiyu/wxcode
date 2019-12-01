@@ -1,0 +1,27 @@
+.container{
+  color: rgb(50, 50, 50);
+  line-height: 40rpx;
+}
+.titleview{
+  width: 92%;
+  height: 100rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.content1{
+  width:90%;
+  height: auto;
+  font-size: 30rpx;
+  text-indent:2em; 
+  padding-top: 50rpx;
+}
+.content2{
+  width:90%;
+  height: auto;
+   font-size: 30rpx;
+   margin-top: 20rpx;
+   text-indent:2em; 
+}

@@ -1,0 +1,45 @@
+<view class='container'>
+  <view class='top'>
+    <view class='title'>活动结束倒计时</view>
+     <view class='timeview'>
+      <view class='tian'>
+        <text>{{countDownDay}}</text>
+        <text>天</text>
+      </view>
+      <view class='tian'>
+        <text>{{countDownHour}}</text>
+        <text>时</text>
+      </view>
+      <view class='fen'>
+        <text>{{countDownMinute}}</text>
+        <text>分</text>
+      </view>
+      <view class='fen'>
+        <text>{{countDownSecond}}</text>
+        <text>秒</text>
+      </view>
+    </view>
+  </view>
+  <view class='contentwrap' wx:for='{{rankdata}}'wx:key='' bindtap='gotovoteschooldetail' data-id='{{item.id}}'>
+    <view class='items'>
+      <view class='iconview'>
+         <image src='../../images/voterank2.png' wx:if='{{index==0}}'></image>
+        <image src='../../images/voterank3.png' wx:if='{{index==1}}'></image>
+        <image src='../../images/voterank1.png' wx:if='{{index==2}}'></image>
+        <text>{{index+1}}</text>
+      </view>
+      <view class='imgview'>
+        <image src='{{Furl}}{{item.schoolPicture}}' mode="widthFix"></image>
+      </view>
+      <view class='txtview'>
+        <view class='llltop'>
+          <text class='hao'>{{item.id}}号</text>
+          <text>{{item.schoolName}}</text>
+        </view>
+        <view class='lllbottom'>
+          <text>{{item.votes}}票</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

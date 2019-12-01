@@ -1,0 +1,249 @@
+
+.others{
+  width:92%;
+  height: auto;
+  /* background-color: red; */
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+align-items: flex-start;
+}
+.texts{
+width: 50%;
+/* background-color: yellow; */
+font-size: 28rpx;
+color: rgb(50, 50, 50);
+margin-bottom: 10rpx;
+}
+.money{
+width: 100%;
+/* background-color: gray; */
+height: 85rpx;
+border: 2rpx solid #f3f2f2;
+padding-left: 8rpx;
+}
+.placeclass{
+  font-size: 24rpx;
+  margin-left: 3rpx;
+}
+.partlines{
+  width: 100%;
+  height: 20rpx;
+  background-color: #F3F2F0;
+  margin-top: 70rpx;
+}
+.details{
+  color: rgb(106, 171, 246);
+  width:92%;
+  height: 40rpx;
+  font-size: 26rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30rpx;
+}
+.optionwrap{
+  margin-top: 20rpx;
+  width: 92%;
+  height: 600rpx;
+  /* background-color: red; */
+  display: flex;
+flex-flow: row wrap;
+justify-content: space-between;
+
+}
+.optionitem{
+width: 48%;
+height: 29%;
+background-color: rgb(106, 171, 246);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: #fff;
+font-size: 24rpx;
+}
+.optionitems{
+background-color: #f5f5f5;
+color: rgb(136, 136, 136);
+}
+.lalalallalala{
+  font-size: 36rpx;
+}
+.lalalallalalas{
+  color: rgb(51, 51, 51);
+}
+.iconview{
+  width: 92%;
+  height:60rpx;
+  /* background-color: yellow; */
+  margin-top: 70rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.iconleft{
+display: flex;
+justify-content: flex-start;
+align-items: center;
+font-size: 30rpx;
+color: rgb(51, 51, 51)
+}
+
+.iconleft image{
+width: 49rpx;
+height: 49rpx;
+margin-right: 20rpx;
+}
+
+.iconright image{
+width: 38rpx;
+height: 38rpx;
+}
+.bottomtip{
+  width: 92%;
+  height: 60rpx;
+  font-size: 28rpx;
+  color:rgb(102, 102, 102);
+  margin-top: 130rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottomtip image{
+  width:30rpx;
+  height: 30rpx;
+  margin-right: 15rpx;
+}
+.fasdfasdf{
+  color: rgb(106, 171, 246)
+}
+.applySubmit{
+height: 85rpx;
+width: 92%;
+background-color: #00AEFE;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 25px;
+font-size: 32rpx;
+margin-top: 30rpx;
+margin-bottom: 300rpx;
+}
+.pay_way{
+  width: 92%;
+  height: 110rpx;
+display: flex;
+margin-top: 60rpx;
+}
+.pay_way_left{
+  width: 12%;
+  height: 100%;
+  /* background-color: red; */
+ display: flex;
+ align-items: center;
+}
+.pay_way_left image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.pay_way_right{
+  width: 88%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: space-between;
+}
+.recmend{
+  background-color: #FF4E6A;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 5px;
+  margin-left: 10rpx;
+  padding: 0 8rpx 0 8rpx;
+}
+.bbll{
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  color: #908D88;
+}
+.pay_way_right_2 image{
+  width: 38rpx;
+  height: 38rpx;
+}
+/* 充值说明弹框 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background:rgb(90, 90, 90);
+  z-index: 9000;
+  opacity: 0.7;
+}
+ 
+.modalDlg {
+  width: 600rpx;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -470rpx 70rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx 0rpx 0 20rpx;
+}
+ 
+
+ 
+.save_money {
+  color: #fff;
+  width: 370rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  background: #1cb2fd;
+  text-align: center;
+  border-radius: 12rpx;
+  margin-bottom: 50rpx;
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+}
+ 
+.close_mask {
+  color: #1cb2fd;
+  position: relative;
+  font-size: 30rpx;
+  /* background-color: yellow; */
+  margin-bottom: 32rpx;
+ 
+}
+.detail_text{
+  width: 94%;
+  margin-bottom: 20rpx;
+  /* background-color: red; */
+  font-size: 26rpx;
+  color: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.detail_texts{
+  width: 94%;
+  margin-bottom: 20rpx;
+  /* background-color: red; */
+  font-size: 26rpx;
+  color: rgb(50, 50, 50);
+
+}
+.protocoldetail{
+  color: #00AEFE;
+}

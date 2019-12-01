@@ -1,0 +1,90 @@
+
+
+.wrap{
+  width: 94%;
+height: auto;
+display: flex;
+flex-direction: column;
+}
+.phonenumber{
+  width: 100%;
+  margin-top: 30rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+}
+.phonetips{
+width: 100%;
+margin-top: 10rpx;
+color: #1CB2FD;
+margin-bottom: 30rpx;
+font-size: 28rpx;
+}
+.titleview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120rpx;
+margin-top:30rpx;
+}
+
+.titleview_left {
+  width: 7%;
+  height: 100%;
+}
+
+.titleview_left image {
+  width: 26rpx;
+  height: 26rpx;
+  transform: rotate(180deg);
+  margin-left: 10rpx;
+}
+
+.titleview_right {
+  width: 93%;
+  height: 100%;
+  color: #FF4E6A;
+  font-size: 24rpx;
+}
+.selecttitle{
+  width: 100%;color: #6A6864;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}
+.btn_submit{
+  width: 80%;
+  height: 90rpx;
+  background-color: #45ABF6;
+  border-radius: 25px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120rpx;
+  font-size: 28rpx;
+}
+.contentwarp{
+  width: 100%;
+  height: auto;
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-size: 28rpx;
+}
+.item{
+height: 40rpx;
+border-radius: 5px;
+padding: 10rpx 50rpx 10rpx 10rpx;
+color: #45ABF6;
+border: 3rpx solid #45ABF6;
+margin-bottom: 20rpx;
+}
+.items{
+  height: 40rpx;
+background-color: #45ABF6;
+border-radius: 5px;
+padding: 10rpx 50rpx 10rpx 10rpx;
+color: #fff;
+}

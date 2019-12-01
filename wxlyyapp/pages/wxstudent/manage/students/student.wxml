@@ -1,0 +1,38 @@
+<!--pages/wxstudent/manage/students/student.wxml-->
+<view class="ub bc-text ub-ver mainpage">
+  <view class='task-top'>
+    <image class='task-img' src='../../common/images/task-top.jpg'></image>
+  </view>
+  
+  <view class='ub ub-ver ub-f1 task-list'>
+    <block wx:for="{{taskList}}" wx:key="ID">
+      <navigator class='ub  tast-item' url='../student/student?id={{item.Id}}&name={{item.StudentName}}&sex={{item.Gender}}&class={{item.DepartmentName}}'>
+        <view class='ub ub-ver ub-f1'>
+          <view class='ub ub-f1 sub-task'>
+            <text>{{index+1}}姓名：</text>
+            <text>{{item.StudentName}}({{item.Gender}})</text>
+               <text>--余额：</text>
+              <text>{{item.BalancePrice}}</text>
+          </view>
+          <view class='ub ub-ac sub-task'>
+            <view class='ub ub-f1'>
+                   <text>班级：{{item.DepartmentName}}</text>                
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+
+  <block  wx:if="{{loaded==true && taskList.length==0}}" > 
+  <view class='ub ub-ver ub-ac ub-pc nodata-box '>
+    <view>
+      <image class='nodata-img' src='../common/images/nodata.png'></image>
+    </view>
+    <view class='ub'>
+      <text>暂无数据</text>
+    </view>
+  </view>
+ </block>
+ 
+</view>

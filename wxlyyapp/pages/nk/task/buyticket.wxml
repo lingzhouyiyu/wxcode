@@ -1,0 +1,52 @@
+<!--pages/nk/task/buyticket.wxml-->
+
+<view class="post-userList">
+  <view style='padding-left:10px;height:40px;width:100%;line-height:40px;color:#4a4a4a;font-size:40rpx;text-align:center'>司机购票</view>
+
+  <view class="userdata">
+    <view class="userdata-name">线路</view>
+    <view class="userdata-symbol"></view>
+    <view class="userdata-input" type="text">
+      <text>{{RouteName}}</text>
+    </view>
+  </view>
+
+
+  <view class="userdata">
+    <view class="userdata-name">起点</view>
+    <view class="userdata-symbol"></view>
+    <view style="flex:1;display:flex;flex-direction: row;flex-wrap:wrap;padding:5px" type="text">
+  <block wx:for="{{Stations}}" wx:key="StationId">
+    <view  bindtap="startStationTap" data-index="{{index}}" class="{{startIndex==index?'stationbtnActive':'stationbtn'}}">{{item.StationName}}</view>
+  </block>
+    </view>
+  </view>
+
+
+
+
+  <view class="userdata">
+    <view class="userdata-name">终点</view>
+    <view class="userdata-symbol"></view>
+    <view style="flex:1;display:flex;flex-direction: row;flex-wrap:wrap;padding:5px" type="text">
+  <block wx:for="{{Stations[startIndex].EndStations}}" wx:key="StationId">
+    <view bindtap="endStationTap" data-index="{{index}}" class="{{endIndex==index?'stationbtnActive':'stationbtn'}}">{{item.StationName}}</view>
+  </block>
+
+    </view>
+  </view>
+
+
+
+  <view class="userdata">
+    <view class="userdata-name">票价</view>
+    <view class="userdata-symbol"></view>
+    <view class="userdata-input" type="text">
+      <text>{{Stations[startIndex].EndStations[endIndex].Price}}元</text>
+    </view>
+  </view>
+
+
+  <button type="primary" bindtap="buttBuyTicketontap" class="userbutton">提交</button>
+
+</view>

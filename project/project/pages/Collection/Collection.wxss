@@ -1,0 +1,447 @@
+page{
+   /* background-color: #F3F2F0; */
+  background-color: #fff;
+}
+.container{
+ font-size: 28rpx;
+}
+.top{
+  width: 100%;
+  height:100rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+.partline{
+  width:100%;
+  height: 15rpx;
+  background-color: #F3F2F0;
+}
+.message{
+  width: 50%;
+  display: flex;
+   justify-content: center;
+     /* background-color: red; */
+     flex-direction: column;
+     font-size: 34rpx;
+}
+.notice{
+  width: 50%;
+  display: flex;
+   justify-content: center;
+     /* background-color: yellow; */
+     flex-direction: column;
+}
+.bottomline{
+  width:170rpx;
+height: 5rpx;
+background-color: #5AABF5;
+margin-top: 20rpx;
+}
+.bottomlines{
+  width:170rpx;
+height: 5rpx;
+background-color: #fff;
+margin-top: 20rpx;
+}
+.contentwrap {
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+}
+
+.institutioncontent {
+  width: 100%;
+  height: auto;
+}
+
+.footeritem {
+  width: 100%;
+  height: auto;
+  padding-top: 20rpx;
+  margin-top: -10rpx;
+  /* margin-bottom: 20rpx; */
+}
+
+.itemtopwrap {
+  width: 100%;
+  border-bottom: 3rpx solid #f2f2f2;
+}
+
+.itemtop {
+  width: 92%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* border-bottom:3rpx solid #F2F2F2; *//* margin-top: 20rpx; */
+  margin: 20rpx 30rpx 0 30rpx;
+}
+
+.itemtop_left {
+  width: 110rpx;
+  height: 110rpx;
+  background-color: gray;
+  padding: 0;
+  margin: 0;
+}
+
+.itemtop_right {
+  width: 80%;
+  margin-left: 20rpx;
+}
+
+.itemtop_left .titleimg {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.itemtop_right .title {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.itemtop_right .catetitle {
+  font-size: 38rpx;
+}
+
+.itemtop_right  .kind {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rpx;
+}
+
+.itemtop_right  .address {
+  margin-top: 10rpx;
+  overflow: hidden; /*超出部分隐藏*/
+  white-space: nowrap; /*不换行*/
+  text-overflow: ellipsis; /*超出部分文字以...显示*/
+}
+
+.itemtop_right  .Score {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+    display: flex;
+  align-items: center;  
+}
+
+.itemtop_right  .Score  text {
+  margin-left: 20rpx;
+}
+
+.starimg {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+}
+
+.itemtop_right .renzhengimg {
+  height: 30rpx;
+  width: 80rpx;
+}
+
+.itembuttom {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+   /* background-color: red; */
+}
+
+.itembuttom .itemcontent {
+  width: 72%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3rpx solid #f2f2f2;
+  /* padding-top: 20rpx; */
+  padding-bottom: 20rpx;
+  margin-left: 130rpx;
+  position: relative;
+  /* background-color: rebeccapurple; */
+}
+
+.itembuttom .itemcontentimg {
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  top: 25rpx;
+}
+.xiamian{
+ /* background-color: yellow; */
+ margin-top: 15rpx;
+}
+.pricelala{
+  color: #97cafe;
+  font-size: 24rpx;
+}
+.itembuttom .itemcontenttxt {
+  position: absolute;
+  top: 23rpx;
+  left: 50rpx;
+  width: 400rpx;
+  overflow: hidden; /*超出部分隐藏*/
+  white-space: nowrap; /*不换行*/
+  text-overflow: ellipsis; /*超出部分文字以...显示*/
+  font-size: 24rpx;
+  color: rgb(50, 50, 50);
+  /* background-color: red;  */
+}
+
+.itembuttom .itemcontentprice {
+  color: #97cafe;
+  font-size: 34rpx;
+}
+.itembuttom .itemcontentprices {
+  color: #97cafe;
+  font-size: 24rpx;
+}
+.itembuttom .checkall {
+  color: #97cafe;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+     width: 100%;
+  height: 40rpx;
+   /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+margin-bottom: 20rpx;
+}
+.checkall_img {
+  width: 12rpx;
+  height: 22rpx;
+  margin-left: 10rpx;
+}
+
+/* 教师内容样式、、、、、、、、、、、、、、、、、、、、、、、、、、、、 */
+
+.itemtop_left_teacher {
+  width: 110rpx;
+  height: 110rpx;
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+}
+
+.titleimg_teacher {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+
+.cate_teacher {
+  position: absolute;
+  left: 140rpx;
+  top: 10rpx;
+}
+
+.kind_teacher {
+  height: 60rpx;
+}
+
+.txt_teacher_wrap {
+  display: inline-flex;
+  justify-content: flex-end;
+  /* background-color: red; */
+  width: 362rpx;
+}
+
+.txt_teacher {
+  margin-left: 60rpx;
+}
+
+.appointment {
+  width: 100%;
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.appointmentitems {
+  width: auto;
+  height: 70rpx;
+  background-color: #f6f5f4;
+  margin-right: 30rpx;
+  border-radius: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10rpx 0 10rpx;
+  margin-bottom: 20rpx;
+}
+
+.itemcontenttxt_teacher {
+  width: 220rpx;
+  /* background-color: red; */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.yuyuecount {
+  position: absolute;
+  left: 280rpx;
+}
+.hotcontent {
+  width: 100%;
+  height: auto;
+  position: relative;
+  /* background-color: red; */
+}
+
+.contentitem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.patrline {
+  width: 100%;
+  height: 15rpx;
+  background-color: #f3f2f0;
+}
+
+.item {
+  width: 94%;
+  height: 210rpx;
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: row;
+}
+
+.leftimg {
+  width: 26%;
+  height: 100%;
+  /* background-color: green; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.leftimg image {
+  width: 165rpx;
+  height: 165rpx;
+  border-radius: 5px;
+}
+
+.rightitem {
+  width: 74%;
+  height: 180rpx;
+  /* background-color: gainsboro; */
+  display: flex;
+  flex-direction: column;
+ justify-content: space-between;
+}
+
+.rightitem text {
+  width: 100%;
+}
+
+.titles {
+  width: 100%;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.teacherview{
+  width: 100%;
+  font-size: 22rpx;
+  /* background-color: red; */
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+ color: #7e7b75;
+}
+.schoolview{
+  width:100%;
+  font-size: 22rpx;
+   color: #7e7b75;
+}
+.detailtxt {
+  color: #7e7b75;
+  font-size: 22rpx;
+
+}
+
+.detailtxts {
+  color: #7e7b75;
+  font-size: 22rpx;
+
+}
+.pricepl{
+    color: #2bb5fe;
+  font-size: 22rpx;
+}
+.prices {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.price {
+  color: #2bb5fe;
+  font-size: 34rpx;
+  margin-right: 20rpx;
+}
+
+.Originalprice {
+  color: #7e7b75;
+  font-size: 22rpx;
+  text-decoration: line-through;
+}
+
+/* 热门附加样式 */
+
+.personMsg {
+  /* display: flex; *//* background-color: red; */
+  width: 100%;
+  position: absolute;
+  bottom: 70rpx;
+  color: #7e7b75;
+  font-size: 24rpx;
+}
+
+.distant {
+  /* display: flex; *//* background-color: yellow; */
+  width: 100%;
+  position: absolute;
+  bottom: 38rpx;
+  color: #7e7b75;
+  font-size: 24rpx;
+}
+
+.distance {
+  margin-left: 350rpx;
+}
+.footeritem{
+  /* border-bottom: 20rpx solid #F3F2F0; */
+  padding-bottom: 20rpx;
+}
+.smsmsms{
+  width: 100%;
+  height: 100rpx;
+  margin-top: 30rpx;
+  /* background-color: #F3F2F0; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blleft{
+width: 30rpx;
+height: 3rpx;
+background: #DAD7D2;
+
+}
+.blhhh{
+color: #DAD7D2;
+padding: 0 20rpx 0 20rpx;
+font-size: 30rpx;
+}

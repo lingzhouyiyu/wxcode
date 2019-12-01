@@ -1,0 +1,187 @@
+.container {
+  color: #343535;
+  font-size: 15px;
+}
+
+.recmendcontent {
+  width: 92%;
+  height: auto;
+  /* background-color: red; */
+}
+
+.recmenditem {
+  width: 100%;
+  height: 160rpx;
+  /* background-color: yellow; */
+  display: flex;
+  padding: 30rpx 0 30rpx 0;
+}
+
+.item_left {
+  width: 25%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.item_left image {
+  width: 90%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.item_right {
+  width: 75%;
+  height: 100%;
+  /* background-color: palegoldenrod; */
+}
+
+.itemtitle {
+  width: 100%;
+  height: 80rpx;
+  /* background-color: red; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 15px;
+}
+
+.itemprice {
+  margin-top: 20rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rpx;
+}
+
+.price {
+  color: #FF4E6A;
+  font-size: 17px;
+  margin-right: 20rpx;
+}
+
+.Originalprice {
+  margin-right: 10rpx;
+  font-size: 12px;
+}
+
+.bubulala {
+  font-size: 12px;
+  color: #FF4E6A;
+}
+
+
+.yuyuecode {
+  width: 92%;
+  height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.yuyue {
+  width: 92%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.xuexiao {
+  width: 92%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.xuexiao image {
+  width: 25rpx;
+  height: 35rpx;
+}
+
+.txtdetail {
+  width: 92%;
+  height: 55rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.txtdetail_title {
+  margin-right: 30rpx;
+}
+
+.dingdetail {
+  width: 92%;
+  height: 55rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.fuzhi {
+  width: 60rpx;
+  height: 45rpx;
+  border: 3rpx solid #908d88;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  border-radius: 15px;
+  padding: 0 15rpx 0 15rpx;
+}
+
+.lalala {
+  margin-bottom: 30rpx;
+}
+
+.made {
+  margin-left: 15rpx;
+}
+
+.bottomtxt {
+  width: 92%;
+  margin-top: -20rpx;
+  /* background-color: red; */
+  margin-bottom: 30rpx;
+  font-size: 13px;
+}
+
+.bottomtxts {
+  margin-left: 125rpx;
+  /* background-color: red; */
+}
+
+.order_content_top {
+  width: 92%;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tuikuan_top {
+  justify-content: flex-end;
+}
+
+.waitpay {
+  color: #ff4e6a;
+  font-size: 15px;
+}
+
+.ylhnmd {
+  width: 100%;
+  height: auto;
+  background-color: #f3f7f6;
+}
+
+.partlines {
+  height: 100rpx;
+  width: 100%;
+  background-color: #f3f2f0;
+}

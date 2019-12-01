@@ -1,0 +1,120 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/evaluate/evaluate",
+    "pages/classification/classification",
+    "pages/find/find",
+    "pages/mine/mine",
+    "pages/logs/logs",
+    "pages/notice/notice",
+    "pages/register/register",
+    "pages/activity/activity",
+    "pages/details/details",
+    "pages/detailTeacher/detailTeacher",
+    "pages/detailinstitution/detailinstitution",
+    "pages/newsmore/newsmore",
+    "pages/activitymore/activitymore",
+    "pages/activitydetail/activitydetail",
+    "pages/newsdetail/newsdetail",
+    "pages/rankings/rankings",
+    "pages/teacherdata/teacherdata",
+    "pages/teacherhonor/teacherhonor",
+    "pages/teachercert/teachercert",
+    "pages/detailcourse/detailcourse",
+    "pages/detailcourse_service/detailcourse_service",
+    "pages/institutionAppointment/institutionAppointment",
+    "pages/applyInstitution/applyInstitution",
+    "pages/applyTeacher/applyTeacher",
+    "pages/orders/myOrder/myOrder",
+    "pages/orders/confirmOrder/confirmOrder",
+    "pages/orders/payresult/payresult",
+    "pages/coupon/coupon",
+    "pages/recharge/recharge",
+    "pages/orders/refund/refund",
+    "pages/orders/OrderDetail/OrderDetail",
+    "pages/orders/refundShenhe/refundShenhe",
+    "pages/Abouts/Abouts",
+    "pages/Signup/Signup",
+    "pages/Collection/Collection",
+    "pages/orders/pay/pay",
+    "pages/Disciple/index/index",
+    "pages/teacherAppointment/teacherAppointment",
+    "pages/Disciple/Selectschool/Selectschool",
+    "pages/applySuccess/applySuccess",
+    "pages/activity_detail/activity_detail",
+    "pages/activity_buy/activity_buy",
+    "pages/orders/confirmOrder_activity/confirmOrder_activity",
+    "pages/orders/confirmOrder_activitybl/confirmOrder_activitybl",
+    "pages/coinOrderDetail/coinOrderDetail",
+    "pages/orders/activeOrderDetail/activeOrderDetail",
+    "pages/rechargeProtocol/rechargeProtocol",
+    "pages/share/share",
+    "pages/activityshare/activityshare",
+    "components/cityList/cityList",
+    "pages/activityshare_buy/activityshare_buy",
+    "pages/search/search"
+  ],
+  "subPackages": [
+    {
+      "root": "subpackage",
+      "pages": [
+        "pages/vote/vote",
+        "pages/votesignupsuccess/votesignupsuccess",
+        "pages/voteschoolrule/voteschoolrule",
+        "pages/votepersonalrule/votepersonalrule",
+        "pages/votepersonaldetail/votepersonaldetail",
+        "pages/votepersonalrank/votepersonalrank",
+        "pages/voteschoolrank/voteschoolrank",
+        "pages/voteschoolsignup/voteschoolsignup",
+        "pages/votepersonalsignup/votepersonalsignup",
+        "pages/voteshare/voteshare",
+        "pages/voteschooldetail/voteschooldetail"
+      ]
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "蛙涡教育",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#999",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "selectedColor": "#56ccf2",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon4.png",
+        "selectedIconPath": "images/icon4s.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/classification/classification",
+        "iconPath": "images/icon1.png",
+        "selectedIconPath": "images/icon1s.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/find/find",
+        "iconPath": "images/icon2.png",
+        "selectedIconPath": "images/icon2s.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "iconPath": "images/icon3.png",
+        "selectedIconPath": "images/icon3s.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,186 @@
+<view class='container'>
+  <view class='topwrap'>
+    <view class='top'>
+      <view class='imgview'>
+        <!-- <image src='../../images/test.jpg' class='headerimage'></image> -->
+        <image src='{{Furl}}{{teacherData.teacherImage}}' class='headerimage'></image>
+      </view>
+      <image src='../../images/teacherrenzheng.png' class='renzhengimg'></image>
+      <view class='centercontent'>
+        <view class='name'>{{teacherData.teacherName}}</view>
+        <view class='sign {{collectionTag?"":"signs"}}' bindtap='teacherCollection'>
+          <image src='../../images/{{collectionImg}}.png' class='zan'></image>
+          <text>{{collectionTxt}}</text>
+        </view>
+        <view class='howlong'>从业{{teacherData.teacherAge}}年</view>
+        <view class='Score'>
+          <image src='../../images/star.png' class='starimg'></image>
+          <image src='../../images/star.png' class='starimg'></image>
+          <image src='../../images/star.png' class='starimg'></image>
+          <image src='../../images/star.png' class='starimg'></image>
+          <image src='../../images/stars.png' class='starimg'></image>
+          <text>{{teacherData.askCount}}条评价</text>
+        </view>
+        <view class='Scores'>
+          <text class='Scores_txt'>效果:4.9</text>
+          <text class='Scores_txt'>专业:4.9</text>
+          <text class='Scores_txt'>服务:4.9</text>
+        </view>
+      </view>
+      <view class='Statistics'>
+        <view class='Statistics_data' bindtap='gototeacherAppointment'>
+          <text class='txtone'>{{teacherData.yuyueCount}}</text>
+          <text class='txttwo'>预约</text>
+        </view>
+        <view class='Statistics_data'>
+          <text class='txtone'>{{teacherData.studentCount}}</text>
+          <text class='txttwo'>学生</text>
+        </view>
+        <view class='Statistics_data'>
+          <text class='txtone'>{{teacherData.askCount}}</text>
+          <text class='txttwo'>咨询排行</text>
+        </view>
+      </view>
+      <view class='partline'></view>
+      <view class='details'>
+        <view class='details_item'>
+          <image class='item_img' src='../../images/teacherdatas.png' bindtap='gototeacherdata'></image>
+          <text bindtap='gototeacherdata'>老师资料</text>
+        </view>
+        <view class='details_item'>
+          <image class='item_img item_imgs' src='../../images/teacherCertificates.png' bindtap='gototeachercert' data-teacherCertificates='{{teacherData.teacherCertificates}}'></image>
+          <text bindtap='gototeachercert' data-teacherCertificates='{{teacherData.teacherCertificates}}'>老师证件</text>
+        </view>
+        <view class='details_item'>
+          <image class='item_img item_imgss' src='../../images/teacherhonor.png' bindtap='gototeacherhonor' data-teacherhonor='{{teacherData.teacherHonor}}'></image>
+          <text bindtap='gototeacherhonor' data-teacherhonor='{{teacherData.teacherHonor}}'>老师荣誉</text>
+        </view>
+
+      </view>
+    </view>
+    <view class='leftspot'></view>
+    <view class='rightspot'></view>
+  </view>
+
+  <view class='institution_wrap' wx:for='{{schoolList}}' wx:key="unique1" bindtap='gotodetailinstitution' data-select='{{item.schoolId}}'>
+    <view class='institution'>
+      <view class='institution_img'>
+        <image src='{{Furl}}{{item.schoolPicture}}'></image>
+      </view>
+      <view class='institution_center'>
+        <text class='center_txt'>{{item.schoolName}}</text>
+        <text>培训学校</text>
+      </view>
+      <view class='institution_right'>
+        <text>{{item.newSchoolDistance}}</text>
+        <image src='../../images/more.png' class='institution_right_img'></image>
+      </view>
+    </view>
+    <view class='partline_3'></view>
+  </view>
+
+
+
+  <!-- <view class='institution'>
+    <view class='institution_img'>
+      <image src=''></image>
+    </view>
+    <view class='institution_center'>
+      <text class='center_txt'>昆明华洋国际教育</text>
+      <text>培训学校</text>
+    </view>
+    <view class='institution_right'>
+      <text>789m</text>
+      <image src='../../images/more.png' class='institution_right_img'></image>
+    </view>
+  </view> -->
+  <view class='partline_20'></view>
+  <view class='hotcate' hidden='{{hascategory}}'>
+    <view class="hotitem {{item.categoryName == catalogSelect ? 'active':''}}" bindtap='tabSelect' data-select="{{item.categoryName}}" data-categoryid="{{item.categoryId}}" wx:for="{{hotarray}}" wx:key="unique1">{{item.categoryName}}</view>
+  </view>
+  <view class='recmendcontent'>
+    <view class='recmenditem' wx:for='{{curseList}}' wx:key="unique2" data-courseid='{{item.courseId}}' bindtap='gotodetailcourse'>
+      <view class='item_left'>
+        <!-- <image src='../../images/test.jpg'></image> -->
+        <image src='{{Furl}}{{item.courseImg}}'></image>
+      </view>
+      <!-- {{item.courseTitle}} -->
+      <view class='item_right'>
+        <view class='itemtitle'>{{item.courseTitle}}</view>
+        <view class='itemname textcolor_gray'>
+          <text class='nameone'>{{item.schoolName}}</text>
+          <text class='nametwo'>{{item.newSchoolDistance}}</text>
+        </view>
+        <view class='itemprice'>
+          <view>
+            <text class='pricess'>￥</text>
+            <text class='price'>{{item.courseAdvancePayment}}</text>
+            <text class='Originalprice textcolor_gray' wx:if='{{item.courseAdvancePayment!=item.coursePrice}}'>￥{{item.coursePrice}}</text>
+          </view>
+          <view>
+            <text class='textcolor_gray bulabula'>已售{{item.sellCount}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='checkall  {{hasComment?"haspadding":""}}' hidden='{{hascourse}}' bindtap='gototeacherAppointment'>
+    <text>查看全部项目</text>
+    <image src='../../images/goto.png' class='cmt_right_imgs'></image>
+  </view>
+  <view class='partline_20' hidden='{{hasComment}}'></view>
+  <view class='commenttop' hidden='{{hasComment}}'>
+    <text class='cmt_left'>评价</text>
+    <view class='cmt_right textcolor_gray'>
+      <text>查看全部</text>
+      <image src='../../images/goto.png' class='cmt_right_img'></image>
+    </view>
+
+  </view>
+  <view class='partline_3' hidden='{{hasComment}}'></view>
+  <!-- 评论内容 -->
+  <view class='comment_content_warp' wx:for='{{commentData}}' wx:key='unique3'>
+    <view class='comment_content'>
+      <view class='comment_content_left'>
+        <!-- <image src='../../images/test.jpg'></image> -->
+        <image src='{{item.nickPicture}}'></image>
+      </view>
+      <view class='comment_content_right'>
+        <view class='comment_title'>{{item.nickName}}</view>
+        <view class='comment_satar'>
+          <image wx:for='{{item.starArray}}' wx:for-item='items' wx:key='unique4' src='../../images/{{items}}.png' class='com_star'></image>
+
+        </view>
+        <!-- <view class='comment_bula textcolor_gray'>
+          <text class='bula_txt'>环境:5.0</text>
+          <text class='bula_txt'>专业度:5.0</text>
+          <text class='bula_txt'>服务:5.0</text>
+          <text class='bula_txt'>效果:5.0</text>
+        </view> -->
+        <view class='commentcontent textcolor_gray'>
+          {{item.teacherReasonText}}
+        </view>
+        <!-- <view class='content_more textcolor_blue'>全文</view> -->
+        <view class='comment_time textcolor_gray'>{{item.newtime}}</view>
+        <view class='content_imgview'>
+          <image wx:for='{{item.imgarray}}' wx:for-item='itemss' wx:key='unique5' class='content_imgview_img' src='{{Furl}}{{itemss}}'></image>
+        </view>
+        <!-- <view class='comment_bottom textcolor_gray'>
+          <view class='comment_bottom_txt'>
+            <text>15万人+已看</text>
+          </view>
+          <view class='comment_bottom_img'>
+            <image src='../../images/laoshixins.png'></image>
+            <text>3</text>
+          </view>
+        </view> -->
+      </view>
+    </view>
+    <view class='partline_3'></view>
+  </view>
+  <view class='checkall textcolor_blue' hidden='{{hasComment}}'>
+    <text>查看全部评价</text>
+    <image src='../../images/more.png' class='cmt_right_imgs'></image>
+  </view>
+  <view class='partline_20' hidden='{{hasComment}}'></view>
+</view>

@@ -1,0 +1,50 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class='newsdetail_content'>
+    <template is="wxParse" data="{{wxParseData:introduceHtml.nodes}}" />
+  </view>
+  <!-- <view class='message_panel'>
+    <view class='message_panel_top'>
+      <view class='top_title textcolor_gray'>精选留言</view>
+      <view class='top_titles textcolor_blue'>写留言</view>
+    </view>
+    <view class='message_panel_content'>
+      <view class='message_panel_content_left'>
+        <image class='message_panel_content_left_img' src='../../images/test.jpg'></image>
+      </view>
+      <view class='message_panel_content_right'>
+        <view class='content_right_top'>
+          <view class='content_right_top_name textcolor_gray'>
+            以舞绘友
+          </view>
+          <view class='content_right_top_zan textcolor_blue'>
+            <image class='zan_image' src='../../images/zixunzan.png'></image>
+            <text>12</text>
+          </view>
+        </view>
+        <view class='content_right_txt'>
+          艺术是人类审美活动的大家族，它的成员有文学、美术、音乐、舞蹈、戏剧、电影、曲艺、杂技等。各个门类的艺术都是反映社会生活和表现人们思想感情的，但是艺术的反映和表现、不是一般的概念的抽象的反映和表现，而是个别的具体的形象和审美的反映和表观。
+        </view>
+      </view>
+    </view>
+    <view class='message_panel_content'>
+      <view class='message_panel_content_left'>
+        <image class='message_panel_content_left_img' src='../../images/test.jpg'></image>
+      </view>
+      <view class='message_panel_content_right'>
+        <view class='content_right_top'>
+          <view class='content_right_top_name textcolor_gray'>
+            以舞绘友
+          </view>
+          <view class='content_right_top_zan textcolor_blue'>
+            <image class='zan_image' src='../../images/zixunzan.png'></image>
+            <text>12</text>
+          </view>
+        </view>
+        <view class='content_right_txt'>
+          感恩舞蹈给我的一片净土，一直坚持跳舞，付出了多少，不忘初心
+        </view>
+      </view>
+    </view>
+  </view> -->
+</view>

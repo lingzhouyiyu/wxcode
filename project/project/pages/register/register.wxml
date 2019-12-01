@@ -1,0 +1,13 @@
+<view class='container'>
+  <view class='tips'>
+    绑定手机号码 （方便您接收订单信息）
+  </view>
+  <view class='information'>
+    <view class='top'>
+      <input placeholder="+86 请输入手机号码" class='phonenub' bindinput='searchPhone' bindconfirm='searchPhone'></input>
+      <view class='sendcode' bindtap='sendCode' disabled='{{disabled}}'>{{time}}</view>
+    </view>
+    <input placeholder="请输入手机短信中的验证码" class='code' bindinput='searchCode' bindconfirm='searchCode'></input>
+  </view>
+  <button class='submitBtn' bindtap='gotoconfirmOrder'>提交</button>
+</view>

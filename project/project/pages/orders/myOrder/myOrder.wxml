@@ -1,0 +1,128 @@
+<view class='container'>
+  <view class='partline_3'></view>
+  <view class='servicetop'>
+    <view class='topitem {{optselect=="listone"?"textcolor_blue":""}}' bindtap='jumpTo' data-opt="listone">
+      全部
+    </view>
+    <view class='topitem {{optselect=="listtwo"?"textcolor_blue":""}}' bindtap='jumpTo' data-opt="listtwo">
+      待付款
+    </view>
+    <view class='topitem {{optselect=="listthree"?"textcolor_blue":""}}' bindtap='jumpTo' data-opt="listthree">
+      未使用
+    </view>
+    <view class='topitem {{optselect=="listfour"?"textcolor_blue":""}}' bindtap='jumpTo' data-opt="listfour">
+      退款
+    </view>
+  </view>
+  <view class='partline_15'></view>
+  <!-- 全部订单 -->
+  <view class='order_contentwarp'>
+    <!-- <view wx:for="{{orderList}}">
+       {{index}}: {{item.orderReservationsPayStatus}}
+    </view> -->
+    <view class='order_content' wx:for="{{orderList}}" wx:key='unique1'>
+      <!-- 等待付款 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==0}}'>
+        <text class='remainder textone'>剩余付款时间{{item.overMillisecond}}小时</text>
+        <text class='waitpay texttwo'>等待付款</text>
+      </view>
+      <!-- 未使用 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==1}}'>
+        <text class='waitpay texttwo'>未使用</text>
+      </view>
+       <!-- 已使用 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==8}}'>
+        <text class='texttwo haspay'>已使用</text>
+      </view>
+      <!-- 退款审核中 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==2}}'>
+        <text class='waitpay texttwo'>退款审核中</text>
+      </view>
+      <!-- 审核失败 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==3}}'>
+        <text class='waitpay texttwo yishixiao'>审核失败</text>
+      </view>
+      <!-- 审核成功 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==4}}'>
+        <text class='waitpay texttwo yishixiao'>审核成功</text>
+      </view>
+      <!-- 退款成功 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==5}}'>
+        <text class='waitpay texttwo'>退款成功</text>
+      </view>
+      <!-- 订单失效 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==6}}'>
+        <text class='waitpay texttwo yishixiao'>订单失效</text>
+      </view>
+      <!-- 取消订单 -->
+      <view class='order_content_top' wx:if='{{item.orderReservationsPayStatus==7}}'>
+        <text class='waitpay texttwo'>取消订单</text>
+      </view>
+      <view class='partline_3'></view>
+
+      <view class='recmendcontent' bindtap='gotoOrderDetail' data-orderno='{{item.orderNum}}'>
+        <view class='recmenditem'>
+          <view class='item_left'>
+            <!-- <image src='../../../images/test.jpg'></image> -->
+             <image src='{{Furl}}{{item.courseList[0].newcourseImg}}'></image>
+          </view>
+          <view class='item_right'>
+            <view class='itemtitle'>{{item.courseList[0].courseTitle}}</view>
+            <view class='itemname textcolor_gray'>
+              <text class='nameone'>数量</text>
+              <text class='nametwo'>x{{item.orderCount}}</text>
+            </view>
+            <view class='itemprice'>
+              <text class='Originalprice'>预约金合计：</text>
+              <text class='bubulala'>￥</text>
+              <text class='price'>{{item.totalPrice}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='partline_3'></view>
+      <!-- 等待付款 -->
+      <view class='btnview' wx:if='{{item.orderReservationsPayStatus==0}}'>
+        <view class='optionBtn' bindtap='cancelOrder' data-ordernum='{{item.orderNum}}'>取消订单</view>
+        <view class='optionBtn' bindtap='gotopay' data-ordernum='{{item.orderNum}}' data-paymount='{{item.orderRepaymount}}' data-orderreservations='{{item.orderReservations}}'>去付款</view>
+      </view>
+      <!-- 未使用 -->
+      <!-- <view class='btnview' wx:if='{{item.orderReservationsPayStatus==1}}'>
+       <view class='optionBtn' bindtap='useOrderCode' data-ordercodeimgurl='{{item.orderCodeImgUrl}}' data-orderno='{{item.orderNum}}'>使用</view>
+      </view> -->
+       <!-- 已使用 -->
+      <view class='btnview' wx:if='{{item.orderReservationsPayStatus==8}}'>
+        <view class='optionBtn' bindtap='gotoevaluate' data-courseid='{{item.courseList[0].courseId}}' data-orderid='{{item.id}}'>评价</view>
+      </view>
+      <!-- 退款审核中 -->
+      <view class='btnview displaynone' wx:if='{{item.orderReservationsPayStatus==2}}'>
+
+      </view>
+      <!-- 审核失败 -->
+      <view class='btnview displaynone' wx:if='{{item.orderReservationsPayStatus==3}}'>
+
+      </view>
+        <!-- 审核成功 -->
+      <view class='btnview displaynone' wx:if='{{item.orderReservationsPayStatus==4}}'>
+
+      </view>
+      <!-- 退款成功 -->
+      <view class='btnview displaynone' wx:if='{{item.orderReservationsPayStatus==5}}'>
+
+      </view>
+      <!-- 订单失效 -->
+      <view class='btnview' wx:if='{{item.orderReservationsPayStatus==6}}'>
+        <view class='optionBtn' bindtap='gotoconfirmOrder' data-select='{{item.courseList[0].courseId}}'>再次购买</view>
+      </view>
+      <!-- 取消订单 -->
+      <view class='btnview' wx:if='{{item.orderReservationsPayStatus==7}}'>
+        <view class='optionBtn'>去购买</view>
+      </view>
+      <view class='partline_15'></view>
+    </view>
+  </view>
+
+  <view class='bottomtips' hidden='{{loadingTips}}'>- 没有更多数据了哦 -</view>
+
+
+</view>

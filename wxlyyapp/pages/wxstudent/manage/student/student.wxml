@@ -1,0 +1,93 @@
+<!--pages/wxstudent/manage/student/student.wxml-->
+<view class="container">
+  <view style='display:flex;flex-direction:row;padding-left:10px;height:40px;width:100%;'>
+    <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">学生信息：</view>
+  </view>
+  
+  <view class="user-termsOfUse userstyle">
+    <text class="userTextStyle">姓名：{{options.name}}（{{options.sex}}）({{options.class}})</text>
+  </view>
+
+  <view class="user-ontegralRule userstyle">
+    <text class="userTextStyle">用户id：{{options.id}}</text>
+  </view>
+  
+    <view class="user-termsOfUse userstyle">
+      <text class="userTextStyle">姓名：{{studentinfo.StudentName}}{{studentinfo.Sex==1?'【男】':(studentinfo.Sex==2?'【女】':'')}}({{studentinfo.ClassName}})</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">用户id：{{studentinfo.Id}}</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">余额：{{studentinfo.BalancePrice}}</text>
+    </view>
+
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">默认线路：{{studentinfo.ForthLineName}}</text>
+    </view>
+    <view class="user-ontegralRule userstyle">
+      <text class="userTextStyle">默认站点：{{studentinfo.StartStationName}}--{{studentinfo.EndStationName}}</text>
+    </view>
+        <view style='display:flex;flex-direction:row; align-items: center;justify-content: center;padding-left:10px;height:40px;width:100%;'>
+      <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">家长信息：</view>
+    </view>
+    <block wx:for="{{studentinfo.SJ_StudentParent}}" wx:key="ID">
+      <view bindtap="clickOrder" id='{{item.Id}}' data-index="{{index}}" class="userstyle">
+        <view style="widht:100%;display:flex;flex-direction:row">
+          <view style="width:100px;text-align:left">
+            <text class="userTextStyle">{{index+1}}.姓名：{{item.ParentName}}</text>
+          </view>
+
+          <view style="text-align:left">
+            <text class="userTextStyle">电话：{{item.ParentPhone}}</text>
+          </view>
+
+          <text class="righthead"></text>
+        </view>
+      </view>
+    </block>
+
+  <view class="user-termsOfUse userstyle">
+    <text class="userTextStyle">人脸库中信息：{{ClassesInfo.user_info}}</text>
+  </view>
+
+  <view class="user-ontegralRule userstyle">
+    <text class="userTextStyle">人脸库中组id：{{ClassesInfo.group_id}}</text>
+  </view>
+
+  <view style='display:flex;flex-direction:row; align-items: center;justify-content: center;padding-left:10px;height:40px;width:100%;'>
+    <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">人脸列表：</view>
+
+    <view bindtap='bindRegist' style="margin-right:20px;border-radius: 5px;border:1px solid #21c021;width:80px;line-height:30px;color:#21c021;font-size:30rpx;text-align:center">获取照片</view>
+
+
+
+  </view>
+
+  <block wx:for="{{TicketList}}" wx:key="ID">
+    <view id='{{face_token}}' data-index="{{index}}" class="userstyle">
+
+      <view style="width:100%;text-align:left">
+        <text class="userTextStyle">{{index+1}}.创建时间：{{item.ctime}}</text>
+      </view>
+      <view style="width:100%;text-align:left">
+        <text style="font-size:26rpx;color:#4a4a4a">face_token：{{item.face_token}}</text>
+      </view>
+    </view>
+  </block>
+
+  <block wx:if="{{avatarUrl}}">
+    <view style='display:flex;flex-direction:row;padding-left:10px;height:40px;width:100%;'>
+      <view style="width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx">预览：</view>
+      <view bindtap='bindAddface' style="margin-right:10px;border-radius: 5px;border:1px solid #21c021;height:30px;width:120px;line-height:30px;color:#21c021;font-size:30rpx;text-align:center">增加人脸</view>
+      <view bindtap='bindUpdateface' style="margin-right:10px;border-radius: 5px;border:1px solid #21c021;height:30px;width:120px;line-height:30px;color:#21c021;font-size:30rpx;text-align:center">替换全部</view>
+    </view>
+    <image style='width: 100%;' mode="widthFix" src="{{avatarUrl}}"></image>
+  </block>
+  <view wx:else style='font-size:30px;text-align:center;margin-top:40px;color:#ff0000'>
+    {{error_msg}}
+  </view>
+
+</view>

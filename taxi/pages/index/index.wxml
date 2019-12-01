@@ -1,0 +1,20 @@
+<!--pages/setaddr/setaddr.wxml-->
+<view class='um-vp mainpage bc-text'>
+  <view class='mapbox'>
+    <map id="mapselect" longitude="{{longitude}}" latitude="{{latitude}}" scale="15" controls="{{controls}}" markers="{{markers}}" show-location bindcontroltap="controltap" polyline="{{polyline}}" bindmarkertap="markertap" circles="{{circles}}" bindregionchange="regionchange"
+      class='map'>
+    </map>
+  </view>
+  <cover-image class="curloact" bindtap='my_location' src="../../common/images/getloact.png"></cover-image>
+ 
+  <cover-view class='addr-box'>
+    <cover-view class='addr-main'>
+      <cover-view class='addr-txt'>
+        {{curaddr}}
+      </cover-view>
+      <cover-view class="carinfor">
+		  附近共用0辆车,点击车辆可查看车辆详情，呼叫司机
+	  </cover-view>
+    </cover-view>
+  </cover-view>
+</view>

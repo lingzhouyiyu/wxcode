@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class='noticecontent' wx:for="{{activeData}}" wx:key='unique1' bindtap='gotoactiveOrderDetail' data-orderno='{{item.orderNum}}' data-activeid='{{item.activeId}}' data-activetype='{{item.activeType}}'>
+    <view class='bulabula'>
+      <text>{{item.activeTitle}}</text>
+    </view>
+    <view class='titles'>
+      <text class='date'>活动时间：</text>
+      <text>{{item.orderDownTime}}</text>
+    </view>
+    <view class='centercontent'>
+      <view>
+        <text class='yuyue'>预约码：</text>
+        <text class='code'>{{item.orderCode}}</text>
+      </view>
+      <view class='getbtn {{item.receiveStatus=="1"?"getbtns":""}}'  wx:if='{{item.activeType=="7"||item.activeType=="8"}}' catchtap='sureOrderCode' data-ordernum='{{item.orderNum}}' data-status='{{item.receiveStatus}}'> 
+        <text >{{item.receiveStatus=="1"?"已领取":"领取"}}</text>
+      </view>
+    </view>
+    <view class='contents'>
+      <text>{{item.activityDescription}}</text>
+    </view>
+  </view>
+</view>

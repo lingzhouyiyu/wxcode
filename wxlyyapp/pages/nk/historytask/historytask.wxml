@@ -1,0 +1,40 @@
+<!--pages/nk/historytask/historytask.wxml-->
+<view class="container">
+<image class='logo' src="/images/history.png" />
+  <view style='padding-left:10px;height:40px;width:100%;line-height:40px;color:#4a4a4a;font-size:30rpx;text-align:center;'>已完成班次信息</view>
+
+    <view style='display:flex;flex-direction:row;padding-left:10px;height:20px;width:100%;'>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:center">
+    </view>
+    <view bindtap="preDay" style="width:60px;line-height:20px;color:#21c021;font-size:26rpx;text-align:center">前一天</view>
+
+    <picker mode="date" value="{{date}}" start="2018-10-01" end="{{endSelsctDate}}" bindchange="bindDateChange">
+      <view  style="width:120px;line-height:20px;color:#21c021;font-size:32rpx;text-align:center">{{date}}</view>
+    </picker>
+    <view bindtap="nextDay" style="width:60px;line-height:20px;color:#21c021;font-size:26rpx;text-align:center">后一天</view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:center">
+    </view>
+  </view>
+  
+  <scroll-view scroll-y style="height: {{windowHeight-226}}px;">
+  <block wx:for="{{taskList}}" wx:key="ID">
+    <navigator  url="taskinfo?id={{item.ID}}">
+  <view class="user-privacyPolicy userstyle">
+   <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.UseDate}}</text>
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.RouteName}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">发：{{item.BeginTime}}</text>
+      <text style="font-size:26rpx;color:#4a4a4a">收：{{item.EndTime}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">车牌：{{item.VehicleNumber}}</text>
+      <text style="font-size:26rpx;color:#4a4a4a">司机：{{item.DriverName}}</text>
+    </view>
+    <text class="righthead"></text>
+  </view>  
+  </navigator>
+</block>
+</scroll-view>
+</view>

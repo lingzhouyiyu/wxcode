@@ -1,0 +1,62 @@
+<view class='container'>
+  <view class='topview'>
+    <view class='headerview'>
+      <view class='headerimg'>
+        <image src='{{Furl}}{{personaldata.headerimg}}'></image>
+      </view>
+      <view class='txtview'>
+        <text class='name'>{{personaldata.name}}，{{personaldata.id}}号</text>
+        <text class='sign' bindtap='signDetail'>2019年，我想对自己说：{{personaldata.introduce}}</text>
+      </view>
+    </view>
+    <view class='piaofuview'>
+      <view class='futop'>
+        <view class='topleft'>
+          <text class='toplefttxt1'>{{personaldata.total}}</text>
+          <text class='toplefttxt2'>当前票数</text>
+        </view>
+        <view class='topleft'>
+          <text class='toplefttxt1'>{{personaldata.rownum}}</text>
+          <text class='toplefttxt2'>当前排行</text>
+        </view>
+      </view>
+      <view class='fubottom'>
+        <view class='btnleft' catchtap='addPersonalVote' data-id='{{personaldata.id}}'>
+          <image src='../../images/voteperson1.png'></image>
+          <text>给TA投票</text>
+        </view>
+        <view class='btnright' bindtap='gotovoteshare'>
+          <image src='../../images/voteperson2.png'></image>
+          <text>邀请好友助力</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='contentview'>
+    <view class='contentimg' wx:if='{{!moreimg}}'>
+     <view class='item' wx:for="{{personaldata.image}}" wx:key='index'>
+        <image mode="widthFix" src='{{Furl}}{{item}}' data-src="{{Furl}}{{item}}" class='itemimg' bindtap="previewImage"></image>
+      </view>
+    </view>
+    <view class='contentleft' wx:if='{{moreimg}}'>
+      <view class='item' wx:for="{{personaldata.image}}" wx:key='index' wx:if="{{index%2==0}}">
+        <image mode="widthFix" src='{{Furl}}{{item}}' data-src="{{Furl}}{{item}}" class='itemimg' bindtap="previewImage"></image>
+      </view>
+    </view>
+    <view class='contentright' wx:if='{{moreimg}}'>
+      <view class='item' wx:for="{{personaldata.image}}" wx:key='index' wx:if="{{index%2==1}}">
+        <image mode="widthFix" src='{{Furl}}{{item}}' data-src="{{Furl}}{{item}}" class='itemimg' bindtap="previewImage"></image>
+      </view>
+    </view>
+  </view>
+  <view class='backview' catchtap='gotoindex'>
+    <image src='../../images/backindex.png'></image>
+  </view>
+</view>
+
+
+<!-- 活动弹框 -->
+<view class="modalDlg" wx:if="{{showModal}}" bindtap="close_mask">
+  <text>2019年，我想对自己说：{{personaldata.introduce}}</text>
+</view>
+<view class="mask" bindtap="close_mask" wx:if="{{showModal}}"></view>

@@ -1,0 +1,149 @@
+page {
+  background-color: #f3f2f0;
+}
+
+.top {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 30rpx;
+}
+
+.partline {
+  width: 100%;
+  height: 15rpx;
+  background-color: #f3f2f0;
+}
+
+.message {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
+  flex-direction: column;
+}
+
+.notice {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  /* background-color: yellow; */
+  flex-direction: column;
+}
+
+.bottomline {
+  width: 55rpx;
+  height: 5rpx;
+  background-color: #5aabf5;
+  margin-top: 8rpx;
+}
+
+.bottomlines {
+  width: 55rpx;
+  height: 5rpx;
+  background-color: #fff;
+  margin-top: 8rpx;
+}
+
+.content {
+  width: 100%;
+  height: auto;
+  background-color: #f3f2f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.txtcolor {
+  color: #5aabf5;
+}
+
+.messagecontent {
+  display: flex;
+  background-color: #fff;
+  width: 100%;
+  position: relative;
+  height: 100rpx;
+  margin-bottom: 3rpx;
+  border: none;
+  outline: none;
+  align-items: center;
+}
+.messagecontent::after{
+  border: 0;
+}
+.item_img {
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 0rpx;
+  /* background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.companyname {
+  margin-left: 30rpx;
+  font-size: 26rpx;
+}
+
+.detailimg {
+  width: 14rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 30rpx;
+}
+
+.noticecontent {
+  background-color: #fff;
+  width: 80%;
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+  border-radius: 5px;
+  position: relative;
+}
+
+.titles {
+  width: 100%;
+  margin-bottom: 25rpx;
+  font-size: 24rpx;
+  color: #c0c0c0;
+}
+
+.date {
+  margin-right: 10rpx;
+}
+
+.contents {
+  width: 100%;
+  color: #808080;
+  font-size: 28rpx;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.nomessages {
+  width: 100%;
+  height: auto;
+  background-color: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 250rpx 0 650rpx 0;
+}
+
+.nomessages image {
+  width: 300rpx;
+  height: 150rpx;
+  margin-bottom: 40rpx;
+}

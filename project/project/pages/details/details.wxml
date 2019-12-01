@@ -1,0 +1,214 @@
+<view class='container'>
+  <view class='header'>
+    <!-- <image class='Locationimg' src='../../images/Location.png'></image>
+    <text class='allalalala'>{{address}}</text> -->
+    <view class='search'>
+      <image class='searchimg' src='../../images/search.png'></image>
+      <input class='searchinput' placeholder="搜索风格、元素和商家" cursor-spacing="15" bindinput='searchdata' bindconfirm='searchdata'></input>
+    </view>
+  </view>
+  <view class='tab_contaner'>
+    <view class='tab_title {{selectTag=="0"?"tab_titles":""}}' catchtap='selectitem' data-select='0'>机构</view>
+    <view class='tab_title {{selectTag=="1"?"tab_titles":""}}' catchtap='selectitem' data-select='1'>教师</view>
+    <view class='tab_title {{selectTag=="2"?"tab_titles":""}}' catchtap='selectitem' data-select='2'>热门</view>
+  </view>
+  <view class='partline_10'></view>
+  <view class='tabwraps'>
+    <view class='tab_filter'>
+      <view class='tab_condition {{selectTags=="0"?"tab_conditions":""}}' catchtap='selectitems' data-select='0'>
+        <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+          <view class="picker">
+            <text class='textdetail'>{{region[1]}}</text>
+          </view>
+        </picker>
+        <image src='../../images/{{selectTags=="0"?"mores":"more"}}.png' class='select_img {{optionselect1?"select_imgs":""}}'></image>
+      </view>
+      <view class='tab_condition {{selectTags=="1"?"tab_conditions":""}}' catchtap='selectitems' data-select='1'>
+        <text>{{diseTwoselect}}</text>
+        <image src='../../images/{{selectTags=="1"?"mores":"more"}}.png' class='select_img {{optionselect2?"select_imgs":""}}'></image>
+      </view>
+      <view class='tab_condition {{selectTags=="2"?"tab_conditions":""}}' catchtap='selectitems' data-select='2'>
+        <!-- {{optionselect3?"倒序":"正序"}} -->
+        {{areaTitle}}
+        <image src='../../images/{{selectTags=="2"?"mores":"more"}}.png' class='select_img {{optionselect3?"select_imgs":""}}'></image>
+      </view>
+    </view>
+    <!-- 距离选择框 -->
+    <view class='picker_distance' hidden='{{distancetag}}'>
+      <scroll-view class='disleft_item' scroll-y='true' hidden='{{distancetag}}'>
+        <view class='section {{item==diseOneselect?"dissection":""}}' wx:for="{{Distancearray}}" wx:key="unique4" bindtap='disOneselect' data-select='{{item}}'>
+          <text class='distext {{item==diseOneselect?"distexts":""}}'>{{item}}</text>
+        </view>
+      </scroll-view>
+      <view class='disright_item' hidden='{{distancetag}}'>
+        <view class='disright_setion' wx:for='{{disitem}}' wx:key="unique5" bindtap='disTwoselect' data-select='{{item}}'>
+          <text class='disright_setion_txt {{item==diseTwoselect?"disright_setion_txts":""}}'>{{item}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 商圈选择 -->
+    <view class='ShopArea' wx:if='{{areaTag}}'>
+      <view class='ShopAreaitem' wx:for='{{Areadata}}' wx:key='' catchtap='searchArea' data-name='{{item.areaName}}' data-latitude='{{item.schoolLatitude}}' data-longitude='{{item.schoolLongitude}}'>{{item.areaName}}</view>
+    </view>
+  </view>
+
+  <view class='partline_3'></view>
+  <view class='contentwrap'>
+    <!-- 机构列表 -->
+    <view class='institutioncontent' hidden='{{selectTag!="0"}}'>
+      <view class='footeritem' wx:for='{{schoolList}}' wx:key="unique2">
+        <view class='itemtopwrap {{item.hascourse?"":"itemtopwraps"}}' bindtap='gotodetailinstitution' data-select='{{item.schoolId}}'>
+          <view class='itemtop'>
+            <view class='itemtop_left'>
+              <!-- <image class='titleimg' src='../../images/test.jpg'></image> -->
+              <image class='titleimg' src='{{Furl}}{{item.schoolPicture}}'></image>
+            </view>
+            <view class='itemtop_right'>
+              <view class='title'>
+                <text class='catetitle'>{{item.schoolName}}</text>
+                <image class='renzhengimg' src='../../images/renzheng.png'></image>
+              </view>
+              <view class='kind'>
+                <text>课程数量:{{item.totalCount}}</text>
+                <text>{{item.newSchoolDistance}}</text>
+              </view>
+
+              <view class='address'>
+                <text>{{item.schoolAddress}}</text>
+              </view>
+              <view class='Score'>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/stars.png' class='starimg'></image>
+                <text>{{item.yuyueCount}}预约</text>
+              </view>
+
+            </view>
+          </view>
+        </view>
+
+        <view class='itembuttom'>
+
+          <view class='itemcontent' data-courseid='{{items.courseId}}' catchtap='gotodetailcourse' wx:for='{{item.course}}' wx:key='unique6' wx:for-item='items'>
+            <view class='shangmian'>
+              <image class='itemcontentimg' src='../../images/buy.png'></image>
+              <text class='itemcontenttxt'>{{items.courseTitle}}</text>
+            </view>
+            <view class='xiamian'>
+              <text class='pricelala'>￥</text>
+              <text class='itemcontentprice'>{{items.courseAdvancePayment}}</text>
+            </view>
+          </view>
+          <view class='checkall' bindtap='gotoinstitutionAppointment' data-select='{{item.schoolId}}' wx:if='{{item.hascourse}}'>
+            <text>查看全部预约</text>
+            <image src='../../images/goto.png' class='checkall_img'></image>
+          </view>
+        </view>
+        <view class='partline_20'></view>
+      </view>
+    </view>
+    <!-- 教师列表 -->
+    <view class='teachercontent' hidden='{{selectTag!="1"}}'>
+      <view class='footeritem' wx:for='{{teacherList}}' wx:key='unique3' wx:for-item='item'>
+        <view class='itemtopwrap' bindtap='gotodetailTeacher' data-select='{{item.teacherId}}'>
+          <view class='itemtop'>
+            <view class='itemtop_left itemtop_left_teacher'>
+              <image class='titleimg titleimg_teacher' src='{{Furl}}{{item.teacherImage}}'></image>
+            </view>
+            <view class='itemtop_right'>
+              <view class='title'>
+                <text class='catetitle'>{{item.teacherName}}</text>
+                <!-- <text class='cate_teacher'>舞蹈老师</text> -->
+                <image class='renzhengimg' src='../../images/teacherrenzheng.png'></image>
+              </view>
+              <view class='kind kind_teacher'>
+                <text>{{item.schoolName}}</text>
+                <text>{{item.newSchoolDistance}}</text>
+              </view>
+              <view class='Score'>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/star.png' class='starimg'></image>
+                <image src='../../images/stars.png' class='starimg'></image>
+                <view class='txt_teacher_wrap'>
+                  <text class='txt_teacher'>{{item.yuyueCount}}预约</text>
+                  <!-- <text>|</text>
+                  <text>209学生</text> -->
+                </view>
+              </view>
+              <!-- <view class='appointment'>
+                <view class='appointmentitems'>
+                  名族舞蹈2590预约
+                </view>
+                <view class='appointmentitems'>
+                  印度舞蹈2590预约
+                </view>
+                <view class='appointmentitems'>
+                  4018预约
+                </view>
+              </view> -->
+            </view>
+          </view>
+        </view>
+
+        <view class='itembuttom'>
+          <view class='itemcontent' wx:for='{{item.sellCourse}}' data-courseid='{{items.courseId}}' catchtap='gotodetailcourse' wx:key='unique4' wx:for-item='items'>
+            <view class='shangmian'>
+              <image class='itemcontentimg' src='../../images/buy.png'></image>
+              <text class='itemcontenttxt'>{{items.courseTitle}}</text>
+            </view>
+            <!-- <view>
+             <text class='yuxueview'>预约数:495</text>
+            </view> -->
+            <view class='xiamian'>
+              <text class='pricelala'>￥</text>
+              <text class='itemcontentprice'>{{items.courseAdvancePayment}}</text>
+            </view>
+          </view>
+          <view class='checkall' bindtap='gototeacherAppointment' data-select='{{item.teacherId}}' wx:if='{{item.hascourse}}'>
+            <text>查看全部预约</text>
+            <image src='../../images/goto.png' class='checkall_img'></image>
+          </view>
+        </view>
+        <view class='partline_15'></view>
+      </view>
+    </view>
+    <!-- 热门列表 -->
+    <view class='hotcontent' hidden='{{selectTag!="2"}}'>
+      <view class='contentitem' wx:for="{{hotCourseList}}" wx:key="unique1">
+        <view class='item' bindtap='gotodetailcourse' data-courseid='{{item.courseId}}'>
+          <view class='leftimg'>
+            <!-- <image src='../../images/test.jpg'></image> -->
+            <image src='{{Furl}}{{item.courseImg}}'></image>
+          </view>
+          <view class='rightitem'>
+            <text class='titles'>{{item.courseTitle}}</text>
+            <view class='personMsg'>
+              <text class='detailtxt'>{{item.teacherName}}</text>
+            </view>
+            <view class='distant'>
+              <text class='schoolnameview'>{{item.schoolName}}</text>
+              <text class='distance'>{{item.newSchoolDistance}}</text>
+            </view>
+            <view class='prices'>
+              <view>
+                <text class='hsjdfashjfd'>￥</text>
+                <text class='price'>{{item.courseAdvancePayment}}</text>
+                <text class='Originalprice' wx:if='{{item.courseAdvancePayment!=item.coursePrice}}'>￥{{item.coursePrice}}</text>
+              </view>
+              <view>
+                <text class='detailtxts'>预约数:{{item.yuyueCount}}</text>
+              </view>
+
+            </view>
+          </view>
+        </view>
+        <view class='patrline'></view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove"  wx:if="{{areaTag}}"></view>

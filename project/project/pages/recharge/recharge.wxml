@@ -1,0 +1,60 @@
+<view class='container'>
+  <view class='details' bindtap='getWawowCoinOrder'>查看明细</view>
+  <view class='optionwrap'>
+    <view class='optionitem {{item.selected?"":"optionitems"}}' wx:for='{{optionsArray}}' bindtap='selectitem' data-index='{{index}}' data-select='{{item.text}}' wx:key='unique1'>
+      <text class='lalalallalala {{item.selected?"":"lalalallalalas"}}'>{{item.text}}元</text>
+      <!-- <text>{{item.text*(rates/100)+item.text}}蛙币</text> -->
+      <text>{{item.text*(item.rate/100)+item.text}}蛙币</text>
+    </view>
+  </view>
+
+  <!-- <view class='others'>
+    <text class='texts'>充值其他金额:</text>
+    <input class='money' placeholder='请输入需要充值的金额(只可整数充值)~' type='number'  value='{{inputValue}}' placeholder-class='placeclass' bindinput='getvalue'bindfocus='getvalue'></input>
+  </view> -->
+  <view class='partlines'></view>
+  <view class='pay_way'>
+    <view class='pay_way_left'>
+      <image src='../../images/weixin.png'></image>
+    </view>
+    <view class='pay_way_right'>
+      <view class='pay_way_right_1'>
+        <view>
+          <text>微信支付</text>
+          <text class='recmend'>推荐</text>
+        </view>
+        <text class='bbll'>亿万用户的选择，更快更安全</text>
+      </view>
+      <view class='pay_way_right_2'>
+        <image src='../../images/wexinspot.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='bottomtip'bindtap="tapselect">
+  <image src='../../images/{{agree?"yhselected":"yhunselected"}}.png'></image>
+    <text>点击去充值，即表示同意</text>
+    <text class='fasdfasdf' bindtap="submit">充值协议</text>
+  </view>
+
+  <view class='applySubmit' bindtap='toPay'>确定充值</view>
+</view>
+<!-- 充值说明弹框 -->
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class='close_mask'>充值协议</view>
+  <view class='detail_texts'>您通过“蛙涡教育平台” 软件向您已注册的用户账号实际支付金额。充值金额等比例兑换平台通用蛙币，适用于平台课程、平台活动等的消费使用。
+    <text class='protocoldetail' bindtap='gotorechargeProtocol'>购买后不予退款。具体详情见《充值服务协议》。</text>
+  </view>
+  <view class='detail_text'>
+    <text>蛙币使用规则：</text>
+    <text>1.用户账户的有效期为自充值之日起至使用完毕为止，所产生的退费依然保留，您可以在任意时间使用。</text>
+    <text>2.蛙币仅可用于平台课程、平台活动等的消费使用，可抵扣定金等消费途径，不可转移或赠送。</text>
+    <text>3.课程发生退费后，可同比例退还蛙币至您账户。</text>
+    <text>4.蛙币抵扣预约金金额为1:1。</text>
+  </view>
+  <view class='detail_text'>
+    <text>充值返蛙币规则：</text>
+    <text>我们会通过充值页面及/或集体活动页面及时公布不同数额的充值本金可享受的返蛙币值，您可通过充值或关注我们的页面了解详情。</text>
+  </view>
+  <button class='save_money' bindtap="close_mask">确定</button>
+</view>
+<view class="mask" catchtouchmove="preventTouchMove" bindtap="close_mask" wx:if="{{showModal}}"></view>

@@ -1,0 +1,43 @@
+{
+  "pages": [
+  
+
+    "pages/index/index",
+    "pages/nk/user/user",
+    "pages/nk/user/changepassword",
+    "pages/nk/task/tasklist",
+    "pages/nk/task/task",
+    "pages/nk/task/buyticket",
+    "pages/nk/historytask/historytask",
+    "pages/nk/historytask/taskinfo",
+    "pages/nk/report/index",
+    "pages/nk/report/detail",
+    "pages/nk/schedule/schedule",
+    "pages/nk/task/qrcode",
+    "pages/nk/schedule/newschedule",
+
+    
+    "pages/wxstudent/taskdetail/taskdetail",
+    "pages/wxstudent/tasklist/tasklist",
+    "pages/wxstudent/histaskdetail/histaskdetail",
+    "pages/wxstudent/checkticket/checkticket",
+    "pages/wxstudent/currtask/currtask",
+    "pages/wxstudent/person/person",
+    "pages/wxstudent/person/changepassword",
+    "pages/wxstudent/manage/classes",
+    "pages/wxstudent/manage/students/student",
+    "pages/wxstudent/manage/student/student",
+    "pages/wxstudent/manage/searchstudent/searchstudent",
+
+    "pages/transport/index",
+    "pages/transport/user/user",
+    "pages/transport/user/changepassword",
+    "pages/transport/history/historytask"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "来云游",
+    "navigationBarTextStyle": "white"
+  }
+}

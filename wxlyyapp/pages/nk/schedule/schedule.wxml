@@ -1,0 +1,87 @@
+<!--pages/nk/schedule/schedule.wxml-->
+<view class="container">
+
+  <view style='display:flex;flex-direction:row;padding-left:10px;height:60px;width:100%;'>
+    <view style="width:100%;line-height:60px;color:#4a4a4a;font-size:50rpx">班次信息</view>
+    <navigator url="newschedule?id={{routeIndex}}" hover-class="navigator-hover">
+      <view style="width:120px;line-height:60px;color:#21c021;font-size:30rpx;text-align:center">【新增班次】</view>
+    </navigator>
+  </view>
+
+
+  <view style='display:flex;flex-direction:row;padding-left:10px;height:20px;width:100%;'>
+    <picker mode="selector"  value="{{routeIndex}}" range="{{routeList}}" bindchange="bindRouteChange">
+      <view  style="line-height:20px;color:#21c021;font-size:32rpx;text-align:center">线路：{{routeList[routeIndex]}}</view>
+    </picker>
+    <view bindtap="preDay" style="width:60px;line-height:20px;color:#21c021;font-size:26rpx;text-align:center">前一天</view>
+    <picker mode="date" value="{{date}}" start="{{startSelsctDate}}" end="{{endSelsctDate}}" bindchange="bindDateChange">
+      <view  style="width:100px;line-height:20px;color:#21c021;font-size:32rpx;text-align:center">{{date}}</view>
+    </picker>
+    <view bindtap="nextDay" style="width:60px;line-height:20px;color:#21c021;font-size:26rpx;text-align:center">后一天</view>
+
+  </view>
+  <view style="height:40px;padding-left:25rpx;padding-right:25rpx;background:#fff;border-width:0rpx 0rpx 4rpx 0rpx;border-style:solid;border-color:#f5f5f5;display:flex;align-items:center;">
+    <view style="display:flex;flex-direction:column;width:50px;text-align:center">
+      <text style="font-size:26rpx;color:#4a4a4a">删除</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">班次</text>
+    </view>
+
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">状态</text>
+    </view>
+    
+    <view style="display:flex;flex-direction:column;width:60px;text-align:center">
+      <text style="font-size:26rpx;color:#4a4a4a">上移</text>
+    </view>
+        <view style="display:flex;flex-direction:column;width:60px;text-align:center">
+      <text style="font-size:26rpx;color:#4a4a4a">下移</text>
+    </view>
+    <!-- 
+    <view style="display:flex;flex-direction:column;width:50px;text-align:center">
+      <text style="font-size:26rpx;color:#4a4a4a">修改</text>
+    </view>
+    -->
+  </view>
+
+  <scroll-view scroll-y="true" style="display:block;width:100%;height:{{windowHeight-124}}px">
+    <block wx:for="{{taskList}}" wx:key="ID">
+      <view class="user-privacyPolicy userstyle">
+        <view bindtap="deleteOption" data-id="{{item.ID}}" style="display:flex;flex-direction:column;width:50px;align-items:left;justify-content: center">
+          <view class="delview"></view>
+        </view>
+        <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+          <text style="font-size:32rpx;color:#4a4a4a">{{item.SortNo}}.{{item.DriverName}}</text>
+          <text style="font-size:26rpx;color:#4a4a4a">{{item.VehicelNumber}}</text>
+        </view>
+        <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+          <text wx:if="{{item.Status=='0'}}" style="font-size:32rpx;color:#4a4a4a">待领取</text>
+          <text wx:if="{{item.Status=='1'}}" style="font-size:32rpx;color:#4a4a4a">待发车</text>
+          <text wx:if="{{item.Status=='2'}}" style="font-size:32rpx;color:#4a4a4a">已发车</text>
+          <text wx:if="{{item.Status=='3'}}" style="font-size:32rpx;color:#21c021">已完成</text>
+        </view>
+
+        <view wx:if="{{item.Status=='0'||item.Status=='1'}}" bindtap="putindexOption" data-id="{{item.ID}}" style="display:flex;flex-direction:column;width:60px;align-items:center;justify-content: center">
+          <view class="upview"></view>
+        </view>
+        <view wx:else style="display:flex;flex-direction:column;width:60px;align-items:center;justify-content: center">
+          <view class="upview"></view>
+        </view>
+
+
+         <view wx:if="{{item.Status=='0'}}" bindtap="downindexOption" data-id="{{item.ID}}" style="display:flex;flex-direction:column;width:60px;align-items:center;justify-content: center">
+          <view class="downview"></view>
+        </view>
+        <view wx:else style="display:flex;flex-direction:column;width:60px;align-items:center;justify-content: center">
+          <view class="downview"></view>
+        </view>
+        <!-- 
+        <view bindtap="editOption" data-id="{{item.ID}}" style="display:flex;flex-direction:column;width:50px;align-items:center;justify-content: center">
+          <view class="editview"></view>
+        </view>
+        -->
+      </view>
+    </block>
+  </scroll-view>
+</view>

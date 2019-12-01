@@ -1,0 +1,13 @@
+<view class='container'>
+  <view class='activitymore_item' wx:for='{{activity}}' wx:key='unique1' catchtap='gotoactivitydetail' data-activeid='{{item.activeId}}'data-activetype='{{item.activeType}}'>
+    <view class='activitymore_time'>
+      星期一09:00
+    </view>
+    <view class='activitymore_content'>
+      <image class='activitymore_content_img' src='{{Furl}}{{item.imgurl}}'></image>
+      <text class='activitymore_content_title'>{{item.activeTitle}}</text>
+      <text class='activitymore_content_detail textcolor_gray'>{{item.activityAddress}}</text>
+    </view>
+  </view>
+ 
+</view>

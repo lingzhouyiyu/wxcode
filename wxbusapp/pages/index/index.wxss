@@ -1,0 +1,190 @@
+/* 共享右箭头设置*/
+
+.righthead:after {
+  content: '';
+  /*即不把兄弟挤下去 又能设置自己的style  inline不能设置大小 block会挤下去 所以有了inline-block*/
+  display: inline-block;
+  width: 18rpx;
+  height: 18rpx;
+  border: 3rpx solid #a3a3a3;
+  border-bottom: none;
+  border-left: none;
+  transform: rotate(45deg);
+  margin-top: -8rpx;
+}
+
+/* 共享下箭头设置*/
+
+.bottomhead:after {
+  content: '';
+  /*即不把兄弟挤下去 又能设置自己的style  inline不能设置大小 block会挤下去 所以有了inline-block*/
+  display: inline-block;
+  width: 14rpx;
+  height: 14rpx;
+  border: 4rpx solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.s-text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.service-bg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 16px;
+  width: 100%;
+  height: 500px;
+}
+
+.service-button {
+  border-radius: 5px;
+  background: #09f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  margin-top: 30px;
+}
+
+.index-bg {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 25px;
+  background: #09f;
+}
+
+.index-bg-location {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 20px;
+  height: 25px;
+}
+
+.index-bg-locaation-img {
+  margin-top: 5px;
+  width: 12px;
+  height: 15px;
+}
+
+.index-bg-loaciton-textview {
+  display: flex;
+  flex-direction: row;
+  line-height: 25px;
+  color: #fff;
+  font-size: 16;
+  width: 100%;
+  height: 25px;
+}
+
+.search-bg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 40px;
+  background: #09f;
+}
+
+.search-bar {
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 30px;
+  background: #fff;
+  border-radius: 20px;
+}
+
+.list-bg {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background: #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-bar {
+  align-items: center;
+  vertical-align: middle;
+  background: #efefef;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+}
+
+.list-baricon {
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 30px;
+  height: 40px;
+  line-height: 40px;
+}
+
+.list-bartext {
+  align-items: center;
+  vertical-align: middle;
+  line-height: 40px;
+  color: #999;
+  font-size: 14px;
+  width: 100%;
+  height: 40px;
+}
+
+.list-itembg {
+  background: #fff;
+  align-items: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
+}
+
+.list-itemicon {
+  padding-left: 5px;
+  flex-direction: column;
+  width: 50px;
+  height: 50px;
+}
+.list-itemleft {
+  padding-left: 5px;
+  flex-direction: column;
+  width: 100%;
+  height: 56px;
+}
+
+.list-itemcenter {
+  line-height: 50px;
+  color: #aaa;
+  font-size: 14px;
+  width: 160px;
+  height: 50px;
+  text-align:center;
+}
+
+.list-itemcenterLight {
+  line-height: 50px;
+  color: #FF9900;
+  font-size: 14px;
+  width: 200px;
+  height: 50px;
+}

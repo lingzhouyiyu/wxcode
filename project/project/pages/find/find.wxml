@@ -1,0 +1,78 @@
+<!--pages/find/find.wxml-->
+<view class='container'>
+  <!-- 顶部 -->
+  <!-- <view class='topwrap'>
+    <view class='search'>
+      <image class='searchimg' src='../../images/search.png'></image>
+      <input class='searchinput' placeholder="想找的搜出来~" cursor-spacing="15"></input>
+    </view>
+    <image class='noticeimg' src='../../images/message.png' catchtap='gotonotice'></image>
+  </view> -->
+  <view class='partline'></view>
+  <!-- 中间 -->
+  <view class='topwraps'>
+    <view class='center_top'>
+      <text class='txt'>最新活动</text>
+      <text class='more' catchtap='gotoactivitymore'>更多</text>
+    </view>
+  </view>
+
+  <view class='centerwrap'>
+    <view class='activewrap' catchtap='gotoactivitydetail' wx:for='{{activity}}' wx:key="unique1" data-activeid='{{item.activeId}}' data-activetype='{{item.activeType}}'>
+      <view class='active_content'>
+        <view class='imgview'>
+          <!-- <image class='active_img' src='../../images/test.jpg'></image> -->
+          <image class='active_img' src='{{Furl}}{{item.imgurl}}'></image>
+        </view>
+        <view class='titleview'>
+          <text>{{item.activeTitle}}</text>
+        </view>
+        <view class='detailview'>
+          <text class='addressview'>{{item.activityAddress}}</text>
+          <!-- <text class='priceTxt'>￥0.0</text> -->
+        </view>
+      </view>
+
+    </view>
+
+  </view>
+  <!-- <view class='partlines'></view> -->
+  <!-- 底部 -->
+
+  <view class='bottomwrap'>
+    <view class='center_top'>
+      <text class='txt'>新闻动态</text>
+      <text class='more' catchtap='gotonewsmore'>更多</text>
+    </view>
+  </view>
+  <view class='news_content' wx:for='{{newsList}}' wx:key='unique2' bindtap='gotonewsdetail' data-newsid='{{item.id}}'>
+
+    <view class='news_item'>
+      <view class='newstitle'>{{item.title}}</view>
+      <view class='newscontent'>{{item.introduceContext}}</view>
+      <view class='newsimg'>
+        <view class='imgviews' wx:for='{{item.imgarray}}' wx:for-item='items' wx:key='unique5'>
+          <image src='{{Furl}}{{items}}' class='detailimg'></image>
+        </view>
+      </view>
+      <view class='newsdetail'>
+        <view class='leftitem'>
+          <text class='catetxt'>官方</text>
+          <text class='timetxt'>{{item.createTime}}</text>
+        </view>
+        <view class='rightitem'>
+          <!-- <view class='rightitem_l'>
+            <text class='counttxt'>10780</text>
+            <text class='looktxt'>浏览</text>
+          </view> -->
+          <view class='rightitem_r'>
+            <text class='countstxt'>{{item.lookCount}}</text>
+            <text class='commenttxt'>浏览</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='partlineb'></view>
+  </view>
+
+</view>

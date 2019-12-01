@@ -1,0 +1,45 @@
+<!--index.wxml-->
+<view class="ub bc-text ub-ver mainpage">
+  <view class='task-top'>
+    <image class='task-img' src='../common/images/task-top.jpg'></image>
+  </view>
+  
+  <view class='ub ub-ver ub-f1 task-list'>
+    <block wx:for="{{taskList}}" wx:key="ID">
+      <navigator class='ub  tast-item' url='../taskdetail/taskdetail?id={{item.TaskId}}'>
+        <view class='ub ub-ver ub-f1'>
+          <view class='ub ub-f1 sub-task'>
+            <text>线路：</text>
+            <text>{{item.LineName}}</text>
+            <text class='line-bg'>—</text>
+            <text>{{item.StartSpot}}{{item.EndSpot}}</text>
+          </view>
+          <view class='ub ub-ac sub-task'>
+            <view class='ub ub-f1'>
+              <text>指派时间：</text>
+              <text>{{item.UseDate}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='ub ub-ac ub-pe colhgreen'>
+          <text wx:if="{{item.TaskState=='0'}}" >未开始</text>
+          <text wx:elif="{{item.TaskState=='1'}}" >已开始</text>
+          <text wx:elif="{{item.TaskState=='2'}}" >已结束</text>
+          <text  wx:else >未知状态</text>
+        </view>
+      </navigator>
+    </block>
+  </view>
+
+  <block  wx:if="{{loaded==true && taskList.length==0}}" > 
+  <view class='ub ub-ver ub-ac ub-pc nodata-box '>
+    <view>
+      <image class='nodata-img' src='../common/images/nodata.png'></image>
+    </view>
+    <view class='ub'>
+      <text>暂无指派任务</text>
+    </view>
+  </view>
+ </block>
+ 
+</view>

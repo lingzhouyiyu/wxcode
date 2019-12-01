@@ -1,0 +1,87 @@
+<view class='container'>
+  <view class='upperview'>
+    <view class='wrapview'>
+      <view class='upperview_top'>
+        <!-- <view class='top_img'>
+          <image src='../../images/test.jpg'></image>
+        </view> -->
+        <view class='top_content'>
+          <!-- <text class='title'>李文喜</text> -->
+          <text class='content'>{{datas.courseTitle}}</text>
+        </view>
+      </view>
+      <view class='upperview_center'>
+        <view class='btnview'>
+          <view class='btnview_left {{tapcurrent=="0"?"txtcolor":""}}' catchtap='menutap' data-current='0'>
+            <image src='../../images/{{tapcurrent=="0"?"bumanyih":"bumanyi"}}.png'></image>
+            <text>不满意</text>
+          </view>
+          <view class='btnview_right {{tapcurrent=="1"?"txtcolor":""}}' catchtap='menutap' data-current='1'>
+            <image src='../../images/{{tapcurrent=="1"?"manyih":"manyi"}}.png'></image>
+            <text>满意</text>
+          </view>
+        </view>
+        <view class='tipsview' hidden='{{tapcurrent!="0"}}'>请选择不满意的原因(必选)</view>
+      </view>
+      <view class='upperview_bottom' hidden='{{tapcurrent!="0"}}'>
+        <view class='btnitem {{item.selected?"btnitems":""}}' wx:for='{{labelArray}}' wx:key='unique2' bindtap='selectitem' data-select='{{index}}'>{{item.text}}</view>
+        
+      </view>
+
+      <textarea class='manyiinput' placeholder='亲，提出您宝贵的意见吧' hidden='{{tapcurrent!="1"}}' bindinput='getReasonText' bindblur="bindTextAreaBlurs" value="{{textcontents}}"></textarea>
+
+    </view>
+  </view>
+  <view class='belowview'>
+    <view class='belowviewwrap'>
+      <view class='below_top'>
+        <view class='below_top_left'>
+          <image src='{{Furl}}{{schoolPicture}}'></image>
+          <text>{{datas.schoolName}}</text>
+        </view>
+        <view class='below_top_right' bindtap='isselect'>
+          <image src='../../images/{{selectTag?"selectn":"selected"}}.png'></image>
+          <text>匿名评价</text>
+        </view>
+      </view>
+      <view class='below_stars'>
+        <view class='star_content'>
+          <view class='star_item'>
+            <text>学校</text>
+            <view>
+              <image wx:for='{{schoolStar}}' wx:key='unique0' src='../../images/{{item}}.png' bindtap='schoolselect' data-select='{{index}}'></image>
+            </view>
+          </view>
+          <view class='star_item'>
+            <text>老师</text>
+            <view>
+              <image wx:for='{{teacherStar}}' wx:key='unique1' src='../../images/{{item}}.png' bindtap='teacherselect' data-select='{{index}}'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <textarea class='inputs' placeholder='亲，对学校、老师以及课程还满意吗?' bindinput='getschoolReasonText' bindblur="bindTextAreaBlur" value="{{textcontent}}"></textarea>
+      <view class='photos'>
+        <block wx:for='{{pics}}' wx:key="unique">
+          <view class='imgview'>
+            <view class='subBtn' bindtap='subImg' data-numbers="{{index}}">
+              <text>-</text>
+            </view>
+            <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+          </view>
+        </block>
+        <view class="addbtn {{isShow?'true':'hideTrue'}}" bindtap='chooseImg'>
+          <image src='../../images/photos.png'></image>
+        </view>
+        <view class="photos_tips {{showText?'true':'hideTrue'}}">
+          <text>上传图片</text>
+          <text class='titles_p textcolor_gray'>内容丰富的评价有机会成为优质评价哦</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>
+<view class='submitBtn' bindtap='submitData'>
+  提交
+</view>

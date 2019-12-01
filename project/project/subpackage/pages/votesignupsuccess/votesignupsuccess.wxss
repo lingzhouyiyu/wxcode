@@ -1,0 +1,32 @@
+.icon{
+  width: 171rpx;
+  height: 171rpx;
+  border-radius: 50%;
+  margin-top: 150rpx;
+}
+.txt1{
+font-size: 42rpx;
+color: rgb(51, 51, 51);
+margin-top: 70rpx;
+}
+.txt2{
+margin-top: 30rpx;
+}
+.txt2_1{
+font-size: 30rpx;
+color: rgb(153 , 153, 153);
+}
+.txt2_2{
+font-size: 30rpx;
+color: rgb(255, 79, 56);
+}
+.txt2_3{
+font-size: 30rpx;
+color: rgb(153 , 153, 153);
+}
+.txt3{
+font-size: 30rpx;
+color: rgb(51, 51, 51);
+text-decoration: underline;
+margin-top: 150rpx;
+}

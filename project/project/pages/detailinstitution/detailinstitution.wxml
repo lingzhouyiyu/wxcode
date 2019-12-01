@@ -1,0 +1,198 @@
+<import src="../../wxParse/wxParse.wxml" />
+
+<view class='container'>
+  <view class='topviewwrap'>
+    <view class='topview'>
+      <view class='imgview'>
+        <!-- <image src='../../images/test.jpg' class='headerimage'></image> -->
+        <image src='{{Furl}}{{schoolPicture}}' class='headerimage'></image>
+      </view>
+      <image src='../../images/xuexiaorenzheng.png' class='renzhengimg'></image>
+      <view class='top_content'>
+        <view class='top_content_title'>{{schoolName}}</view>
+        <view class='Score'>
+          <image src='../../images/star.png' class='starimg'></image>
+          <image src='../../images/star.png' class='starimg'></image>
+          <image src='../../images/star.png' class='starimg'></image>
+          <image src='../../images/star.png' class='starimg'></image>
+          <image src='../../images/stars.png' class='starimg'></image>
+          <text>{{schoolData.commentCount}}条评价</text>
+        </view>
+        <view class='top_list textcolor_gray'>
+          <view class='top_list_item' bindtap='gotoinstitutionAppointment'>
+            <text class='item_counts'>{{schoolData.yuyueCount}}</text>
+            <text class='item_title'>预约</text>
+            <view class='Verticalline'></view>
+          </view>
+          <view class='top_list_item'>
+            <text class='item_counts'>{{schoolData.commentCount}}</text>
+            <text class='item_title'>评价</text>
+            <view class='Verticalline'></view>
+          </view>
+          <view class='top_list_item'>
+            <text class='item_counts'>{{teacherCount}}</text>
+            <text class='item_title'>老师</text>
+            <view class='Verticalline'></view>
+          </view>
+          <view class='top_list_item'>
+            <text class='item_counts'>{{schoolData.askCount}}</text>
+            <text class='item_title'>咨询排行</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='location_msg' bindtap='openlocation'>
+    <view class='lefttview'>
+      <image class='location_msg_img' src='../../images/locations.png'></image>
+      <text class='location_msg_txt'>{{schoolAddress}}</text>
+    </view>
+    <image class='location_more_img' src='../../images/more.png'></image>
+  </view>
+  <view class='partline_15'></view>
+  <view class='notice_msg' wx:if='{{schoolData.schoolNotice!=""&&schoolData.schoolNotice!=null}}'>
+    <image class='notice_msg_img' src='../../images/notices.png'></image>
+    <text class='notice_msg_txt'>{{schoolNotice}}</text>
+  </view>
+  <view class='partline_15' wx:if='{{schoolData.schoolNotice!=""&&schoolData.schoolNotice!=null}}'></view>
+  <!-- 推荐 -->
+  <view class='recmendwrap' hidden='{{hascategory}}'>
+    <scroll-view scroll-x="true" scroll-left='15' class="tab_comtainer">
+      <block wx:for="{{footertitle}}" wx:key="unique1">
+        <text class="tab_item {{item.categoryName == catalogSelect ? 'active':'actives'}}" bindtap='tabSelect' data-select="{{item.categoryName}}" data-categoryid='{{item.categoryId}}'>{{item.categoryName}}</text>
+      </block>
+    </scroll-view>
+    <view class='partline_3'></view>
+  </view>
+  <view class='recmendcontent'>
+    <view class='recmenditem' wx:for='{{recmendarray}}' wx:key="unique2" data-courseid='{{item.courseId}}' bindtap='gotodetailcourse'>
+      <view class='item_left'>
+        <!-- <image src='../../images/test.jpg'></image> -->
+        <image src='{{Furl}}{{item.newcourseImg}}'></image>
+      </view>
+      <view class='item_right'>
+        <view class='itemtitle'>{{item.courseTitle}}</view>
+        <view class='itemname textcolor_gray'>
+          <text class='nameone'>{{item.schoolName}}</text>
+          <text class='nametwo'>{{item.newSchoolDistance}}</text>
+        </view>
+        <view class='itemprice'>
+          <view>
+            <text class='price'>￥{{item.courseAdvancePayment}}</text>
+            <text class='Originalprice textcolor_gray' wx:if='{{item.courseAdvancePayment!=item.coursePrice}}'>￥{{item.coursePrice}}</text>
+          </view>
+
+          <text class='textcolor_gray bulabula'>已售{{item.sellCount}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class='checkall textcolor_blue' hidden='{{hascourse}}' bindtap='gotoinstitutionAppointment'>
+    <text>查看全部项目</text>
+    <image src='../../images/goto.png' class='checkall_img'></image>
+  </view>
+  <view class='partline_20'></view>
+  <view class='teacherteam_wrap' hidden='{{!hasTeacher}}'>
+    <view class='teacherteam_left'>老师团队</view>
+    <!-- <view class='teacherteam_right textcolor_gray'>
+      <text>共{{teacherCount}}位教师</text>
+      <image class='teacherteam_right_img' src='../../images/more.png'></image>
+    </view> -->
+  </view>
+  <view class='partline_3'></view>
+  <view class='teacher_rec'>
+    <scroll-view scroll-x='true' class='teacherarea'>
+      <view class='blanks'></view>
+      <view class='teacher_section' wx:for="{{teacherarray}}" wx:key="unique3" wx:for-index="index" bindtap='gotodetailTeacher' data-teacherId='{{item.teacherId}}'>
+        <view class='sectionheader'>
+          <!-- <image src='../../images/guitar.png' class='headerimg'></image> -->
+          <image src='{{Furl}}{{item.teacherImage}}' class='headerimg'></image>
+        </view>
+        <view class='teacherdes'>
+          <text class='margins name'>{{item.teacherName}}</text>
+          <text class='margins kind'>{{item.categoryName}}</text>
+          <text class='margins counts'>{{item.yuyueCount}}人预约过</text>
+        </view>
+        <view class='hotsign'></view>
+        <view class='signTxt'>{{item.recommend==1?'名师':'HOT'}}</view>
+        <view class='hotsigns' style="border-color:{{item.recommend==1?'#00AEFE':'#FF4B50'}} transparent"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='partline_15'></view>
+  <view class='introduce'>
+    <view class='introduce_item' bindtap='introduce_item_switch' data-select='0'>
+      <text class='introduce_item_txt {{introduceSelect=="0"?"introduce_item_txts":""}}'>介绍</text>
+    </view>
+    <view class='introduce_item' bindtap='introduce_item_switch' data-select='1'>
+      <text class='introduce_item_txt {{introduceSelect=="1"?"introduce_item_txts":""}}'>环境</text>
+    </view>
+    <view class='introduce_item' bindtap='introduce_item_switch' data-select='2'>
+      <text class='introduce_item_txt {{introduceSelect=="2"?"introduce_item_txts":""}}'>评价</text>
+    </view>
+  </view>
+  <view class='partline_3'></view>
+  <!-- 介绍 -->
+  <view scroll-y class='scroll_content' hidden='{{introduceSelect!="0"}}'>
+    <view class='insiti_bottom'>
+      <template is="wxParse" data="{{wxParseData:schoolIntroduce.nodes}}" />
+    </view>
+
+  </view>
+  <!-- 环境 -->
+  <!-- <view class='huanjingtitle' hidden='{{introduceSelect!="1"}}'>【教室环境】</view> -->
+  <view scroll-y class='scroll_content' hidden='{{introduceSelect!="1"}}'>
+    <template is="wxParse" data="{{wxParseData:schoolEnvironment.nodes}}" />
+    <!-- <view class='huanjingimg'>
+      <image src='../../images/test.jpg'></image>
+      <image src='../../images/test.jpg'></image>
+    </view> -->
+  </view>
+  <!-- 评价 -->
+  <!-- <view class='commenttop' hidden='{{introduceSelect!="2"}}'>
+    <view class='insti_score'>5.0</view>
+    <view class='insti_score_detail'>
+      <text>环境：5.0</text>
+      <text>专业度：5.0</text>
+      <text>服务：5.0</text>
+      <text>效果：5.0</text>
+    </view>
+    <view class='partline_3'></view>
+    <view class='hotcate'>
+      <view class='hotitem' wx:for="{{hotarray}}" wx:key="unique4">{{item}}</view>
+    </view>
+  </view> -->
+  <view scroll-y class='scroll_content scroll_contents' hidden='{{introduceSelect!="2"}}'>
+    <view class='comment_item' wx:for="{{commentData}}" wx:key='unique5'>
+      <view class='comment_item_left'>
+        <image src='{{item.nickPicture}}'></image>
+      </view>
+      <view class='comment_item_right'>
+        <view class='comment_item_right_1'>{{item.nickName}}</view>
+        <view class='comment_item_right_2'>
+          <image wx:for='{{item.starArray}}' wx:key='unique6' wx:for-item='items' src='../../images/{{items}}.png'></image>
+        </view>
+        <view class='comment_item_right_3'>
+          {{item.schoolReasonText}}
+        </view>
+        <view class='comment_item_right_4 textcolor_gray'>{{item.newtime}}</view>
+        <!-- <view class='comment_item_right_5 textcolor_gray'>浏览90676</view> -->
+      </view>
+    </view>
+    <view wx:if='{{!hasmessage}}' class='nomessages'>
+      <image src='../../images/nomessages.png'></image>
+      <text class='textcolor_gray'>暂时没有评价</text>
+    </view>
+  </view>
+  <view class='Consultation'>
+    <view class='Consultation_left' bindtap='makephonecall'>
+      <image src='../../images/xuexiaophone.png' class='Consultation_img'></image>
+      <text class='Consultation_txt'>电话咨询</text>
+    </view>
+    <button class='Consultation_right' session-from='{{sessionfrom}}' bindtap='onlinecontact' open-type="contact">
+      <image src='../../images/xuexiaoonline.png' class='Consultation_img'></image>
+      <text class='Consultation_txt'>在线咨询</text>
+    </button>
+  </view>
+</view>

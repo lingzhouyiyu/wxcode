@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class='wrap'>
+    <input class='phonenumber' value='13887656543'></input>
+    <view class='phonetips'>默认号码</view>
+    <view class='partline_3'></view>
+    <view class='titleview'>
+      <view class='titleview_left'>
+        <image src='../../../images/Explain.png'></image>
+      </view>
+      <view class='titleview_right'>以上电话号码默认为哇呜小程序所绑定的手机号，如改号码与所在机构预留的号码不一致，请更改为入驻机构预留的号码</view>
+    </view>
+    <view class='selecttitle'>选择学校机构</view>
+    <view class='contentwarp'>
+      <text class='item {{selectTag==item?"items":""}}' data-select='{{item}}' bindtap='selectitem' wx:for='{{array}}'>{{item}}</text>
+    </view>
+    <view class='btn_submit' bindtap='gotoapplySuccess'>确认</view>
+  </view>
+
+
+</view>

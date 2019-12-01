@@ -1,0 +1,63 @@
+<!--pages/nk/historytask/historytask.wxml-->
+<view class="container">
+    <view style='display:flex;flex-direction:row;padding-left:10px;height:20px;width:100%;'>
+    <picker mode="selector"  value="{{carIndex}}" range="{{carList}}" bindchange="bindCarChange">
+      <view  style="border-radius: 8rpx;width:100px;border-width: 4rpx 4rpx 4rpx 4rpx;border-style: solid;border-color: #7b7b7b;line-height:20px;color:#7b7b7b;font-size:32rpx;text-align:center">{{carList[carIndex]}}</view>
+    </picker>
+    <view bindtap="preDay" style="width:60px;line-height:20px;color:#7b7b7b;font-size:26rpx;text-align:center">前一天</view>
+    <picker mode="date" value="{{date}}" start="2018-10-01" end="{{endSelsctDate}}" bindchange="bindDateChange">
+      <view  style="width:120px;line-height:20px;color:#7b7b7b;font-size:32rpx;text-align:center">{{date}}</view>
+    </picker>
+    <view bindtap="nextDay" style="width:60px;line-height:20px;color:#7b7b7b;font-size:26rpx;text-align:center">后一天</view>
+  </view>
+  
+  <view class="tabheadtyle">
+   <view style="display:flex;flex-direction:column;flex:1;text-align:left;">
+      <text style="font-size:30rpx;color:#4a4a4a">车牌</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">趟数</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">人数</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">金额</text>
+    </view>
+  </view> 
+  <scroll-view scroll-y style="height: {{windowHeight-54-50}}px;"> 
+  <block wx:for="{{orderList}}" wx:key="ID">
+    <navigator  url="detail?id={{item.VehicleId}}&beginDate={{date}}&endDate={{date}}&VehicleNumber={{item.VehicleNumber}}">
+  <view class=" userstyle">
+   <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:30rpx;color:#4a4a4a">{{item.VehicleNumber}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.Ranks}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.Passengers}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{item.Amount}}</text>
+    </view>
+    <text class="righthead"></text>
+  </view>  
+  </navigator>
+</block>
+</scroll-view>
+<view class="bottomStyle">
+   <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:30rpx;color:#4a4a4a">合计</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{orderSum.Ranks}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{orderSum.Passengers}}</text>
+    </view>
+    <view style="display:flex;flex-direction:column;flex:1;text-align:left">
+      <text style="font-size:26rpx;color:#4a4a4a">{{orderSum.Amount}}</text>
+    </view>
+  </view>  
+</view>

@@ -1,0 +1,63 @@
+<view class='container'>
+  <view class='partline_3'></view>
+  <view class='applyTitle textcolor_blue'>请填写以下个人申请资料</view>
+  <form bindsubmit="submitdata" class='formview'>
+    <view class='applyContent'>
+      <view class='applyContent_img' bindtap='selectHeaderimg'>
+        <view class='headerimg' wx:if='{{!hasImg}}'>
+          <image src='../../images/photos.png'></image>
+        </view>
+        <view class='headerimgs' wx:for='{{headerpics}}' wx:key='unique1' wx:if='{{hasImg}}'>
+          <image src='{{item}}'></image>
+        </view>
+      </view>
+      <view class='contents'>
+        <view class='contents_item'>
+          <text class='contents_item_txt'>姓名</text>
+          <input class='contents_item_input' name='teacherName'></input>
+        </view>
+        <view class='contents_item'>
+          <text class='contents_item_txt'>服务机构</text>
+          <input class='contents_item_input' name='schoolName'></input>
+        </view>
+        <view class='contents_item'>
+          <text class='contents_item_txt'>联系电话</text>
+          <input class='contents_item_input' type="number" name='teacherPhone'></input>
+        </view>
+        <view class='contents_item'>
+          <text class='contents_item_txt'>擅长</text>
+          <input class='contents_item_input' name='goodsWork'></input>
+        </view>
+        <view class='contents_item'>
+          <text class='contents_item_txt'>毕业学校</text>
+          <input class='contents_item_input' name='graduateSchool'></input>
+        </view>
+        <view class='contents_item'>
+          <text class='contents_item_txt'>从业年限</text>
+          <input class='contents_item_input' type="number" name='workAge'></input>
+        </view>
+        <view class='contents_item contents_itemzhengshu'>
+          <text class='contents_item_txt contents_item_txtzhengshu'>证书</text>
+
+          <view class='uploadview'>
+            <view class='imageview' wx:for='{{pics}}' wx:key='unique'>
+              <image src='{{item}}'></image>
+            </view>
+            <view class='uploadBtn {{isShow?"true":"hideTrue"}}' bindtap='selectimg'>
+              <view class='imgwrap'>
+                <image src='../../images/addimg.png'></image>
+              </view>
+
+            </view>
+          </view>
+        </view>
+        <view class='contents_item lalalalla'>
+          <text class='contents_item_txt'>个人签名</text>
+          <input class='contents_item_input' placeholder='(30个字以内)' name='teacherMotto'></input>
+        </view>
+      </view>
+
+    </view>
+    <button class='applySubmit' formType="submit">提交申请</button>
+  </form>
+</view>

@@ -1,0 +1,14 @@
+/* pages/setaddr/setaddr.wxss */
+@import '../../common/css/common.wxss';
+
+page{background:#f2f6ff}
+.mainpage{height:100vh}
+.mapbox{height:100%}
+.map{height:100%;width:100%}
+.addr-box{display:flex;position:fixed;left:0;bottom:0;width:100%;overflow:hidden}
+.addr-main{background:#fff;padding:.8em .6em;display:flex;flex:1; flex-direction: column; align-items:center;box-shadow:2px 2px 3px #aaa}
+.addr-txt{display:flex;white-space:normal; justify-content: center;}
+.surebtn{color:#ff8033;padding-left:.6em}
+.curloact{position:fixed;right:10px;top:48%;width:30px;height:30px}
+.carinfor{ display: flex; white-space:normal; justify-content: center; font-size: 0.9em; color: #ff8033; margin-top: 0.4em;}
+

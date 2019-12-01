@@ -1,0 +1,83 @@
+<view class='container'>
+<view class='ylhnmd'>
+ <view class='order_content_top tuikuan_top'>
+    <text class='waitpay'>退款审核中</text>
+  </view>
+</view>
+  <view class='recmendcontent'>
+    <view class='recmenditem'>
+      <view class='item_left'>
+        <image src='../../../images/test.jpg'></image>
+      </view>
+      <view class='item_right'>
+        <view class='itemtitle'>端午节回馈儿童暑假特色欢乐钢琴课10节端午节回馈儿童暑假特色欢乐钢琴课</view>
+
+        <view class='itemprice'>
+          <view class='itemprice_left'>
+            <text class='Originalprice'>预约金：</text>
+            <text class='bubulala'>￥</text>
+            <text class='price'>19</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='partline_15'></view>
+  <view class='yuyuecode'>联系信息</view>
+  <view class='xuexiao'>
+    <text>学校：云南华洋国际教育</text>
+    <image src='../../../images/telephone.png'></image>
+  </view>
+  <view class='partline_3'></view>
+  <view class='xuexiao'>
+    <text>地址：云南省昆明市盘龙区尚亿街170号</text>
+    <image src='../../../images/locations.png'></image>
+  </view>
+  <view class='partline_15'></view>
+  <view class='yuyuecode'>订单信息</view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>订单合计</text>
+    <text class='textcolor_pink'>￥11</text>
+  </view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>商品数量</text>
+    <text>1</text>
+  </view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>预约金红包</text>
+    <text>￥10</text>
+  </view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>氧分兑换</text>
+    <text>￥10</text>
+  </view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>尾款合计</text>
+    <text>￥10</text>
+  </view>
+  <view class='txtdetail'>
+    <text class='txtdetail_title textcolor_gray'>订单时间</text>
+    <text>2018-09-17 11:54:32</text>
+  </view>
+  <view class='dingdetail'>
+    <text class='txtdetail_title textcolor_gray'>订单编号</text>
+    <text>2565476564</text>
+    <view class='fuzhi'>复制</view>
+  </view>
+  <view class='txtdetail lalala'>
+    <text class='txtdetail_title textcolor_gray'>手机号码</text>
+    <text>1356565474</text>
+  </view>
+  <view class='partline_15'></view>
+  <view class='xuexiao'>
+    <view>
+      <text>客服电话:</text>
+      <text class='textcolor_blue made'>400-8888-8888</text>
+    </view>
+    <image src='../../../images/telephone.png'></image>
+  </view>
+  <view class='textcolor_gray bottomtxt'>
+    <text class='bottomtxts'>(每天9:00-22:00)</text>
+  </view>
+  <view class='partlines'></view>
+</view>

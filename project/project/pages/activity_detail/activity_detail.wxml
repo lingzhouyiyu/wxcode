@@ -1,0 +1,5 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
+<view class='partline_3'></view>
+  <template is="wxParse" data="{{wxParseData:activity_detail.nodes}}" />
+</view>

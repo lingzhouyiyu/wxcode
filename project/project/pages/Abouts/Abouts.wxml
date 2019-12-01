@@ -1,0 +1,26 @@
+<view class='container'>
+  <view class='partline_3'></view>
+
+  <view class='about_top'>
+    <view class='icon'></view>
+    <text class='title textcolor_blue'>蛙涡教育</text>
+    <text class='version textcolor_gray'>V1.0.1</text>
+  </view>
+  <view class='partlines'>
+    <view class='left'></view>
+    <view class='center textcolor_gray'>///</view>
+    <view class='right'></view>
+  </view>
+  <view class='content'>
+  </view>
+
+  <view class='contenttext'>
+    <text class='titles'>黑芒教育科技公司</text>
+    <text class='texts'>黑芒，取自The light of dawn,the light of future.曙光，黎明之光，未来之光。我们怀着对教育的敬畏以及对优质教育环境的向往出发，开发了公司旗下的蛙涡教育平台。</text>
+    <text class='texts'>平台目前签约机构，昆明A类、B类艺术综合素质类机构上千家，曲靖市机构上百家。如：街舞ACE、美吉姆早教集团、八八空间、苗苗艺术、AK集团、七田、金宝贝、等等上百家大型优质教育连锁学校。</text>
+    <text class='texts'>蛙涡，因全国艺术教育市场的参差不齐，家长筛选好学校、好老师困难等因素而诞生。</text>
+    <text class='texts'>我们专注开发运营一个能够让综合素质教育机构、素质教育从业人员、自由教育工作者通过手机端平台进行线上资历展示、教育结果评分、教学内容介绍、教育成果展示，线下面对面教育指导、教学分享、教学考核、与客户交流的平台。</text>
+    <text class='texts'>并且将以上内容，精确的匹配给教育投资的家长和教育需求者，实现线上支付（退款），逐步实现受教育过程的监督评论体系、预付教育资金监管、从业资质审核等工作。通过对受教育者的数据分析，挖掘深度教育需求、教育大环境改良，同时衍生用户交流价值生态圈（社群），受教育群体间的图片、视频、文字分享。实现差异化服务，满足多层次受教育群体的综合教育需求的社区平台。</text>
+    <text class='phone' bindtap='makephonecall'>联系我们：0871-68505116</text>
+  </view>
+</view>

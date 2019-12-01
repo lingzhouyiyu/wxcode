@@ -1,0 +1,61 @@
+<!--index.wxml-->
+<view class="ub bc-text ub-ver mainpage">
+  <view class='task-top'>
+    <image class='task-img' src='../common/images/task-top.jpg'></image>
+  </view>
+  <view class='ub ub-ac checkdata'>
+    <view class='ub ub-ac ub-pc ub-f1 colhgreen' bindtap="preDay">
+      <text>前一个月</text>
+    </view>
+    <picker mode="date" fields='month' value="{{date}}" start="2018-10" end="{{endSelsctDate}}" bindchange="bindDateChange">
+      <view style="width:120px;line-height:20px;color:#00CC66;font-size:32rpx;text-align:center">{{date}}</view>
+    </picker>
+    <view class='ub ub-ac ub-pc  ub-f1 colhgreen' bindtap="nextDay">
+      <text>后一个月</text>
+    </view>
+  </view>
+
+    <view class='ub ub-ver ub-f1 task-list' wx:for="{{taskList}}" wx:key="id">
+      <navigator class='ub  tast-item' url='../histaskdetail/histaskdetail?id={{item.TaskId}}'>
+        <view class='ub ub-ver ub-f1'>
+          <view class='ub ub-ac umar-b'>
+            <text>线路：</text>
+            <text>{{item.StartSpot}}</text>
+            <text class='line-bg'>—</text>
+            <text>{{item.EndSpot}}</text>
+          </view>
+          <view class='ub ub-ac umar-b'>
+            <view class='ub ub-ac'>
+              <text>指派时间：</text>
+              <text>{{item.UseDate}}</text>
+            </view>
+          </view>
+          <view class='ub ub-ac'>
+            <view class='ub ub-ac'>
+              <text>总额：</text>
+              <text>{{item.LinePrice}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='ub ub-ac ub-pe colhgreen'>
+          <text wx:if="{{item.TaskState=='0'}}" >未开始</text>
+          <text wx:elif="{{item.TaskState=='1'}}" >已开始</text>
+          <text wx:elif="{{item.TaskState=='2'}}" >已完成</text>
+          <text  wx:else >未知状态</text>
+        </view>
+      </navigator>
+    </view>
+
+
+  <!--暂无任务-->
+  <block  wx:if="{{loaded==true && taskList.length==0}}">
+  <view class='ub ub-ver ub-ac ub-pc nodata-box'>
+    <view>
+      <image class='nodata-img' src='../common/images/nodata.png'></image>
+    </view>
+    <view class='ub'>
+      <text>当前暂无历史任务</text>
+    </view>
+  </view>
+  </block>
+</view>

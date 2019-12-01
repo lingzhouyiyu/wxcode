@@ -1,0 +1,48 @@
+<view class='container'>
+  <view class='top'>
+    <view class='title'>活动结束倒计时</view>
+    <view class='timeview'>
+      <view class='tian'>
+        <text>{{countDownDay}}</text>
+        <text>天</text>
+      </view>
+      <view class='tian'>
+        <text>{{countDownHour}}</text>
+        <text>时</text>
+      </view>
+      <view class='fen'>
+        <text>{{countDownMinute}}</text>
+        <text>分</text>
+      </view>
+      <view class='fen'>
+        <text>{{countDownSecond}}</text>
+        <text>秒</text>
+      </view>
+    </view>
+  </view>
+  <view class='optionview'>
+    <view class='optionitem'>名次</view>
+    <view class='optionitem'>封面图</view>
+    <view class='optionitem'>编号</view>
+    <view class='optionitem'>姓名</view>
+    <view class='optionitem'>票数</view>
+  </view>
+  <view class='contentwrap' wx:for='{{rankdata}}' wx:key='' bindtap='gotovotepersonaldetail' data-id='{{item.id}}'>
+    <view class='items'>
+      <view class='iconview'>
+        <image src='../../images/voterank2.png' wx:if='{{index==0}}'></image>
+        <image src='../../images/voterank3.png' wx:if='{{index==1}}'></image>
+        <image src='../../images/voterank1.png' wx:if='{{index==2}}'></image>
+        <text>{{index+1}}</text>
+      </view>
+      <view class='imgview'>
+        <image src='{{Furl}}{{item.image}}'></image>
+      </view>
+      <view class='txtview'>
+       <text>{{item.id}}</text>
+       <text>{{item.name}}</text>
+       <text>{{item.total}}</text>
+      </view>
+    </view>
+  </view>
+</view>

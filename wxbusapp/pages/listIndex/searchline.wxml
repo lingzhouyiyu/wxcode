@@ -1,0 +1,46 @@
+<view >
+  <view class="transit-sug-click-hook">
+    <view class="transit-sug-search-icon">
+      <image class="transit-search-icon-img"  src='../../source/icon/search.png'></image>
+    </view>
+    <input auto-focus class='sug-input' placeholder-style="color:#ff9900;" placeholder="搜线路" bindinput="getSug"/>
+  </view>
+
+  <scroll-view scroll-y style='height:{{scrollheight-36}}px'>
+        <block wx:key="line_id" wx:for="{{suggests}}">
+          <navigator url="../mapshow/mapIndex?id={{item.id}}&line_id={{item.no}}&type={{item.type}}&online={{item.isopen == '开通'?1:0}}">
+
+            <view class="list-itembg">
+            <view class="list-itemicon" ><image  style="margin-top:5px;width:30px; height:30px" src="/source/icon/bus.png"></image></view>
+              <view class="list-itemleft">
+                <view style="color: #000;font-size: 16px;width:100%;"><text>{{item.no}}</text><text style="margin-left:10px;font-size:12px">{{item.start_time}}-{{item.end_time}}</text></view>
+                <view style="color: #aaa;font-size: 12px">{{item.start_stop}} 开往 {{item.end_stop}}</view>
+              </view>
+
+              <view  wx:if="{{item.isopen == '开通'}}"  class="list-itemcenterLight">实时位置</view>
+              <view  wx:else class="list-itemcenter">无实时位置</view>
+              <view style="padding-right: 18px;">
+                <text class="righthead"></text>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </scroll-view>
+  <!--
+  <scroll-view scroll-y="true" class="transit-sug-list" style='height:{{scrollheight}}px'>
+    <view wx:for="{{suggests}}" wx:for-item="suggest" class="transit-list-item">
+     <navigator url="./showline?line_id={{suggest.no}}&type={{item.type}}">
+      <view class="transit-list-item-inner">
+          <view class="transit-sug-icon">
+            <image style="width: 20px; height: 20px;"  src='../../source/icon/bus.png'></image>
+          </view>
+          <view class="transit-sug-text">
+            <view class="transit-sugitem-name"><text>{{suggest.name}}</text></view>
+            <view class="transit-sugitem-desc">票价：{{suggest.basic_price}}-{{suggest.max_parice}}元</view>
+          </view>
+      </view>
+      </navigator>
+    </view>
+  </scroll-view>
+   -->
+</view>

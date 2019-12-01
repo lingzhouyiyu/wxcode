@@ -1,0 +1,114 @@
+@import "../../wxParse/wxParse.wxss";
+
+.container {
+  font-size: 28rpx;
+}
+
+.marginleft {
+  margin-left: 40rpx;
+}
+
+.teacher_name {
+  width: 92%;
+  height: 100rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+
+.teacher_position {
+  width: 92%;
+  height: 100rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.position_title {
+  color: #52524f;
+    margin-right: 30rpx;
+    font-size: 28rpx;
+}
+
+.position_content {
+  color: #9e9a94;
+}
+
+.teacher_goodat {
+  width: 92%;
+  height: 100rpx;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.goodat_content_item{
+  margin-right: 8rpx;
+}
+.goodat_title {
+  color: #52524f;
+  margin-right: 30rpx;
+}
+
+.goodat_content_item {
+  color: #9e9a94;
+}
+
+.teacher_introduction {
+  width: 92%;
+  height: auto;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.introduction_title {
+  color: #52524f;
+  width: 25%;
+  height: 100rpx;
+  /* background-color: red; */
+}
+
+.introduction_content {
+  color: #9e9a94;
+  display: flex;
+  flex-flow: row wrap;
+  width: 75%;
+  height: auto;
+  /* background-color: yellow; */
+  word-break: break-all;
+  word-wrap: break-word;
+}
+.teacher_photo_title{
+  width: 92%;
+  height: 100rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* background-color: red; */
+}
+.teacher_photo_warp{
+   width: 100%;
+   height: auto;
+   /* background-color: yellow; */
+}
+.teacher_photo{
+  width: 95%;
+  height: auto;
+  /* background-color: red; */
+  margin-left: 8rpx;
+}
+.teacher_photo_img{
+  width: 29%;
+  height: 200rpx;
+  background-color: gray;
+  margin-left: 25rpx;
+  margin-bottom: 25rpx;
+}

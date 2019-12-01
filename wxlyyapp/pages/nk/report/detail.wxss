@@ -1,0 +1,33 @@
+/* pages/nk/historytask/historytask.wxss */
+.container{
+   margin-top: 4px;
+   height: 100%;
+   background: #F5F5F5;
+}
+/* 共享view样式*/
+.userstyle {
+  padding: 10rpx 10rpx;
+  background: #ffffff;
+  border-width: 0rpx 0rpx 4rpx 0rpx;
+  border-style: solid;
+  border-color: #E0E0E0;
+  display: flex;
+  align-items: center;
+}
+.userTextStyle {
+  color: #4a4a4a;
+  font-size: 26rpx;
+  line-height: 1.42857;
+  flex: 1;
+}
+.tabheadtyle {
+  height:20px;
+  margin-top: 4px;
+  padding: 15rpx 10rpx;
+  background: #f0f0f0;
+  border-width: 0rpx 0rpx 4rpx 0rpx;
+  border-style: solid;
+  border-color: #F5F5F5;
+  display: flex;
+  align-items: center;
+}

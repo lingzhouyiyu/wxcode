@@ -1,0 +1,80 @@
+page{
+  background-color: #f2f2f2;
+}
+.container{
+  padding-top: 28rpx;
+}
+.schoolname{
+  width: 92%;
+  margin-top: 12rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+}
+.nameinput{
+  width: 100%;
+  height: 80rpx;
+  background-color: #fff;
+  padding-left: 30rpx;
+  border-radius: 8rpx;
+}
+.nameinputarea{
+   width: 100%;
+  height: 170rpx;
+  background-color: #fff;
+  padding-left: 30rpx;
+  border-radius: 8rpx;
+}
+.tips{
+width: 92%;
+height: 70rpx;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+color: #ff4f38;
+ margin-top: 12rpx;
+}
+.imgview{
+  width: 100%;
+  height: auto;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: #fff;
+  color: rgb(153, 153, 153)
+}
+.addimg{
+  width: 100%;
+  height: auto;
+    display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  /* background-color: rebeccapurple; */
+}
+.addbtn{
+  width: 140rpx;
+  height: 140rpx;
+  /* background-color: red; */
+  margin-top: 30rpx;
+  margin-right: 18rpx;
+}
+.addbtn image{
+  width: 140rpx;
+  height: 140rpx;
+}
+.btnview{
+width: 92%;
+height: 83rpx;
+background-color: #ff4f38;
+color: #fff;
+font-size: 33rpx;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 15rpx;
+margin-top: 70rpx;
+}

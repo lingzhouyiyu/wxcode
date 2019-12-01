@@ -1,0 +1,23 @@
+@import "../../wxParse/wxParse.wxss";
+
+.container{
+  background-color: #F3F7F6;
+  padding: 30rpx 30rpx 0 30rpx;
+  min-height: 1100rpx;
+}
+.honorwrap{
+width: 100%;
+min-height: 1000rpx;
+background-color: #fff;
+display: flex;
+flex-flow: row wrap;
+justify-content: space-between;
+align-items: flex-start;
+align-content: flex-start;
+}
+.honor_img{
+  width: 48.5%;
+height: 350rpx;
+margin-bottom: 20rpx;
+border-radius: 5px;
+}

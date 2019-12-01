@@ -1,0 +1,74 @@
+<view class='container'>
+  <view class='recmendcontent'>
+    <view class='recmenditem'>
+      <view class='item_left'>
+        <image src='{{Furl}}{{courseInfo.newImg[0]}}'></image>
+      </view>
+      <view class='item_right'>
+        <view class='itemtitle'>{{courseInfo.courseTitle}}</view>
+
+        <view class='itemprice'>
+          <view class='itemprice_left'>
+            <text class='Originalprice'>预约金：</text>
+            <text class='bubulala'>￥</text>
+            <text class='price'>{{cacReservations}}</text>
+          </view>
+          <view class='itemprice_right'>
+            <view class='itemprice_right_item1' bindtap='countsub'>-</view>
+            <input class='itemprice_right_item' disabled='disabled' value='{{ordercounts}}' bindblur='ordercounts'></input>
+            <view class='itemprice_right_item2' bindtap='countadd'>+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='partline_15'></view>
+
+  <view class='yuyuejin'>
+    <text>预约金小计：￥{{cacReservation}}</text>
+  </view>
+  <view class='teacherteam_wraps' wx:if='{{hashongbao}}'>
+    <view class='teacherteam_left' bindtap='selecthongbao'>
+      <image src='../../../images/{{usehongbao?"yhselected":"yhunselected"}}.png'></image>
+      <text>可用优惠券抵扣</text>
+    </view>
+    <view class='teacherteam_right textcolor_gray' bindtap='gotocoupon' data-id='{{yhqid}}'>
+      <text class='textcolor_pink'>￥{{yhqje}}</text>
+      <image class='teacherteam_right_img' src='../../../images/more.png'></image>
+    </view>
+  </view>
+  <view class='partline_3'></view>
+  <view class='teacherteam_wraps' bindtap='selectwabi'>
+    <view class='teacherteam_left'>
+      <image src='../../../images/{{usewabi?"yhselected":"yhunselected"}}.png'></image>
+      <text>可用{{WawowCoin}}个蛙币抵扣</text>
+    </view>
+    <view class='teacherteam_right textcolor_gray'>
+      <text class='textcolor_pink'>￥{{WawowCoin}}</text>
+    </view>
+  </view>
+  <view class='partline_15'></view>
+  <view class='teacherteam_wrap'>
+    <view class='teacherteam_left'>尾款小计：</view>
+    <!-- <view class='teacherteam_right'>
+      <text >0个红包可用</text>
+      <image class='teacherteam_right_img' src='../../../images/more.png'></image>
+    </view> -->
+    <view>￥{{cacRepaymount}}</view>
+  </view>
+  <view class='partline_3'></view>
+  <view class='phone'>
+    <view> 手机号：</view>
+    <view>{{phonenum}}</view>
+    <!-- <input type='text' disabled='disabled' placeholder='请您输入手机号(必填)' value='{{phonenum}}' class='userPhone' name='userPhone' bindblur='userPhoneBlur'></input> -->
+  </view>
+  <view class='partline_3'></view>
+</view>
+<view class='submit'>
+  <view class='submit_left'>
+    <text class='submit_left_1'>还需支付预约金：</text>
+    <text class='submit_left_2 textcolor_blue'>￥</text>
+    <text class='submit_left_3 textcolor_blue'>{{finalcacReservation}}</text>
+  </view>
+  <view class='submit_right' bindtap='downOrder'>确认订单</view>
+</view>

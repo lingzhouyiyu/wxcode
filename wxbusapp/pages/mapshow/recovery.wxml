@@ -1,0 +1,37 @@
+<view class="map_container">
+  <map id="map4select" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" polyline="{{polyline}}" scale="12" style="width:{{map_width}}px;height:{{map_height}}px" bindregionchange="regionchange" bindmarkertap="markertap" controls="{{controls}}">
+  </map>
+</view>
+<swiper indicator-dots="true"	 style="height:200px">
+  <swiper-item>
+    <view class="page__bd">
+
+     <view style="padding-top:5px">
+        <button size="default" bindtap="doinput">从剪贴板输入线路标点</button>
+      </view>  
+      <view style="padding-top:5px">
+        <button size="default" bindtap="dooutput">地图标点输出到剪贴板</button>
+      </view>  
+     <view style="padding-top:5px">
+        <button size="default" bindtap="dooutput2">地图标点输出到剪贴板(反方向)</button>
+      </view>  
+    </view>
+  </swiper-item>
+<swiper-item>
+    <view class="page__bd">
+    <view style="padding-top:5px">
+        <button size="default" bindtap="doNew">新增地图中心标点</button>
+      </view>  
+      <view style="padding-top:5px">
+        <button size="default" bindtap="doEdit">修改{{pointindex}}标点到地图中心</button>
+      </view>  
+      <view style="padding-top:5px">
+        <button size="default" bindtap="doinsert">在{{pointindex}}标点之后插入</button>
+      </view>  
+      <view style="padding-top:5px">
+        <button size="default" bindtap="dodelete">删除{{pointindex}}标点</button>
+      </view>  
+    </view>
+  </swiper-item>
+
+</swiper>

@@ -1,0 +1,23 @@
+<view class='container'>
+  <view class='resultimg'>
+    <image src='../../../images/payresult.png'></image>
+  </view>
+  <view class='titleswrap'>
+    <view class='leftline'></view>
+    <view class='titles'>接下来的消费流程</view>
+    <view class='rightline'></view>
+  </view>
+  <view class='detailes'>
+    <view class='spot'></view>
+    <view class='texts textcolor_gray'>在消费前,提前联系老师或学校,预约培训时间。在订单详情页查看联系方式或私信咨询</view>
+  </view>
+
+  <view class='detailes'>
+    <view class='spot'></view>
+    <view class='texts textcolor_gray'>约定时间到达培训地点，验证码预约</view>
+  </view>
+  <view class='button'>
+    <view class='Btn_1' bindtap='showOrder'>查看订单</view>
+    <view class='Btn_2'>分享好友拆红包</view>
+  </view>
+</view>

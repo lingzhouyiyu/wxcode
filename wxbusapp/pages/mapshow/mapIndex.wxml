@@ -1,0 +1,147 @@
+<view wx:if="{{loaded == false}}" style="margin-top:120px;height: 60px;">
+    <view class="spinner">
+      <view class="rect1"></view>
+      <view class="rect2"></view>
+      <view class="rect3"></view>
+      <view class="rect4"></view>
+      <view class="rect5"></view>
+    </view>
+  </view>
+<view  wx:if="{{loaded}}" class="map_container"> 
+
+<map id="busMap"
+ longitude="{{longitude}}" 
+ latitude="{{latitude}}" 
+ markers="{{markers}}"
+ bindmarkertap="makertap"
+ polyline="{{polyline}}"
+ scale="{{scale}}" 
+ show-location=true
+ controls="{{controls}}" 
+ bindcontroltap="controlTap"
+ style="width:{{devwidth}}px;height:{{devheight}}px"
+ bindregionchange="regionchange"
+ bindtap="maptap"
+ bindupdated="mapupdated"
+ include-points	= "{{includePoints}}"
+ controls="{{controls}}">
+
+ <cover-view wx:if="{{showtip}}" style=" display: flex; align-items: center;justify-content: center;flex-direction:column;position: fixed;height:90px;width:200px;margin-top: {{(devheight-100)/2-50}}px;margin-left: {{devwidth/2-100}}px;">
+      <cover-view style="display: flex;flex-direction:row;background: #ffffff;border: 1px solid #A3A3A3;border-radius:10px;height:70px;width:198px;">
+          <cover-view style="padding:5px;border-radius:2px;height:70px;width:60px;">
+          <cover-image  style="height:50px;width:50px;" src="/source/icon/timg.png"/>
+          </cover-view>
+          <cover-view style="font-size: 14px;line-height:30px;padding:5px;height:70px;width:140px;">
+            {{markers[curStation].mname}}
+            <cover-view style="border-radius:5px;line-height:20px;font-size: 14px;text-align: center;color: #FFFFFF;background: #0099FF;height:20px;width:80px;" bindtap="gotothere">
+            去这里
+            </cover-view>
+          </cover-view>
+
+      </cover-view>
+      <cover-view style="height:20px;width:20px;margin-top: -2px;">
+      <cover-image  style="height:20px;width:20px;" src="/source/icon/arrow.png"/>
+      </cover-view>
+ </cover-view>
+
+
+<!-- -->
+
+  <cover-view wx:if="{{barHeight>0}}"   style="position: fixed;margin-top: 0px;margin-left: 0px;width:100%;height:100px">
+      <cover-view style="padding-top:10px;margin:10px;border: 1px solid #A3A3A3;border-radius:15px;background: #ffffff;align-items: left;vertical-align: middle;display: flex;flex-direction:column;width:{{devwidth-20}}px;height:70px">
+      <cover-view style="display: flex;flex-direction:row;width:100%;">
+        <cover-view style="display: flex;flex-direction:row;padding:5px;color: #999;width:40%;">
+           <cover-image style="width:20px;height:20px" src='../../source/icon/carNo.png'></cover-image>
+           <cover-view style="line-height:22px;margin-left:5px;color: #999">{{cars[selmarkID].vid}}</cover-view>
+        </cover-view>
+        <cover-view style="display: flex;flex-direction:row;padding:5px;color: #999;width:30%;">
+          <cover-image style="width:20px;height:20px" src='../../source/icon/way.png'></cover-image>
+          <cover-view  wx:if="{{cars[selmarkID].hx>337 || cars[selmarkID].hx<23}}" style="line-height:22px;margin-left:5px;color: #999">
+          正北
+          </cover-view>
+          <cover-view wx:elif="{{cars[selmarkID].hx>22 && cars[selmarkID].hx<67}}"  style="line-height:22px;margin-left:5px;color: #999">
+          东北
+          </cover-view>
+          <cover-view wx:elif="{{cars[selmarkID].hx>66 && cars[selmarkID].hx<112}}"  style="line-height:22px;margin-left:5px;color: #999;width:100%">
+          正东
+          </cover-view>
+          <cover-view wx:elif="{{cars[selmarkID].hx>111 && cars[selmarkID].hx<158}}"  style="line-height:22px;margin-left:5px;color: #999">
+          东南
+          </cover-view>
+          <cover-view wx:elif="{{cars[selmarkID].hx>157 && cars[selmarkID].hx<203}}"  style="line-height:22px;margin-left:5px;color: #999">
+          正南
+          </cover-view>
+          <cover-view wx:elif="{{cars[selmarkID].hx>202 && cars[selmarkID].hx<248}}" style="line-height:22px;margin-left:5px;color: #999;width:100%">
+          西南
+          </cover-view>
+          <cover-view wx:elif="{{cars[selmarkID].hx>247 && cars[selmarkID].hx<338}}" style="line-height:22px;margin-left:5px;color: #999">
+          正西
+          </cover-view>
+          <cover-view wx:elif="{{cars[selmarkID].hx>292 && cars[selmarkID].hx<316}}" style="line-height:22px;margin-left:5px;color: #999">
+          西北
+          </cover-view>
+          <cover-view wx:else  style="line-height:22px;margin-left:5px;color: #999">
+          {{cars[selmarkID].hx}}
+          </cover-view>
+          
+          </cover-view>
+        <cover-view style="display: flex;flex-direction:row;padding:5px;color: #999;width:30%;">
+          <cover-image style="width:20px;height:20px" src='../../source/icon/speed.png'></cover-image>
+          <cover-view style="line-height:22px;margin-left:5px;color: #999">{{cars[selmarkID].sp/10}}km/h</cover-view>
+        </cover-view>         
+      </cover-view>
+      <cover-view style="display: flex;flex-direction:row;padding:5px;">
+          <cover-image style="width:20px;height:20px" src='../../source/icon/location.png'></cover-image>
+          <cover-view style="margin-left:5px;color: #999;line-height:22px;height:20px;">
+          {{cars[selmarkID].ps}}
+          </cover-view>     
+      </cover-view> 
+      </cover-view>
+    </cover-view>
+
+  <cover-view style="padding:10px;position: fixed;margin-top: {{devheight-160}}px;margin-left: 0px;width:{{devwidth}}px;height:210px;">
+    <cover-view style="background: #ffffff;border: 1px solid #A3A3A3;border-radius:15px;align-items: center;vertical-align: middle;display: flex;flex-direction:column;width:{{devwidth-22}}px;height:120px">
+        <cover-view style="margin-top:10px;display: flex;flex-direction:row; align-items: center;justify-content: center;width:100%;height:120px">
+          <cover-view catchtap="selectArea" style="font-size: 16px;color:#0099ff;border: 1px dashed #0099ff;border-radius:10px;line-height:40px;text-align: center;width:60px;height:40px">{{district}}</cover-view>
+          <cover-view style="display: flex;flex-direction:column;align-items: center;vertical-align: middle;background: #ffffff;width:{{devwidth-180}}px;height:50px">
+            <cover-view style="display: flex;flex-direction:row; align-items: center;vertical-align: middle;width:{{devwidth-190}}px;height:24px">
+            <cover-image class="transit-search-icon-img"  src='../../source/icon/clock.png'></cover-image>
+            <cover-view style="font-size: 15px;line-height:24px;text-align: center;width:{{devwidth-220}};height:24px">
+             {{lineinfo.start_time}}-{{lineinfo.end_time}}
+             </cover-view>
+            </cover-view>
+            <cover-view style="border-top: 1px solid #8e8e8e;width:{{devwidth-200}}px;height:1px"></cover-view>
+            <cover-view style="display: flex;flex-direction:row; align-items: center;vertical-align: left;width:{{devwidth-190}}px;height:24px">
+            <cover-image class="transit-search-icon-img"  src='../../source/icon/bus.png'></cover-image>
+            <cover-view style="font-size: 15px;line-height:24px;text-align: left;width:60px">
+             {{onlineCount}}辆
+             </cover-view>
+             <cover-image class="transit-search-icon-img"  src='../../source/icon/money.png'></cover-image>
+            <cover-view style="font-size: 15px;line-height:24px;text-align: left;width:60px">
+                  <block wx:if="{{true}}">{{lineinfo.max_parice}}元</block>
+                  <block wx:else>{{lineinfo.basic_price}}-{{lineinfo.max_parice}}元</block>
+             </cover-view>
+            </cover-view>
+          </cover-view>
+          <cover-view catchtap="gotoList"  style="border-radius:8px;line-height:30px;text-align: center;background: #0099ff;width:80px;height:30px;font-size: 14px;color:#ffffff">列表模式</cover-view>
+        </cover-view>
+        <cover-view  style="margin-top:0px;display: flex;flex-direction:row; align-items: center;justify-content: center;width:100%;height:120px"> 
+        <cover-view catchtap="searchLine" style="display: flex;flex-direction:row; align-items: center;vertical-align: middle;margin-right:15px;border: 1px solid #eeeeee;border-radius:5px;background: #eeeeee;font-size: 15px;line-height:25px;text-align: center;width:{{devwidth-100}}px;height:30px">
+         <cover-image class="transit-search-icon-img"  src='../../source/icon/search.png'></cover-image>
+        <cover-view style="text-align: center;width:width:{{devwidth-116}}px;">
+           {{lineinfo.name}}
+        </cover-view>
+        </cover-view>
+        <cover-view  wx:if="{{linetype=='去程'}}" catchtap="changeline"  style="border-radius:20px;line-height:40px;text-align: center;background: #07ab45;width:40px;height:40px;font-size: 14px;color:#ffffff">{{linetype}}</cover-view>
+        <cover-view wx:if="{{linetype=='返程'}}"  catchtap="changeline"  style="border-radius:20px;line-height:40px;text-align: center;background: #e4be24;width:40px;height:40px;font-size: 14px;color:#ffffff">{{linetype}}</cover-view>
+
+        </cover-view>
+        
+    </cover-view>
+  </cover-view>
+
+</map>
+
+
+
+</view>

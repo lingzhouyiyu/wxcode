@@ -1,0 +1,255 @@
+
+
+.top{
+  width: 100%;
+  height: 270rpx;
+  /* background-color: #80C5DF; */
+  background: linear-gradient(#8cd5d0, #69abf7);
+}
+.center{
+  width: 100%;
+  height: 350rpx;
+  background-color: #F2F3F6;
+}
+.list{
+  width: 100%;
+  height: auto;
+  font-size: 30rpx;
+}
+.item{
+  width: 100%;
+  height: 110rpx;
+  /* background-color: red; */
+display: flex;
+}
+.item_left{
+width: 15%;
+height: 100%;
+/* background-color: green; */
+display: flex;
+align-items: center;
+justify-content: center;
+}
+/* .item_left image{
+  width: 40rpx;
+  height: 40rpx;
+} */
+.item_right{
+  width:85%;
+  height: 100%;
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  position: relative;
+    color: #908D88;
+    border-bottom: 3rpx solid #F3F2F0;
+    font-size: 32rpx;
+}
+.item_right image{
+   width: 14rpx;
+  height: 24rpx;
+  position: absolute;
+  right: 35rpx;
+}
+.item_right text{
+   font-size: 32rpx;
+}
+.hongbao image{
+  width: 35rpx;
+  height: 25rpx;
+}
+.baoming image{
+  width: 30rpx;
+  height: 31rpx;
+}
+.shoucang image{
+  width: 35rpx;
+  height: 33rpx;
+}
+.shicheng image{
+  width: 35rpx;
+  height: 35rpx;
+}
+.jigou image{
+  width: 34rpx;
+  height: 34rpx;
+}
+.laoshi image{
+  width: 31rpx;
+  height: 27rpx;
+}
+.lianxi image{
+  width: 29rpx;
+  height: 32rpx;
+}
+.coverview{
+width: 94%;
+height: 500rpx;
+position: absolute;
+top:100rpx;
+background-color: #fff;
+border-radius: 5px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+color: #908D88;
+/* background-color: yellow; */
+}
+.imgviews{
+  width: 150rpx;
+  height: 150rpx;
+  position: absolute;
+  top: -60rpx;
+}
+.coverviewimg{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #F2F3F6;
+}
+.loginstate {
+/* background-color: red; */
+position: absolute;
+top:130rpx;
+font-size: 40rpx;
+font-weight: bold;
+color: #000;
+}
+.phonestate {
+/* background-color: yellow; */
+margin-top: 30rpx;
+}
+.options{
+width: 100%;
+height: 150rpx;
+/* background-color: green; */
+position: absolute;
+bottom: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 30rpx;
+}
+.optionone{
+  width: 24%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+align-items: center;
+/* background-color: yellow; */
+margin-top: -25rpx;
+font-size: 24rpx;
+}
+.optiontwo{
+ width: 24%;
+ /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 99rpx;
+  margin-top: -25rpx;
+  border-left: 3rpx solid  #F3F2F0;
+  font-size: 30rpx;
+}
+.optiontwo text{
+
+ font-weight: bold;
+color: #000;
+}
+.optionimg{
+width:38rpx;
+height: 38rpx;
+margin-bottom: 15rpx;
+
+}
+.optionimgs{
+width:43rpx;
+height: 38rpx;
+margin-bottom: 15rpx;
+
+}
+.optionimgss{
+width:42rpx;
+height: 40rpx;
+margin-bottom: 15rpx;
+
+}
+.recharge{
+  height: 130rpx;
+  width: 81%;
+  /* background-color: red; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3rpx solid #F3F2F0;
+}
+.leftview{
+width: 75%;
+height: 100%;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+.leftview image{
+width: 50rpx;
+height: 50rpx;
+margin-right: 30rpx;
+}
+.leftprice{
+  font-size: 50rpx;
+  color: rgb(68, 68, 68)
+}
+.wabi{
+  font-size: 26rpx;
+  margin-left: 15rpx;
+  /* background-color: red; */
+  height: 50rpx;
+  line-height: 60rpx;
+}
+.rightview{
+  width: 25%;
+height: 100%;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+/* background-color: gray; */
+}
+ .textview{
+  width: 100rpx;
+  height: 40rpx;
+  background-color: #69abf7;
+display: flex;
+justify-content: center;
+align-items: center;
+font-size: 24rpx;
+border-radius: 10rpx;
+color: #fff;
+}
+
+/* 分享 */
+.sharewrap{
+  width: 100%;
+  height: 100rpx;
+  background-color: #69abf7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   font-size: 32rpx;
+   color: #fff;
+}
+.share{
+width: 90%;
+height: 100%;
+/* background-color: yellow; */
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.shareleft{
+display: flex;
+}
+.shareleft image{
+  width: 46rpx;
+  height: 47rpx;
+  margin-right: 50rpx;
+}
